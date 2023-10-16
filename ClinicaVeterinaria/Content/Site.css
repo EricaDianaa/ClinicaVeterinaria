@@ -10,18 +10,4 @@
 select,
 textarea {
     max-width: 280px;
-}*/
-.card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
-}
-
-.card-registration .select-arrow {
-    top: 13px;
-}
-body {
-    background: rgb(150,233,255);
-    background: radial-gradient(circle, rgba(150,233,255,1) 23%, rgba(124,245,255,1) 46%, rgba(0,212,255,1) 96%);
 }
