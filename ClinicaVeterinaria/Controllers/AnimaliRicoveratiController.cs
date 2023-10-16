@@ -10,18 +10,17 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AnimaliRicoveratiController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
 
-        // GET: AnimaliRicoverati
         public ActionResult Index()
         {
             var animaliRicoverati = db.AnimaliRicoverati.Include(a => a.Tipologia1).Include(a => a.Utenti);
             return View(animaliRicoverati.ToList());
         }
 
-        // GET: AnimaliRicoverati/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,8 +34,6 @@ namespace ClinicaVeterinaria.Controllers
             }
             return View(animaliRicoverati);
         }
-
-        // GET: AnimaliRicoverati/Create
         public ActionResult Create()
         {
             ViewBag.Tipologia = new SelectList(db.Tipologia, "IdTipologia", "Nome");
