@@ -32,11 +32,13 @@ namespace ClinicaVeterinaria.Models
         public string ColoreMantello { get; set; }
 
         [Column(TypeName = "date")]
+        [DisplayFormat(ApplyFormatInEditMode = true,DataFormatString ="{0:d}")]
         public DateTime? DataNascita { get; set; }
 
         public bool? Microchip { get; set; }
 
         [StringLength(50)]
+        [Display(Name="Numero Microchip")]
         public string NumeroMicrochip { get; set; }
 
         [StringLength(50)]
