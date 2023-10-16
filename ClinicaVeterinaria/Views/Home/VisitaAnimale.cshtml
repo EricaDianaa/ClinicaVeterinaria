@@ -1,0 +1,26 @@
+﻿@model List<ClinicaVeterinaria.Models.VisiteVeterinarie>
+
+<div class="d-flex flex-column mt-4 ">
+    <h2 class="text-center text-black">Visite</h2>
+
+    <table class="table table-bordered border-dark ">
+        <thead>
+            <tr class="bg-info">
+                <th scope="col"></th>
+                <th scope="col">Data visita</th>
+                <th scope="col">Descrizione</th>
+            </tr>
+        </thead>
+        @foreach (ClinicaVeterinaria.Models.VisiteVeterinarie v in Model)
+        {
+
+            <tbody>
+                <tr>
+                    <th scope="row" class="bg-info">@v.idVisite</th>
+                    <td>@string.Format("{0:d}", @v.Data)</td>
+                    <td>@v.Descrizione</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
