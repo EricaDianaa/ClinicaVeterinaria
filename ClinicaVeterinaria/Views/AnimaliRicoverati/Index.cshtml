@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.AnimaliRicoverati>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipologia1.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Utenti.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataRegistrazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ColoreMantello)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Microchip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroMicrochip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeProprietario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CognomeProprietario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsComune)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataInizioRicovero)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipologia1.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utenti.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataRegistrazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColoreMantello)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Microchip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroMicrochip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeProprietario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CognomeProprietario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsComune)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInizioRicovero)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdAnimali }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdAnimali }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdAnimali })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,122 @@
+﻿@model ClinicaVeterinaria.Models.AnimaliRicoverati
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AnimaliRicoverati</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipologia1.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipologia1.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Utenti.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Utenti.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataRegistrazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataRegistrazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ColoreMantello)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColoreMantello)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Microchip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Microchip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroMicrochip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroMicrochip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeProprietario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeProprietario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CognomeProprietario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CognomeProprietario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsComune)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsComune)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInizioRicovero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInizioRicovero)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAnimali }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

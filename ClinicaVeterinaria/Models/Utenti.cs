@@ -32,6 +32,7 @@ namespace ClinicaVeterinaria.Models
 
         [Required]
         [StringLength(16)]
+        [Display(Name = "Codice Fiscale")]
         public string CodiceFiscale { get; set; }
 
         [Required]
