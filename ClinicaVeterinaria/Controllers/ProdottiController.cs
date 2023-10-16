@@ -29,24 +29,24 @@ namespace ClinicaVeterinaria.Controllers
             }
         }
 
-        private List<SelectListItem> ArmadiettiDisponibili
-        {
-            get
-            {
-                List<SelectListItem> list = new List<SelectListItem>();
-                List<Armadietti> listarm = db.Armadietti.ToList();
-                foreach (Armadietti arm in listarm)
-                {
-                    list.Add(new SelectListItem { Text = arm.CodiceArmadietto, Value = arm.IdArmadietto.ToString() });
-                    List<SelectListItem> listCass = new List<SelectListItem>();
-                    foreach (Cassetti c in arm.Cassetti)
-                    {
-                        listCass.Add(new SelectListItem { Text = c.NomeCassetto, Value = c.IdCassetto.ToString() });
-                    }
-                }
-                return list;
-            }
-        }
+        //private List<SelectListItem> ArmadiettiDisponibili
+        //{
+        //    get
+        //    {
+        //        List<SelectListItem> list = new List<SelectListItem>();
+        //        List<Armadietti> listarm = db.Armadietti.ToList();
+        //        foreach (Armadietti arm in listarm)
+        //        {
+        //            list.Add(new SelectListItem { Text = arm.CodiceArmadietto, Value = arm.IdArmadietto.ToString() });
+        //            List<SelectListItem> listCass = new List<SelectListItem>();
+        //            foreach (Cassetti c in arm.Cassetti)
+        //            {
+        //                listCass.Add(new SelectListItem { Text = c.NomeCassetto, Value = c.IdCassetto.ToString() });
+        //            }
+        //        }
+        //        return list;
+        //    }
+        //}
 
         // GET: Prodotti
         public ActionResult Index()
@@ -116,12 +116,20 @@ namespace ClinicaVeterinaria.Controllers
 
         public JsonResult GetCassettiByArmadio(int IdArmadietto)
         {
-            // Qui dovresti ottenere i dati dei cassetti in base all'armadioId.
-            // Ad esempio, puoi utilizzare Entity Framework per fare una query al database.
-
             List<Cassetti> cassetti = db.Cassetti.Where(x => x.IdArmadietto == IdArmadietto).ToList();
+            List<Cassetti> cassettiToPass = new List<Cassetti>();
 
-            return Json(cassetti, JsonRequestBehavior.AllowGet);
+            foreach (Cassetti cassetto in cassetti)
+            {
+                cassettiToPass.Add(new Cassetti
+                {
+                    IdArmadietto = cassetto.IdArmadietto,
+                    IdCassetto = cassetto.IdCassetto,
+                    NomeCassetto = cassetto.NomeCassetto
+                });
+            }
+
+            return Json(cassettiToPass, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Prodotti/Edit/5
@@ -144,10 +152,10 @@ namespace ClinicaVeterinaria.Controllers
                 new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
             };
 
-            ViewBag.Armadietti = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", prodotti.Cassetto_Prodotti);
-
-            //fare chiamata ajax per modificare il risultato delle ViewBag = solo i cassetti dentro l'armadio selezionato su
-            ViewBag.Cassetti = new SelectList(db.Cassetti, "IdArmadietto", "NomeCassetto", prodotti.Cassetto_Prodotti);
+            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
+            SelectList selArm = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", prodotti.Cassetto_Prodotti);
+            ViewBag.Armadietti = arm.Concat(selArm);
+            ViewBag.Cassetti =  new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
 
             return View(prodotti);
         }
@@ -171,6 +179,17 @@ namespace ClinicaVeterinaria.Controllers
                 new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
             };
             ViewBag.IdDitta = new SelectList(db.Ditte, "IdDitta", "Nome", prodotti.IdDitta);
+            ViewBag.UsiDisponibili = UsiDisponibili;
+            ViewBag.Tipo = new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Medicinale", Value = "Medicinale" },
+                new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
+            };
+
+            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
+            SelectList selArm = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", prodotti.Cassetto_Prodotti);
+            ViewBag.Armadietti = arm.Concat(selArm);
+            ViewBag.Cassetti = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
             return View(prodotti);
         }
 
