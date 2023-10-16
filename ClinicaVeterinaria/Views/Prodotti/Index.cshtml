@@ -23,7 +23,13 @@
         <th>
             @Html.DisplayNameFor(model => model.Descrizione)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdottiUsi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cassetto_Prodotti)
+        </th>
+        <th>Gestione</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -41,9 +47,22 @@
             @Html.DisplayFor(modelItem => item.Descrizione)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdProdotto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdProdotto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdProdotto })
+            @foreach (ClinicaVeterinaria.Models.ProdottiUsi usi in item.ProdottiUsi)
+            {
+                <p>@usi.UsiDisponibili.Descrizione</p>
+            }
+        </td>
+        <td>
+            @foreach (ClinicaVeterinaria.Models.Cassetto_Prodotti cassetto in item.Cassetto_Prodotti)
+            {
+                <p>Armadietto Codice: @cassetto.Cassetti.Armadietti.CodiceArmadietto</p>
+                <p>ID Cassetto: @cassetto.Cassetti.IdCassetto</p>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdProdotto }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IdProdotto }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdProdotto })
         </td>
     </tr>
 }

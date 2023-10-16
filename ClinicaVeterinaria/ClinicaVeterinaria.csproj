@@ -166,12 +166,18 @@
     <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
+    <Compile Include="Controllers\ProdottiUsiController.cs" />
+    <Compile Include="Controllers\UsiDisponibiliController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202310160938435_Inital.cs" />
     <Compile Include="Migrations\202310160938435_Inital.designer.cs">
       <DependentUpon>202310160938435_Inital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310161357193_NomeCassetto.cs" />
+    <Compile Include="Migrations\202310161357193_NomeCassetto.designer.cs">
+      <DependentUpon>202310161357193_NomeCassetto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnimaliRicoverati.cs" />
@@ -266,11 +272,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Prodotti\Create.cshtml" />
-    <Content Include="Views\Prodotti\Delete.cshtml" />
-    <Content Include="Views\Prodotti\Details.cshtml" />
-    <Content Include="Views\Prodotti\Edit.cshtml" />
-    <Content Include="Views\Prodotti\Index.cshtml" />
     <Content Include="Views\Ditte\Create.cshtml" />
     <Content Include="Views\Ditte\Delete.cshtml" />
     <Content Include="Views\Ditte\Details.cshtml" />
@@ -291,6 +292,21 @@
     <Content Include="Views\Armadietti\Details.cshtml" />
     <Content Include="Views\Armadietti\Edit.cshtml" />
     <Content Include="Views\Armadietti\Index.cshtml" />
+    <Content Include="Views\ProdottiUsi\Create.cshtml" />
+    <Content Include="Views\ProdottiUsi\Delete.cshtml" />
+    <Content Include="Views\ProdottiUsi\Details.cshtml" />
+    <Content Include="Views\ProdottiUsi\Edit.cshtml" />
+    <Content Include="Views\ProdottiUsi\Index.cshtml" />
+    <Content Include="Views\UsiDisponibili\Create.cshtml" />
+    <Content Include="Views\UsiDisponibili\Delete.cshtml" />
+    <Content Include="Views\UsiDisponibili\Details.cshtml" />
+    <Content Include="Views\UsiDisponibili\Edit.cshtml" />
+    <Content Include="Views\UsiDisponibili\Index.cshtml" />
+    <Content Include="Views\Prodotti\Create.cshtml" />
+    <Content Include="Views\Prodotti\Delete.cshtml" />
+    <Content Include="Views\Prodotti\Details.cshtml" />
+    <Content Include="Views\Prodotti\Edit.cshtml" />
+    <Content Include="Views\Prodotti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -326,6 +342,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202310160938435_Inital.resx">
       <DependentUpon>202310160938435_Inital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310161357193_NomeCassetto.resx">
+      <DependentUpon>202310161357193_NomeCassetto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

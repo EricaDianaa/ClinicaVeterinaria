@@ -14,14 +14,30 @@ namespace ClinicaVeterinaria.Controllers
     {
         private ModelDBContext db = new ModelDBContext();
 
-        // GET: Prodottis
+        //ViewBag per la liste degli usi da db
+        private List<SelectListItem> UsiDisponibili
+        {
+            get
+            {
+                List<SelectListItem> list = new List<SelectListItem>();
+                List<UsiDisponibili> listUsi = db.UsiDisponibili.ToList();
+                foreach (UsiDisponibili uso in listUsi)
+                {
+                    list.Add(new SelectListItem { Text = uso.Descrizione, Value = uso.IdUsi.ToString() });
+                }
+                return list;
+            }
+        }
+
+        // GET: Prodotti
         public ActionResult Index()
         {
-            var prodotti = db.Prodotti.Include(p => p.Ditte);
+            List<Prodotti> prodotti = db.Prodotti.ToList();
+            //var prodotti = db.Prodotti.Include(p => p.Ditte);
             return View(prodotti.ToList());
         }
 
-        // GET: Prodottis/Details/5
+        // GET: Prodotti/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,9 +52,10 @@ namespace ClinicaVeterinaria.Controllers
             return View(prodotti);
         }
 
-        // GET: Prodottis/Create
+        // GET: Prodotti/Create
         public ActionResult Create()
         {
+            ViewBag.UsiDisponibili = UsiDisponibili;
             ViewBag.IdDitta = new SelectList(db.Ditte, "IdDitta", "Nome");
             ViewBag.Tipo = new List<SelectListItem>
             {
@@ -48,20 +65,28 @@ namespace ClinicaVeterinaria.Controllers
             return View();
         }
 
-        // POST: Prodottis/Create
-        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
+        // POST: Prodotti/Create
+        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdProdotto,Tipo,Nome,Descrizione,IdDitta")] Prodotti prodotti)
+        public ActionResult Create([Bind(Include = "IdProdotto,Tipo,Nome,Descrizione,IdDitta")] Prodotti prodotti, FormCollection cheks)
         {
             if (ModelState.IsValid)
             {
+                List<string> selezione = cheks.GetValues("Selezione")?.ToList();
+                foreach (string s in selezione)
+                {
+                    prodotti.ProdottiUsi.Add(new ProdottiUsi{ IdUsi = Convert.ToInt16(s) });
+                }
+
+
                 db.Prodotti.Add(prodotti);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UsiDisponibili = UsiDisponibili;
             ViewBag.IdDitta = new SelectList(db.Ditte, "IdDitta", "Nome", prodotti.IdDitta);
             ViewBag.Tipo = new List<SelectListItem>
             {
@@ -71,7 +96,7 @@ namespace ClinicaVeterinaria.Controllers
             return View(prodotti);
         }
 
-        // GET: Prodottis/Edit/5
+        // GET: Prodotti/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,6 +109,7 @@ namespace ClinicaVeterinaria.Controllers
                 return HttpNotFound();
             }
             ViewBag.IdDitta = new SelectList(db.Ditte, "IdDitta", "Nome", prodotti.IdDitta);
+            ViewBag.UsiDisponibili = UsiDisponibili;
             ViewBag.Tipo = new List<SelectListItem>
             {
                 new SelectListItem { Text = "Medicinale", Value = "Medicinale" },
@@ -92,8 +118,8 @@ namespace ClinicaVeterinaria.Controllers
             return View(prodotti);
         }
 
-        // POST: Prodottis/Edit/5
-        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
+        // POST: Prodotti/Edit/5
+        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -105,16 +131,17 @@ namespace ClinicaVeterinaria.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdDitta = new SelectList(db.Ditte, "IdDitta", "Nome", prodotti.IdDitta);
+            ViewBag.UsiDisponibili = UsiDisponibili;
             ViewBag.Tipo = new List<SelectListItem>
             {
                 new SelectListItem { Text = "Medicinale", Value = "Medicinale" },
                 new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
             };
+            ViewBag.IdDitta = new SelectList(db.Ditte, "IdDitta", "Nome", prodotti.IdDitta);
             return View(prodotti);
         }
 
-        // GET: Prodottis/Delete/5
+        // GET: Prodotti/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -129,7 +156,7 @@ namespace ClinicaVeterinaria.Controllers
             return View(prodotti);
         }
 
-        // POST: Prodottis/Delete/5
+        // POST: Prodotti/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -40,7 +40,7 @@ namespace ClinicaVeterinaria.Controllers
         public ActionResult Create()
         {
             ViewBag.IdCassetto = new SelectList(db.Cassetti, "IdCassetto", "IdCassetto");
-            ViewBag.IdProdotti = new SelectList(db.Prodotti, "IdProdotto", "Tipo");
+            ViewBag.IdProdotti = new SelectList(db.Prodotti, "IdProdotto", "Nome");
             return View();
         }
 
