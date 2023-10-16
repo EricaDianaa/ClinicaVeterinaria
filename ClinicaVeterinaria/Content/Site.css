@@ -1,13 +1,46 @@
-﻿/* Set padding to keep content from hitting the edges */
-/*.body-content {
+﻿ Set padding to keep content from hitting the edges 
+.body-content {
     margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
-}*/
+}
 
-/* Set width on the form input elements since they're 100% wide by default */
-/*input,
+Set width on the form input elements since they're 100% wide by default
+input,
 select,
 textarea {
     max-width: 280px;
 }
+
+
+
+
+body {
+    font-size: 1.5em !important
+}
+
+/* Height for devices larger than 576px */
+@media (min-width: 992px) {
+    #intro {
+        margin-top: -58.59px;
+        height: 50vh !important;
+    }
+}
+
+.navbar .nav-link {
+    color: black !important;
+}
+
+nav {
+    height: 210px
+}
+
+
+.fixed-height-card {
+    height: 500px !important;
+    width: 350px !important;
+    overflow: auto;
+}
+
+
+
