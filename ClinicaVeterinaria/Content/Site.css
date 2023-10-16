@@ -37,9 +37,10 @@ nav {
 
 
 .fixed-height-card {
-    height: 500px !important;
+    height: 750px!important;
     width: 350px !important;
     overflow: auto;
+   
 }
 
 
