@@ -53,6 +53,7 @@
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -277,6 +278,8 @@
     <Content Include="Content\ImgsLayout\Chirurgia.png" />
     <Content Include="Content\ImgsLayout\Degenza.png" />
     <Content Include="Content\ImgsLayout\Dermatologia.png" />
+    <Content Include="Content\ImgsLayout\Diagnostica.png" />
+    <Content Include="Content\ImgsLayout\Ecografia.png" />
     <Content Include="Content\ImgsLayout\Endoscopia.png" />
     <Content Include="Content\ImgsLayout\Interna.png" />
     <Content Include="Content\ImgsLayout\logobianco.png" />
