@@ -160,7 +160,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ArmadiettiController.cs" />
+    <Compile Include="Controllers\CassettiController.cs" />
+    <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
+    <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProdottiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +208,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\customStyle.css">
+      <DependentUpon>customStyle.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\customStyle.min.css">
+      <DependentUpon>customStyle.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -230,6 +241,11 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\customStyle.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -250,9 +266,35 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Prodotti\Create.cshtml" />
+    <Content Include="Views\Prodotti\Delete.cshtml" />
+    <Content Include="Views\Prodotti\Details.cshtml" />
+    <Content Include="Views\Prodotti\Edit.cshtml" />
+    <Content Include="Views\Prodotti\Index.cshtml" />
+    <Content Include="Views\Ditte\Create.cshtml" />
+    <Content Include="Views\Ditte\Delete.cshtml" />
+    <Content Include="Views\Ditte\Details.cshtml" />
+    <Content Include="Views\Ditte\Edit.cshtml" />
+    <Content Include="Views\Ditte\Index.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Create.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Delete.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Details.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Edit.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Index.cshtml" />
+    <Content Include="Views\Cassetti\Create.cshtml" />
+    <Content Include="Views\Cassetti\Delete.cshtml" />
+    <Content Include="Views\Cassetti\Details.cshtml" />
+    <Content Include="Views\Cassetti\Edit.cshtml" />
+    <Content Include="Views\Cassetti\Index.cshtml" />
+    <Content Include="Views\Armadietti\Create.cshtml" />
+    <Content Include="Views\Armadietti\Delete.cshtml" />
+    <Content Include="Views\Armadietti\Details.cshtml" />
+    <Content Include="Views\Armadietti\Edit.cshtml" />
+    <Content Include="Views\Armadietti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
