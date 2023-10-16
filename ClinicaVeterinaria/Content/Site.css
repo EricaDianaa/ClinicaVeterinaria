@@ -1,13 +1,27 @@
 ﻿/* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
+}*/
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+body {
+    background: rgb(150,233,255);
+    background: radial-gradient(circle, rgba(150,233,255,1) 23%, rgba(124,245,255,1) 46%, rgba(0,212,255,1) 96%);
 }

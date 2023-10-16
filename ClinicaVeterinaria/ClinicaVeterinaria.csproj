@@ -160,7 +160,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AnimaliRicoveratiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -178,7 +181,9 @@
     <Compile Include="Models\ModelDBContext.cs" />
     <Compile Include="Models\Prodotti.cs" />
     <Compile Include="Models\ProdottiUsi.cs" />
+    <Compile Include="Models\SiteRole.cs" />
     <Compile Include="Models\Tipologia.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\UsiDisponibili.cs" />
     <Compile Include="Models\Utenti.cs" />
     <Compile Include="Models\Vendite.cs" />
@@ -203,6 +208,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Immagini\DogDaycare.png" />
+    <Content Include="Content\Immagini\ImmagineRegister.png" />
+    <Content Include="Content\Immagini\pexels-barnabas-davoti-11106411.jpg" />
+    <Content Include="Content\Immagini\sfondoLogin.png" />
+    <Content Include="Content\Immagini\user-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -250,9 +260,17 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\AnimaliRicoverati\Create.cshtml" />
+    <Content Include="Views\AnimaliRicoverati\Delete.cshtml" />
+    <Content Include="Views\AnimaliRicoverati\Details.cshtml" />
+    <Content Include="Views\AnimaliRicoverati\Edit.cshtml" />
+    <Content Include="Views\AnimaliRicoverati\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ImgProgetto\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

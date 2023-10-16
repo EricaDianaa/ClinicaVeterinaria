@@ -1,0 +1,56 @@
+﻿@model ClinicaVeterinaria.Models.Utenti
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <section class="vh-100 bg-image"
+             style="background-image: url('/Content/Immagini/DogDaycare.png');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">Accedi al tuo Account</h2>
+                                <form>
+
+                                    <div class="form-outline mb-4">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @id = "Email" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label col-md-2", @for = "Email" })
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password", @id = "Password" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "form-label col-md-2", @for = "Password" })
+                                    </div>
+
+                                    <div class="form-check d-flex justify-content-center mb-5">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                                        <label class="form-check-label" for="form2Example3g">
+                                            I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                                        </label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <input type="submit" value="Accedi" class="btn btn-success btn-lg" />
+                                    </div>
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger alert alert-danger" })
+                                    <p class="text-center text-muted mt-5 mb-0">
+                                        Non sei ancora registrato? <a href="/Register/Register" class="fw-bold text-body"><u>Registrati</u></a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
