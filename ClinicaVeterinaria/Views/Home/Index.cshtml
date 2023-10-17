@@ -1,35 +1,86 @@
 ﻿<main>
 
     <header>
-             
-      
-        <!-- Background image -->
-        <div id="intro" class="bg-image vh-100 shadow-1-strong">
-            <video style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
-                <source class="h-100"
-                        src="https://mdbootstrap.com/img/video/animation-intro-min.mp4"
-                        type="video/mp4" />
-            </video>
-            <div class="mask" style="
-            background: linear-gradient(
-              45deg,
-              rgba(29, 236, 197, 0.7),
-              rgba(91, 14, 214, 0.7) 100%
-            );
-          ">
-                <div class="container d-flex align-items-center justify-content-center text-center h-100">
-                    <div class="text-white">
-                        <h1 class="mb-3">Learn Bootstrap 5 with MDB</h1>
-                        <h5 class="mb-4">Best & free guide of responsive web design</h5>
-                        <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
-                           rel="nofollow" target="_blank">Start tutorial</a>
-                        <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
-                           role="button">Download MDB UI KIT</a>
+
+
+
+
+        @*<div id="carouselExampleControls" class="carousel slide mt-5" data-mdb-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/Content/ImgsLayout/canecarosello.jpg" class="d-block w-100" alt="Wild Landscape" />
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/ImgsLayout/gattocarosello.jpg" class="d-block w-100" alt="Camera" />
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/ImgsLayout/conigliocarosello.jpg" class="d-block w-100" alt="Exotic Fruits" />
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>*@
+
+
+
+        <div id="imgcontainer" class="d-flex flex-row">
+            <div class="col-md-8">
+                <div id="imgheader" class="mt-5">
+                    <img src="~/Content/ImgsLayout/canecarosello.jpg" class="d-block w-100" alt="Wild Landscape" />
+                </div>
+            </div>
+            <div class="d-flex flex-column">
+
+                <div class=" mt-5">
+                    <div id="cardheader" class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Clinica Veterinaria Animal House</h2>
+                            <p class="card-text"> Il tuo partner fidato per la salute e il benessere dei tuoi amici a quattro zampe</p>
+                            <a href="#!" class="btn btn-primary">Button</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="d-flex flex-row">
+                    <div class="col-md-4 mt-5">
+                        <div  class=" cardheadertrio">
+                            <div class="d-flex flex-column justify-content-between"  >
+                                <h2 class="card-title">Veterinaria di base</h2>
+                                <p class="card-text">Nella nostra clinica puoi trovare servizi di diagnosi, cura, prevenzione e degenza assistita per tutte le tipologie di animali domestici</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-5">
+                        <div  class=" cardheadertrio">
+                            <div >
+                                <h2 class="card-title">Veterinaria d'urgenza e specialistica</h2>
+                                <p class="card-text"> Un team di veterinari competenti e specializzati in ambiti differenti per visite specialistiche rivolte a tutti gli animali domestici in ogni fase della loro vita.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-5">
+                        <div  class=" cardheadertrio">
+                            <div >
+                                <h2 class="card-title">Servizi di Salute e di Benessere</h2>
+                                <p class="card-text">I cani, sia cuccioli che adulti, hanno accesso a servizi di educazione comportamentale che si sviluppano in sessioni di lavoro individuali o di gruppo.</p>
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Background image -->
+
+
+
     </header>
 
 

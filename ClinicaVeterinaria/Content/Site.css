@@ -28,11 +28,12 @@ body {
 }
 
 .navbar .nav-link {
-    color: black !important;
+    color: white !important;
 }
 
 nav {
-    height: 210px
+    height: 170px !important;
+    background-color: rgb(37, 150, 190);
 }
 
 
@@ -43,5 +44,39 @@ nav {
    
 }
 
+#imgcontainer{
+    width:100%
+}
 
+
+#imgheader {
+    max-width: 90%;
+
+   position: relative;
+}
+
+    #imgheader::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1) 100%), 
+                    linear-gradient(to right, rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1) 100%); 
+        pointer-events: none; 
+    }
+
+#cardheader {
+    text-align: center;
+    border: solid 3px;
+    border-color: rgb(37, 150, 190)
+}
+
+
+.cardheadertrio {
+    text-align: center;
+    
+    height: 660px !important
+}
 
