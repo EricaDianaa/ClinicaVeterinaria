@@ -29,25 +29,25 @@
             <div class="container-fluid">
                 <!-- Navbar brand -->
 
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-                    aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarExample01">
-                <img src="~/content/ImgsLayout/logosfondoblu.png" alt="Logo" style="max-height:140px;">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                    <li class="nav-item active ">
-                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Chi siamo", "ChiSiamo", "Home", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
-                    </li>
-                    <li> @Html.ActionLink("Admin", "AdminMenu", "Admin", null, new { @class = "nav-link" })</li>
-                    <!-- ... other menu items ... -->
-                </ul>
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                        aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarExample01">
+                    <img src="~/content/ImgsLayout/logosfondoblu.png" alt="Logo" style="max-height:140px;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item active ">
+                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Chi siamo", "ChiSiamo", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
+                        </li>
+                        <li> @Html.ActionLink("Admin", "AdminMenu", "Admin", null, new { @class = "nav-link" })</li>
+                        <!-- ... other menu items ... -->
+                    </ul>
 
                     <ul class="navbar-nav d-flex flex-row">
                         <!-- Icons -->
@@ -71,69 +71,6 @@
                             <a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
                                 <i class="fab fa-github"></i>
                             </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Ditte
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Lista", "Index", "Ditte", new { area = "" }, new { @class = "dropdown-item" })</li>
-                                <li>@Html.ActionLink("Crea", "Create", "Ditte", new { area = "" }, new { @class = "dropdown-item" })</li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                UsiDisponibili
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Lista", "Index", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
-                                <li>@Html.ActionLink("Crea", "Create", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                ProdottiUsi
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Lista", "Index", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
-                                <li>@Html.ActionLink("Crea", "Create", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Prodotti
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Lista", "Index", "Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                                <li>@Html.ActionLink("Crea", "Create", "Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Armadietti
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Lista", "Index", "Armadietti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                                <li>@Html.ActionLink("Crea", "Create", "Armadietti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Cassetti
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Lista", "Index", "Cassetti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                                <li>@Html.ActionLink("Crea", "Create", "Cassetti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Cassetto_Prodotti
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Lista", "Index", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                                <li>@Html.ActionLink("Crea", "Create", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -177,7 +114,7 @@
                             @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Servizi offerti", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("RicercaAnimale", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
                         </li>
                         <!-- ... other menu items ... -->
                     </ul>
@@ -243,7 +180,7 @@
                             @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Servizi offerti", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("RicercaAnimale", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
                         </li>
                         <!-- ... other menu items ... -->
                     </ul>
