@@ -43,10 +43,16 @@ namespace ClinicaVeterinaria.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdAnimali,DataRegistrazione,Nome,Tipologia,ColoreMantello,DataNascita,Microchip,NumeroMicrochip,NomeProprietario,CognomeProprietario,IsComune,Foto,DataInizioRicovero,IdUtente")] AnimaliRicoverati animaliRicoverati)
+        public ActionResult Create(/*[Bind(Include = "IdAnimali,DataRegistrazione,Nome,Tipologia,ColoreMantello,DataNascita,Microchip,NumeroMicrochip,NomeProprietario,CognomeProprietario,IsComune,Foto,DataInizioRicovero,IdUtente")] */AnimaliRicoverati animaliRicoverati, HttpPostedFileBase foto)
         {
             if (ModelState.IsValid)
             {
+                if(foto != null && foto.ContentLength > 0)
+                {
+                    animaliRicoverati.Foto = foto.FileName;
+                    string pathToSave = Server.MapPath("~/Content/ImgProgetto/") + foto.FileName;
+                    foto.SaveAs(pathToSave);
+                }
                 db.AnimaliRicoverati.Add(animaliRicoverati);
                 db.SaveChanges();
                 return RedirectToAction("Index");

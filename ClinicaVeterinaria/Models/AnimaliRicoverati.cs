@@ -19,6 +19,7 @@ namespace ClinicaVeterinaria.Models
         public int IdAnimali { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name ="Data Registrazione")]
         public DateTime DataRegistrazione { get; set; }
 
         [Required]
@@ -29,30 +30,36 @@ namespace ClinicaVeterinaria.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Colore Mantello")]
         public string ColoreMantello { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Data di nascita")]
         public DateTime? DataNascita { get; set; }
 
         public bool? Microchip { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Num. Microchip")]
         public string NumeroMicrochip { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Nome proprietario")]
         public string NomeProprietario { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Cognome proprietario")]
         public string CognomeProprietario { get; set; }
-
+        [Display(Name = "Canile municipale")]
         public bool? IsComune { get; set; }
 
         [StringLength(50)]
         public string Foto { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Data inizio ricovero")]
         public DateTime? DataInizioRicovero { get; set; }
-
+        [Display(Name = "Cliente")]
         public int? IdUtente { get; set; }
 
         public virtual Utenti Utenti { get; set; }

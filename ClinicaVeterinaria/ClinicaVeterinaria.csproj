@@ -164,6 +164,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\TipologiaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -241,6 +242,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\JavaScript2.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
@@ -267,6 +269,11 @@
     <Content Include="Views\AnimaliRicoverati\Details.cshtml" />
     <Content Include="Views\AnimaliRicoverati\Edit.cshtml" />
     <Content Include="Views\AnimaliRicoverati\Index.cshtml" />
+    <Content Include="Views\Tipologia\Create.cshtml" />
+    <Content Include="Views\Tipologia\Delete.cshtml" />
+    <Content Include="Views\Tipologia\Details.cshtml" />
+    <Content Include="Views\Tipologia\Edit.cshtml" />
+    <Content Include="Views\Tipologia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
