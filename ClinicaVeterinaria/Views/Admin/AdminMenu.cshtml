@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "AdminMenu";
+}
+
+<h2 class="text-center m-3">AdminMenu</h2>
+
+<h2>User</h2>
+<ul class="navbar-nav d-flex flex-row gap-5 flex-wrap container">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Utenti
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Registrati", "Register", "Register", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Clinica veterinaria</h2>
+<ul class="navbar-nav d-flex flex-row gap-5 flex-wrap container">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Animali Anagrafati
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "AnimaliRicoverati", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "AnimaliRicoverati", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tipi Animali
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "Tipologia", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "Tipologia", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Farmacia Vendite</h2>
+<ul class="navbar-nav d-flex flex-row gap-5 flex-wrap container">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ditte
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "Ditte", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "Ditte", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            UsiDisponibili
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ProdottiUsi
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Prodotti
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Armadietti
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "Armadietti", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "Armadietti", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cassetti
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "Cassetti", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "Cassetti", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cassetto_Prodotti
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+</ul>
