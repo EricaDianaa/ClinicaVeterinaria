@@ -5,6 +5,7 @@ namespace ClinicaVeterinaria.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Prodotti")]
     public partial class Prodotti
@@ -25,6 +26,7 @@ namespace ClinicaVeterinaria.Models
         public string Tipo { get; set; }
 
         [Required]
+        [Remote("IsProductNameValid", "Validazioni", ErrorMessage = "Nome gia presente")]
         [StringLength(50)]
         public string Nome { get; set; }
 

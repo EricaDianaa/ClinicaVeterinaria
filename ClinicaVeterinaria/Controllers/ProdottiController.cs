@@ -20,7 +20,7 @@ namespace ClinicaVeterinaria.Controllers
             get
             {
                 List<SelectListItem> list = new List<SelectListItem>();
-                List<UsiDisponibili> listUsi = db.UsiDisponibili.ToList();
+                List<UsiDisponibili> listUsi = db.UsiDisponibili.OrderBy(x => x.Descrizione).ToList();
                 foreach (UsiDisponibili uso in listUsi)
                 {
                     list.Add(new SelectListItem { Text = uso.Descrizione, Value = uso.IdUsi.ToString() });
@@ -81,6 +81,10 @@ namespace ClinicaVeterinaria.Controllers
                 new SelectListItem { Text = "Medicinale", Value = "Medicinale" },
                 new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
             };
+            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
+            SelectList selArm = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", 0);
+            ViewBag.Armadietti = arm.Concat(selArm);
+            ViewBag.Cassetti = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
             return View();
         }
 
@@ -111,6 +115,10 @@ namespace ClinicaVeterinaria.Controllers
                 new SelectListItem { Text = "Medicinale", Value = "Medicinale" },
                 new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
             };
+            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
+            SelectList selArm = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", prodotti.Cassetto_Prodotti);
+            ViewBag.Armadietti = arm.Concat(selArm);
+            ViewBag.Cassetti = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
             return View(prodotti);
         }
 
@@ -155,7 +163,7 @@ namespace ClinicaVeterinaria.Controllers
             List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
             SelectList selArm = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", prodotti.Cassetto_Prodotti);
             ViewBag.Armadietti = arm.Concat(selArm);
-            ViewBag.Cassetti =  new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
+            ViewBag.Cassetti = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
 
             return View(prodotti);
         }

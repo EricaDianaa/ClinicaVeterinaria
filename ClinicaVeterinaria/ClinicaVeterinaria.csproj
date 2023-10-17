@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ProdottiUsiController.cs" />
     <Compile Include="Controllers\UsiDisponibiliController.cs" />
     <Compile Include="Controllers\ServiziOffertiController.cs" />
+    <Compile Include="Controllers\ValidazioniController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -369,6 +370,11 @@
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -438,6 +444,7 @@
     <Folder Include="Content\ImgProgetto\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\Validazioni\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
