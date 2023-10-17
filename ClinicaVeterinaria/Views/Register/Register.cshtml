@@ -22,18 +22,18 @@
                                     <h3 class="mb-5 text-uppercase text-center"><i class="fa-solid fa-paw"></i> Diventa dei nostri - Registrati <i class="fa-solid fa-paw"></i></h3>
 
                                     <div class="row">
-                                        <div class="col-md-12 mb-4">
+                                        <div class="col-md-6 mb-4">
                                             <div class="form-outline">
-                                                @Html.EditorFor(model => model.Cognome, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.Cognome, new { htmlAttributes = new { @class = "form-control", @id = "Nome" } })
                                                 @Html.ValidationMessageFor(model => model.Cognome, "", new { @class = "text-danger" })
-                                                @Html.LabelFor(model => model.Cognome, htmlAttributes: new { @class = "form-label col-md-2" })
+                                                <label class="form-label pt-0" for="Cognome">Cognome</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-12 mb-4">
+                                        <div class="col-md-6 mb-4">
                                             <div class="form-outline">
                                                 @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @id = "Nome" } })
                                                 @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-                                                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "form-label col-md-2", @for = "Nome" })
+                                                <label class="form-label pt-0" for="Nome">Nome</label>
                                             </div>
                                         </div>
                                     </div>
@@ -41,32 +41,32 @@
                                     <div class="row">
                                         <div class="col-md-12 mb-4">
                                             <div class="form-outline">
-                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @id = "Username" } })
+                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @id = "Email" } })
                                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label col-md-2", @for = "Username" })
+                                                <label class="form-label pt-0" for="Email">Email</label>
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-4">
                                             <div class="form-outline">
-                                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @id = "CodiceFiscale" } })
                                                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "form-label col-md-2" })
+                                                <label class="form-label pt-0" for="Password">Password</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 mb-4">
                                             <div class="form-outline">
-                                                @Html.EditorFor(model => model.CodiceFiscale, new { htmlAttributes = new { @class = "form-control", @id = "Indirizzo" } })
+                                                @Html.EditorFor(model => model.CodiceFiscale, new { htmlAttributes = new { @class = "form-control", @id = "CodiceFiscale" } })
                                                 @Html.ValidationMessageFor(model => model.CodiceFiscale, "", new { @class = "text-danger" })
-                                                @Html.LabelFor(model => model.CodiceFiscale, htmlAttributes: new { @class = "form-label col-md-2", @for = "Indirizzo" })
+                                                <label class="form-label pt-0" for="CodiceFiscale">Codice Fiscale</label>
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-4">
                                             <div class="form-outline">
-                                                @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", @id = "Indirizzo" } })
+                                                @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", @id = "Telefono" } })
                                                 @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
-                                                @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "form-label col-md-2", @for = "Indirizzo" })
+                                                <label class="form-label pt-0" for="Telefono">Telefono</label>
                                             </div>
                                         </div>
                                     </div>
@@ -77,7 +77,7 @@
                                         </div>*@
                                     <div class="d-flex justify-content-end pt-3">
                                         <a class="btn btn-link me-2" href="/Home/Index">Back</a>
-                                        <input type="submit" value="Registrati" class="btn btn-danger" />
+                                        <input type="submit" value="Registrati" class="btn btn-primary" />
                                     </div>
 
                                 </div>

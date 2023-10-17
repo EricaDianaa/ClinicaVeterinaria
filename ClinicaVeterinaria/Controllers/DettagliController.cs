@@ -10,117 +10,116 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class ProdottiUsiController : Controller
+    public class DettagliController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
 
-        // GET: ProdottiUsi
+        // GET: Dettagli
         public ActionResult Index()
         {
-            var prodottiUsi = db.ProdottiUsi.Include(p => p.Prodotti).Include(p => p.UsiDisponibili);
-            return View(prodottiUsi.ToList());
+            var dettagli = db.Dettagli.Include(d => d.Prodotti).Include(d => d.Vendite);
+            return View(dettagli.ToList());
         }
 
-        // GET: ProdottiUsi/Details/5
+        // GET: Dettagli/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProdottiUsi prodottiUsi = db.ProdottiUsi.Find(id);
-            if (prodottiUsi == null)
+            Dettagli dettagli = db.Dettagli.Find(id);
+            if (dettagli == null)
             {
                 return HttpNotFound();
             }
-            return View(prodottiUsi);
+            return View(dettagli);
         }
 
-        // GET: ProdottiUsi/Create
+        // GET: Dettagli/Create
         public ActionResult Create()
         {
-            ViewBag.IdProdotti = new SelectList(db.Prodotti, "IdProdotto", "Tipo");
-            ViewBag.IdUsi = new SelectList(db.UsiDisponibili, "IdUsi", "Descrizione");
+            ViewBag.IdProdotto = new SelectList(db.Prodotti, "IdProdotto", "Nome");
+            ViewBag.IdVendita = new SelectList(db.Vendite, "IdVendita", "NumeroRicetta");
             return View();
         }
 
-        // POST: ProdottiUsi/Create
+        // POST: Dettagli/Create
         // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdProdottiUsi,IdUsi,IdProdotti")] ProdottiUsi prodottiUsi)
+        public ActionResult Create([Bind(Include = "IdDettaglio,IdProdotto,Quantita,IdVendita,Prezzo")] Dettagli dettagli)
         {
             if (ModelState.IsValid)
             {
-                db.ProdottiUsi.Add(prodottiUsi);
+                db.Dettagli.Add(dettagli);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdProdotti = new SelectList(db.Prodotti, "IdProdotto", "Tipo", prodottiUsi.IdProdotti);
-            ViewBag.IdUsi = new SelectList(db.UsiDisponibili, "IdUsi", "Descrizione", prodottiUsi.IdUsi);
-            return View(prodottiUsi);
+            ViewBag.IdProdotto = new SelectList(db.Prodotti, "IdProdotto", "Nome", dettagli.IdProdotto);
+            ViewBag.IdVendita = new SelectList(db.Vendite, "IdVendita", "NumeroRicetta", dettagli.IdVendita);
+            return View(dettagli);
         }
 
-        // GET: ProdottiUsi/Edit/5
+        // GET: Dettagli/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProdottiUsi prodottiUsi = db.ProdottiUsi.Find(id);
-            if (prodottiUsi == null)
+            Dettagli dettagli = db.Dettagli.Find(id);
+            if (dettagli == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IdProdotti = new SelectList(db.Prodotti, "IdProdotto", "Tipo", prodottiUsi.IdProdotti);
-            ViewBag.IdUsi = new SelectList(db.UsiDisponibili, "IdUsi", "Descrizione", prodottiUsi.IdUsi);
-            return View(prodottiUsi);
+            ViewBag.IdProdotto = new SelectList(db.Prodotti, "IdProdotto", "Nome", dettagli.IdProdotto);
+            ViewBag.IdVendita = new SelectList(db.Vendite, "IdVendita", "NumeroRicetta", dettagli.IdVendita);
+            return View(dettagli);
         }
 
-        // POST: ProdottiUsi/Edit/5
+        // POST: Dettagli/Edit/5
         // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdProdottiUsi,IdUsi,IdProdotti")] ProdottiUsi prodottiUsi)
+        public ActionResult Edit([Bind(Include = "IdDettaglio,IdProdotto,Quantita,IdVendita,Prezzo")] Dettagli dettagli)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(prodottiUsi).State = EntityState.Modified;
+                db.Entry(dettagli).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdProdotti = new SelectList(db.Prodotti, "IdProdotto", "Tipo", prodottiUsi.IdProdotti);
-            ViewBag.IdUsi = new SelectList(db.UsiDisponibili, "IdUsi", "Descrizione", prodottiUsi.IdUsi);
-            return View(prodottiUsi);
+            ViewBag.IdProdotto = new SelectList(db.Prodotti, "IdProdotto", "Nome", dettagli.IdProdotto);
+            ViewBag.IdVendita = new SelectList(db.Vendite, "IdVendita", "NumeroRicetta", dettagli.IdVendita);
+            return View(dettagli);
         }
 
-        // GET: ProdottiUsi/Delete/5
+        // GET: Dettagli/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProdottiUsi prodottiUsi = db.ProdottiUsi.Find(id);
-            if (prodottiUsi == null)
+            Dettagli dettagli = db.Dettagli.Find(id);
+            if (dettagli == null)
             {
                 return HttpNotFound();
             }
-            return View(prodottiUsi);
+            return View(dettagli);
         }
 
-        // POST: ProdottiUsi/Delete/5
+        // POST: Dettagli/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ProdottiUsi prodottiUsi = db.ProdottiUsi.Find(id);
-            db.ProdottiUsi.Remove(prodottiUsi);
+            Dettagli dettagli = db.Dettagli.Find(id);
+            db.Dettagli.Remove(dettagli);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

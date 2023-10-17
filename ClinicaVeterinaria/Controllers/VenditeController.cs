@@ -10,108 +10,112 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class DitteController : Controller
+    public class VenditeController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
 
-        // GET: Dittes
+        // GET: Vendite
         public ActionResult Index()
         {
-            return View(db.Ditte.ToList());
+            var vendite = db.Vendite.Include(v => v.Utenti);
+            return View(vendite.ToList());
         }
 
-        // GET: Dittes/Details/5
+        // GET: Vendite/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ditte ditte = db.Ditte.Find(id);
-            if (ditte == null)
+            Vendite vendite = db.Vendite.Find(id);
+            if (vendite == null)
             {
                 return HttpNotFound();
             }
-            return View(ditte);
+            return View(vendite);
         }
 
-        // GET: Dittes/Create
+        // GET: Vendite/Create
         public ActionResult Create()
         {
+            ViewBag.IdUtente = new SelectList(db.Utenti, "IdUtente", "Nome");
             return View();
         }
 
-        // POST: Dittes/Create
-        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
+        // POST: Vendite/Create
+        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdDitta,Nome,Recapito,Indirizzo")] Ditte ditte)
+        public ActionResult Create([Bind(Include = "IdVendita,IdUtente,DataVendita,NumeroRicetta")] Vendite vendite)
         {
             if (ModelState.IsValid)
             {
-                db.Ditte.Add(ditte);
+                db.Vendite.Add(vendite);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(ditte);
+            ViewBag.IdUtente = new SelectList(db.Utenti, "IdUtente", "Nome", vendite.IdUtente);
+            return View(vendite);
         }
 
-        // GET: Dittes/Edit/5
+        // GET: Vendite/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ditte ditte = db.Ditte.Find(id);
-            if (ditte == null)
+            Vendite vendite = db.Vendite.Find(id);
+            if (vendite == null)
             {
                 return HttpNotFound();
             }
-            return View(ditte);
+            ViewBag.IdUtente = new SelectList(db.Utenti, "IdUtente", "Nome", vendite.IdUtente);
+            return View(vendite);
         }
 
-        // POST: Dittes/Edit/5
-        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
+        // POST: Vendite/Edit/5
+        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdDitta,Nome,Recapito,Indirizzo")] Ditte ditte)
+        public ActionResult Edit([Bind(Include = "IdVendita,IdUtente,DataVendita,NumeroRicetta")] Vendite vendite)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ditte).State = EntityState.Modified;
+                db.Entry(vendite).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(ditte);
+            ViewBag.IdUtente = new SelectList(db.Utenti, "IdUtente", "Nome", vendite.IdUtente);
+            return View(vendite);
         }
 
-        // GET: Dittes/Delete/5
+        // GET: Vendite/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ditte ditte = db.Ditte.Find(id);
-            if (ditte == null)
+            Vendite vendite = db.Vendite.Find(id);
+            if (vendite == null)
             {
                 return HttpNotFound();
             }
-            return View(ditte);
+            return View(vendite);
         }
 
-        // POST: Dittes/Delete/5
+        // POST: Vendite/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Ditte ditte = db.Ditte.Find(id);
-            db.Ditte.Remove(ditte);
+            Vendite vendite = db.Vendite.Find(id);
+            db.Vendite.Remove(vendite);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
