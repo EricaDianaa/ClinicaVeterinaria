@@ -8,7 +8,7 @@
 <ul class="navbar-nav d-flex flex-row gap-5 flex-wrap container">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Utenti
+            Utenti
         </a>
         <ul class="dropdown-menu">
             <li>@Html.ActionLink("Registrati", "Register", "Register", new { area = "" }, new { @class = "dropdown-item" })</li>
@@ -38,7 +38,7 @@
     </li>
 </ul>
 
-<h2>Farmacia Vendite</h2>
+<h2>Farmacia Prodotti</h2>
 <ul class="navbar-nav d-flex flex-row gap-5 flex-wrap container">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -101,6 +101,28 @@
         <ul class="dropdown-menu">
             <li>@Html.ActionLink("Lista", "Index", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
             <li>@Html.ActionLink("Crea", "Create", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Farmacia Vendite</h2>
+<ul class="navbar-nav d-flex flex-row gap-5 flex-wrap container">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Crea vendita
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "Vendite", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "Vendite", new { area = "" }, new { @class = "dropdown-item" })</li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Crea dettaglio
+        </a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Lista", "Index", "Dettagli", new { area = "" }, new { @class = "dropdown-item" })</li>
+            <li>@Html.ActionLink("Crea", "Create", "Dettagli", new { area = "" }, new { @class = "dropdown-item" })</li>
         </ul>
     </li>
 </ul>

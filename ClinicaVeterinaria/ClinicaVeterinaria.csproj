@@ -166,6 +166,7 @@
     <Compile Include="Controllers\ArmadiettiController.cs" />
     <Compile Include="Controllers\CassettiController.cs" />
     <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
+    <Compile Include="Controllers\DettagliController.cs" />
     <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Controllers\ServiziOffertiController.cs" />
     <Compile Include="Controllers\ValidazioniController.cs" />
     <Compile Include="Controllers\TipologiaController.cs" />
+    <Compile Include="Controllers\VenditeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,9 +189,14 @@
     <Compile Include="Migrations\202310161357193_NomeCassetto.designer.cs">
       <DependentUpon>202310161357193_NomeCassetto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310171442063_ProdottiQuantita.cs" />
+    <Compile Include="Migrations\202310171442063_ProdottiQuantita.designer.cs">
+      <DependentUpon>202310171442063_ProdottiQuantita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnimaliRicoverati.cs" />
     <Compile Include="Models\Armadietti.cs" />
+    <Compile Include="Models\Carrello.cs" />
     <Compile Include="Models\Cassetti.cs" />
     <Compile Include="Models\Cassetto_Prodotti.cs" />
     <Compile Include="Models\Dettagli.cs" />
@@ -448,8 +455,17 @@
     <Content Include="Views\Tipologia\Details.cshtml" />
     <Content Include="Views\Tipologia\Edit.cshtml" />
     <Content Include="Views\Tipologia\Index.cshtml" />
-    <Content Include="Views\Admin\AdminView.cshtml" />
     <Content Include="Views\Admin\AdminMenu.cshtml" />
+    <Content Include="Views\Dettagli\Create.cshtml" />
+    <Content Include="Views\Dettagli\Delete.cshtml" />
+    <Content Include="Views\Dettagli\Details.cshtml" />
+    <Content Include="Views\Dettagli\Edit.cshtml" />
+    <Content Include="Views\Dettagli\Index.cshtml" />
+    <Content Include="Views\Vendite\Create.cshtml" />
+    <Content Include="Views\Vendite\Delete.cshtml" />
+    <Content Include="Views\Vendite\Details.cshtml" />
+    <Content Include="Views\Vendite\Edit.cshtml" />
+    <Content Include="Views\Vendite\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -491,6 +507,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310161357193_NomeCassetto.resx">
       <DependentUpon>202310161357193_NomeCassetto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310171442063_ProdottiQuantita.resx">
+      <DependentUpon>202310171442063_ProdottiQuantita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\ClinicaVeterinaria.Migrations.Inital.resources" />
   </ItemGroup>
