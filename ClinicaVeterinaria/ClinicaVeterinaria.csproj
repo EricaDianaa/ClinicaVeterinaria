@@ -53,6 +53,7 @@
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -161,9 +162,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AnimaliRicoveratiController.cs" />
+    <Compile Include="Controllers\ArmadiettiController.cs" />
+    <Compile Include="Controllers\CassettiController.cs" />
+    <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
+    <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\ProdottiController.cs" />
+    <Compile Include="Controllers\ProdottiUsiController.cs" />
+    <Compile Include="Controllers\UsiDisponibiliController.cs" />
+    <Compile Include="Controllers\ServiziOffertiController.cs" />
+    <Compile Include="Controllers\ValidazioniController.cs" />
     <Compile Include="Controllers\TipologiaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,6 +181,10 @@
     <Compile Include="Migrations\202310160938435_Inital.cs" />
     <Compile Include="Migrations\202310160938435_Inital.designer.cs">
       <DependentUpon>202310160938435_Inital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310161357193_NomeCassetto.cs" />
+    <Compile Include="Migrations\202310161357193_NomeCassetto.designer.cs">
+      <DependentUpon>202310161357193_NomeCassetto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnimaliRicoverati.cs" />
@@ -189,10 +203,75 @@
     <Compile Include="Models\Utenti.cs" />
     <Compile Include="Models\Vendite.cs" />
     <Compile Include="Models\VisiteVeterinarie.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\ClinicaVeterinaria.dll" />
+    <Content Include="bin\ClinicaVeterinaria.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\it\System.Net.Http.Formatting.resources.dll" />
+    <Content Include="bin\it\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\it\System.Web.Http.resources.dll" />
+    <Content Include="bin\it\System.Web.Http.WebHost.resources.dll" />
+    <Content Include="bin\it\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\it\System.Web.Optimization.resources.dll" />
+    <Content Include="bin\it\System.Web.Razor.resources.dll" />
+    <Content Include="bin\it\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="bin\it\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="bin\it\System.Web.WebPages.resources.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.Buffers.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Memory.dll" />
+    <Content Include="bin\roslyn\System.Numerics.Vectors.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -209,11 +288,32 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\ImgsLayout\Chirurgia.png" />
+    <Content Include="Content\ImgsLayout\Degenza.png" />
+    <Content Include="Content\ImgsLayout\Dermatologia.png" />
+    <Content Include="Content\ImgsLayout\Diagnostica.png" />
+    <Content Include="Content\ImgsLayout\Ecografia.png" />
+    <Content Include="Content\ImgsLayout\Endoscopia.png" />
+    <Content Include="Content\ImgsLayout\Interna.png" />
+    <Content Include="Content\ImgsLayout\logobianco.png" />
+    <Content Include="Content\ImgsLayout\logosenzasfondo.png" />
+    <Content Include="Content\ImgsLayout\Odontostomatologia.png" />
+    <Content Include="Content\ImgsLayout\Oftalmologia.png" />
+    <Content Include="Content\ImgsLayout\PianoSalute.png" />
+    <Content Include="Content\ImgsLayout\ProntoSoccorso.png" />
+    <Content Include="Content\ImgsLayout\service.png" />
+    <Content Include="Content\ImgsLayout\vaccini.png" />
     <Content Include="Content\Immagini\DogDaycare.png" />
     <Content Include="Content\Immagini\ImmagineRegister.png" />
     <Content Include="Content\Immagini\pexels-barnabas-davoti-11106411.jpg" />
     <Content Include="Content\Immagini\sfondoLogin.png" />
     <Content Include="Content\Immagini\user-icon.png" />
+    <Content Include="Content\customStyle.css">
+      <DependentUpon>customStyle.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\customStyle.min.css">
+      <DependentUpon>customStyle.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -235,18 +335,48 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="obj\Debug\ClinicaVeterinaria.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ClinicaVeterinaria.dll" />
+    <Content Include="obj\Debug\ClinicaVeterinaria.pdb" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="obj\Debug\ClinicaVeterinaria.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\ClinicaVeterinaria.csproj.CopyComplete" />
+    <Content Include="obj\Debug\ClinicaVeterinaria.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\ClinicaVeterinaria.csproj.GenerateResource.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="bin\ClinicaVeterinaria.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="Content\customStyle.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\JavaScript2.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -262,6 +392,41 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Ditte\Create.cshtml" />
+    <Content Include="Views\Ditte\Delete.cshtml" />
+    <Content Include="Views\Ditte\Details.cshtml" />
+    <Content Include="Views\Ditte\Edit.cshtml" />
+    <Content Include="Views\Ditte\Index.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Create.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Delete.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Details.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Edit.cshtml" />
+    <Content Include="Views\Cassetto_Prodotti\Index.cshtml" />
+    <Content Include="Views\Cassetti\Create.cshtml" />
+    <Content Include="Views\Cassetti\Delete.cshtml" />
+    <Content Include="Views\Cassetti\Details.cshtml" />
+    <Content Include="Views\Cassetti\Edit.cshtml" />
+    <Content Include="Views\Cassetti\Index.cshtml" />
+    <Content Include="Views\Armadietti\Create.cshtml" />
+    <Content Include="Views\Armadietti\Delete.cshtml" />
+    <Content Include="Views\Armadietti\Details.cshtml" />
+    <Content Include="Views\Armadietti\Edit.cshtml" />
+    <Content Include="Views\Armadietti\Index.cshtml" />
+    <Content Include="Views\ProdottiUsi\Create.cshtml" />
+    <Content Include="Views\ProdottiUsi\Delete.cshtml" />
+    <Content Include="Views\ProdottiUsi\Details.cshtml" />
+    <Content Include="Views\ProdottiUsi\Edit.cshtml" />
+    <Content Include="Views\ProdottiUsi\Index.cshtml" />
+    <Content Include="Views\UsiDisponibili\Create.cshtml" />
+    <Content Include="Views\UsiDisponibili\Delete.cshtml" />
+    <Content Include="Views\UsiDisponibili\Details.cshtml" />
+    <Content Include="Views\UsiDisponibili\Edit.cshtml" />
+    <Content Include="Views\UsiDisponibili\Index.cshtml" />
+    <Content Include="Views\Prodotti\Create.cshtml" />
+    <Content Include="Views\Prodotti\Delete.cshtml" />
+    <Content Include="Views\Prodotti\Details.cshtml" />
+    <Content Include="Views\Prodotti\Edit.cshtml" />
+    <Content Include="Views\Prodotti\Index.cshtml" />
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\AnimaliRicoverati\Create.cshtml" />
@@ -269,6 +434,12 @@
     <Content Include="Views\AnimaliRicoverati\Details.cshtml" />
     <Content Include="Views\AnimaliRicoverati\Edit.cshtml" />
     <Content Include="Views\AnimaliRicoverati\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\ServiziOfferti\Index.cshtml" />
+    <Content Include="Views\Home\RicercaAnimale.cshtml" />
+    <Content Include="Views\Home\AnimaleRicercato.cshtml" />
+    <Content Include="Views\Home\VisitaAnimale.cshtml" />
     <Content Include="Views\Tipologia\Create.cshtml" />
     <Content Include="Views\Tipologia\Delete.cshtml" />
     <Content Include="Views\Tipologia\Details.cshtml" />
@@ -278,6 +449,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\ImgProgetto\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Default\" />
+    <Folder Include="Views\Validazioni\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -310,6 +484,10 @@
     <EmbeddedResource Include="Migrations\202310160938435_Inital.resx">
       <DependentUpon>202310160938435_Inital.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310161357193_NomeCassetto.resx">
+      <DependentUpon>202310161357193_NomeCassetto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\ClinicaVeterinaria.Migrations.Inital.resources" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,6 +5,7 @@ namespace ClinicaVeterinaria.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Utenti")]
     public partial class Utenti
@@ -24,6 +25,7 @@ namespace ClinicaVeterinaria.Models
         public string Nome { get; set; }
 
         [Required]
+        [Remote("IsEmailValid", "Validazioni", ErrorMessage = "Indirizzo e-mail già presente")]
         [StringLength(50)]
         public string Password { get; set; }
 

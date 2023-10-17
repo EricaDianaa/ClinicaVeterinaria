@@ -1,0 +1,116 @@
+﻿@model ClinicaVeterinaria.Models.Prodotti
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Prodotti</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IdProdotto)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Tipo", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descrizione, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Descrizione, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Descrizione, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdDitta, "IdDitta", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdDitta", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdDitta, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Armadio @Html.LabelFor(model => model.Cassetto_Prodotti, "Cassetto_Prodotti", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Armadietti", null, new { @class = "form-control", id = "ArmadiettiDropdown" })
+                @Html.ValidationMessageFor(model => model.Cassetto_Prodotti, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                Cassetto @Html.LabelFor(model => model.Cassetto_Prodotti, "Cassetto_Prodotti", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Cassetti", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Cassetto_Prodotti, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+        <div class="form-group">
+            Cassetto @Html.LabelFor(model => model.Cassetto_Prodotti, "Cassetto_Prodotti", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Cassetti", null, new { @class = "form-control", id = "CassettiDropdown" })
+                @Html.ValidationMessageFor(model => model.Cassetto_Prodotti, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ArmadiettiDropdown").on("change", function () {
+                var IdArmadietto = $(this).val();
+                $.ajax({
+                    url: "/Prodotti/GetCassettiByArmadio",
+                    data: { IdArmadietto: IdArmadietto },
+                    type: "GET",
+                    success: function (data) {
+                        console.log("ok")
+                        var cassettiDropdown = $("#CassettiDropdown");
+                        cassettiDropdown.empty();
+                        $.each(data, function (index, item) {
+                            cassettiDropdown.append($("<option></option>")
+                                .attr("value", item.IdCassetto)
+                                .text(item.NomeCassetto));
+                        });
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Errore: " + xhr + " + " + status + " + " + error)
+                    }
+                });
+            });
+        });
+    </script>
+
+}

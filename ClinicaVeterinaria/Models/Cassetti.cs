@@ -20,6 +20,8 @@ namespace ClinicaVeterinaria.Models
 
         public int IdArmadietto { get; set; }
 
+        public string NomeCassetto { get; set; }
+
         public virtual Armadietti Armadietti { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
