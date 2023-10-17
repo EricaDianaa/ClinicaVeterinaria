@@ -202,6 +202,7 @@
     <Compile Include="Models\Cassetto_Prodotti.cs" />
     <Compile Include="Models\Dettagli.cs" />
     <Compile Include="Models\Ditte.cs" />
+    <Compile Include="Models\ElencoMedicinaliVenduti.cs" />
     <Compile Include="Models\ModelDBContext.cs" />
     <Compile Include="Models\Prodotti.cs" />
     <Compile Include="Models\ProdottiUsi.cs" />

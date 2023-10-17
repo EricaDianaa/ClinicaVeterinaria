@@ -7,20 +7,25 @@ using System.Web.Mvc;
 
 namespace ClinicaVeterinaria.Controllers
 {
-
     public class RicercaMedicinaliController : Controller
-    {  
-        ModelDBContext db = new ModelDBContext();
+    {
+        private ModelDBContext db = new ModelDBContext();
+
         // GET: RicercaMedicinali
         public ActionResult RicercaMedicinale()
         {
             return View();
         }
-       // [HttpPost]
-        public JsonResult RicercaMedicinaleData(DateTime data)
-        {
-           int Totale = db.Vendite.Count(m => m.DataVendita == data);
 
+        [HttpPost]
+        public JsonResult RicercaMedicinaleData(DateTime DataVendita)
+        {
+            List<Vendite> Totale1 = db.Vendite.Where(m => m.DataVendita == DataVendita).ToList();
+            List<ElencoMedicinaliVenduti> Totale = new List<ElencoMedicinaliVenduti>();
+            foreach (Vendite v in Totale1)
+            {
+                Totale.Add(new ElencoMedicinaliVenduti { Nome = v.Utenti.Nome, Ricetta = v.NumeroRicetta });
+            }
             return Json(Totale);
         }
     }
