@@ -54,14 +54,15 @@
                     data: { CodiceFiscale: valore },
                     success: function (data) {
                         console.log(data)
-                        //$.each(data, function (i, v) {
-                        //    var licurrent =
-                        //        "<table class='table table-bordered border-dark bg-body mt-3'> <thead> <tr>  <th scope='col'>NumeroRicetta</th><th scope='col'>Data vendita</th></tr></thead> <tbody><tr> " +
-                        //        "<td>" + v.NumeroRicetta + "</td> " +
-                        //        "<td>" + v.DataVendita + "</td> " +
-                        //        "</tr></tbody></table>";
-                        //    $("#List1").append(licurrent);
-                       // })
+                        $.each(data, function (i, v) {
+                            var licurrent =
+                                "<table class='table table-bordered border-dark bg-body mt-3'> <thead> <tr> <th scope='col'>IdVisita</th>  <th scope='col'>NumeroRicetta</th><th scope='col'>Data vendita</th></tr></thead> <tbody><tr> " +
+                                "<td>" + v.IdVendita + "</td> " +
+                                "<td>" + v.NumeroRicetta + "</td> " +
+                                "<td>" + v.DataVendita + "</td> " +
+                                "</tr></tbody></table>";
+                            $("#List1").append(licurrent);
+                        })
                     }
 
                 })
