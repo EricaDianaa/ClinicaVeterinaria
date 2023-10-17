@@ -10,7 +10,7 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     public class AnimaliRicoveratiController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
@@ -34,6 +34,7 @@ namespace ClinicaVeterinaria.Controllers
             }
             return View(animaliRicoverati);
         }
+
         public ActionResult Create()
         {
             ViewBag.Tipologia = new SelectList(db.Tipologia, "IdTipologia", "Nome");
@@ -47,7 +48,7 @@ namespace ClinicaVeterinaria.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(foto != null && foto.ContentLength > 0)
+                if (foto != null && foto.ContentLength > 0)
                 {
                     animaliRicoverati.Foto = foto.FileName;
                     string pathToSave = Server.MapPath("~/Content/ImgProgetto/") + foto.FileName;
