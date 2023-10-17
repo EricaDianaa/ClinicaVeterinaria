@@ -10,6 +10,7 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class Cassetto_ProdottiController : Controller
     {
         private ModelDBContext db = new ModelDBContext();

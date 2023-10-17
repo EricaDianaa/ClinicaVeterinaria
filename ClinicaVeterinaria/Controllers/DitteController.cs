@@ -10,6 +10,7 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class DitteController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
