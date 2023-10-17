@@ -173,6 +173,7 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
     <Compile Include="Controllers\ProdottiUsiController.cs" />
+    <Compile Include="Controllers\RicercaMedicinaliController.cs" />
     <Compile Include="Controllers\UsiDisponibiliController.cs" />
     <Compile Include="Controllers\ServiziOffertiController.cs" />
     <Compile Include="Controllers\ValidazioniController.cs" />
@@ -467,6 +468,7 @@
     <Content Include="Views\Vendite\Details.cshtml" />
     <Content Include="Views\Vendite\Edit.cshtml" />
     <Content Include="Views\Vendite\Index.cshtml" />
+    <Content Include="Views\RicercaMedicinali\RicercaMedicinale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

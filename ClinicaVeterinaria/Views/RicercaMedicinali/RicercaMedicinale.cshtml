@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "RicercaMedicinale";
+}
+
+<h2>RicercaMedicinale</h2>
+<input type="date" name="name"  id="Input" class="form-control mt-3" />
+<button id="Cerca">Cerca</button>
+
+<div class="container">
+
+    <div class="row" id="List">
+
+    </div>
+
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#Cerca").click(function () {
+                var valore = $("#Input").val()
+                console.log(valore)
+                $.ajax({
+                    method: "POST",
+                    url: "/RicercaMedicinali/RicercaMedicinaleData",
+                    data: { DataVendita: valore },
+                    success: function (data) {
+                        console.log(data)
+                            var licurrent =
+                            "<h2 >Numero medicinali venduti: " + data  +" </h2>";
+                            $("#List").append(licurrent); 
+                    }
+                })
+
+            })
+        })
+    </script>
+}

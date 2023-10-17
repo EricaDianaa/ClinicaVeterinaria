@@ -17,7 +17,8 @@ namespace ClinicaVeterinaria.Controllers
 
             return View();
         }
-        //-------------RicercaAnimale-----------
+
+        //-------------RicercaAnimale----------
         public ActionResult RicercaAnimale()
         {
             Session["Animale"] = null;
