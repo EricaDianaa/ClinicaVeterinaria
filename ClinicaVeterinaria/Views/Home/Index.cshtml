@@ -30,8 +30,8 @@
                     <div class="col-xl-4 col-lg-12 mt-5">
                         <div class="cardheadertrio d-flex flex-column justify-content-between" style="height: 100%;">
                             <div>
-                                <h2 class="card-title mb-auto">Veterinaria d'urgenza</h2> 
-                                <img src="~/content/ImgsLayout/vaccini.png" alt="Logo" style="max-height:240px; margin-bottom: auto;"> 
+                                <h2 class="card-title mb-auto">Veterinaria d'urgenza</h2>
+                                <img src="~/content/ImgsLayout/vaccini.png" alt="Logo" style="max-height:240px; margin-bottom: auto;">
                             </div>
                             <p class="card-text">Un team di veterinari  specializzati in ambiti differenti per visite specialistiche rivolte a tutti gli animali domestici in ogni fase della loro vita.</p>
                         </div>
@@ -39,8 +39,8 @@
                     <div class="col-xl-4 col-lg-12 mt-5">
                         <div class="cardheadertrio d-flex flex-column justify-content-between" style="height: 100%;">
                             <div>
-                                <h2 class="card-title mb-auto">Servizi di Salute e di Benessere</h2> 
-                                <img src="~/content/ImgsLayout/PianoSalute.png" alt="Logo" style="max-height:240px; margin-bottom: auto;"> 
+                                <h2 class="card-title mb-auto">Servizi di Salute e di Benessere</h2>
+                                <img src="~/content/ImgsLayout/PianoSalute.png" alt="Logo" style="max-height:240px; margin-bottom: auto;">
                             </div>
                             <p class="card-text">I cani, sia cuccioli che adulti, hanno accesso a servizi di educazione comportamentale che si sviluppano in sessioni di lavoro individuali o di gruppo.</p>
                         </div>
@@ -52,6 +52,8 @@
     </header>
 
 
+    <hr class="my-5" />
+
     <main class="mt-5 ">
         <div class="container ">
             <!--Section: Content-->
@@ -59,7 +61,7 @@
                 <div class="row">
                     <div class="col-md-6 gx-5 mb-4">
                         <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                            <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
+                            <img src="~/Content/ImgsLayout/canemalato.jpg" class="img-fluid" />
                             <a href="#!">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                             </a>
@@ -67,20 +69,13 @@
                     </div>
 
                     <div class="col-md-6 gx-5 mb-4">
-                        <h4><strong>Facilis consequatur eligendi</strong></h4>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-                            consequatur eligendi quisquam doloremque vero ex debitis
-                            veritatis placeat unde animi laborum sapiente illo possimus,
-                            commodi dignissimos obcaecati illum maiores corporis.
-                        </p>
-                        <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                            itaque voluptate nesciunt laborum incidunt. Officia, quam
-                            consectetur. Earum eligendi aliquam illum alias, unde optio
-                            accusantium soluta, iusto molestiae adipisci et?
-                        </p>
+                        <h2 class="text-center"><strong>Hai smarrito il tuo animale? </strong></h2>
+                       
+                        <p class="fs-3 my-5 text-center">Inserisci il numero di microchip e controlla se è ricoverato in una delle nostre cliniche</p>
+                        <p class="fs-3 text-center">Clicca qui e segui la procedura</p>
+                        <button class="nav-item btn btn-primary ">
+                            @Html.ActionLink("Avvia Ricerca", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
+                        </button>
                     </div>
                 </div>
             </section>
