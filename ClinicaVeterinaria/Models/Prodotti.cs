@@ -34,6 +34,8 @@ namespace ClinicaVeterinaria.Models
         [StringLength(50)]
         public string Descrizione { get; set; }
 
+        public int Quantita { get; set; }
+
         public int IdDitta { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
