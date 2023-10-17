@@ -10,7 +10,7 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
-    // [Authorize(Roles = "Admin")]
+     [Authorize(Roles = "Admin")]
     public class AnimaliRicoveratiController : Controller
     {
         private ModelDBContext db = new ModelDBContext();

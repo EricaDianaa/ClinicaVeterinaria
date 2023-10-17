@@ -7,7 +7,6 @@ using System.Web.Mvc;
 
 namespace ClinicaVeterinaria.Controllers
 {
-
     public class HomeController : Controller
     {
         ModelDBContext db = new ModelDBContext();
