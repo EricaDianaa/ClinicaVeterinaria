@@ -174,6 +174,7 @@
     <Compile Include="Controllers\UsiDisponibiliController.cs" />
     <Compile Include="Controllers\ServiziOffertiController.cs" />
     <Compile Include="Controllers\ValidazioniController.cs" />
+    <Compile Include="Controllers\TipologiaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -368,6 +369,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\JavaScript2.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
@@ -440,6 +442,11 @@
     <Content Include="Views\Home\RicercaAnimale.cshtml" />
     <Content Include="Views\Home\AnimaleRicercato.cshtml" />
     <Content Include="Views\Home\VisitaAnimale.cshtml" />
+    <Content Include="Views\Tipologia\Create.cshtml" />
+    <Content Include="Views\Tipologia\Delete.cshtml" />
+    <Content Include="Views\Tipologia\Details.cshtml" />
+    <Content Include="Views\Tipologia\Edit.cshtml" />
+    <Content Include="Views\Tipologia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
