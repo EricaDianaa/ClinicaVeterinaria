@@ -19,7 +19,7 @@ namespace ClinicaVeterinaria.Controllers
                 List<Prodotti> listPr = db.Prodotti.ToList();
                 foreach (Prodotti prodotto in listPr)
                 {
-                    list.Add(new SelectListItem { Text = prodotto.Descrizione, Value = prodotto.IdProdotto.ToString() });
+                    list.Add(new SelectListItem { Text = prodotto.Nome, Value = prodotto.IdProdotto.ToString() });
                 }
                 return list;
             }

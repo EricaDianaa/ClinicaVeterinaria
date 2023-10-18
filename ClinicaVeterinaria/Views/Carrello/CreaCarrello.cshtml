@@ -3,8 +3,7 @@
     ViewBag.Title = "CreaCarrello";
 }
 
-<h2>Aggiungi un prodotto</h2>
-<div class="row row-cols-2">
+<h4>Aggiungi un prodotto</h4>
     <div class="col">
 
         @using (Html.BeginForm("CreaCarrello", "Carrello", FormMethod.Post, new { id = "FormCarrello" }))
@@ -30,15 +29,9 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" form="FormCarrello" value="Aggiungi al carrello" class="btn btn-default" />
+                        <input type="submit" form="FormCarrello" value="Aggiungi al carrello" class="btn btn-primary" />
                     </div>
                 </div>
             </div>
         }
     </div>
-    @*<div class="col">
-            @{
-                Html.RenderAction("MostraCarrello");
-            }
-        </div>*@
-</div>

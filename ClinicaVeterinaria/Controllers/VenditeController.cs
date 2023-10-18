@@ -77,6 +77,9 @@ namespace ClinicaVeterinaria.Controllers
                             Quantita = cartItem.qta,
                             Prezzo = cartItem.Prezzo,
                         });
+                        Prodotti pr = db.Prodotti.Find(cartItem.IdProduct);
+                        pr.Quantita -= cartItem.qta;
+                        db.Entry(pr).State = EntityState.Modified;
                     }
 
                     db.SaveChanges();

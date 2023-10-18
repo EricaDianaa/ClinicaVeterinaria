@@ -6,7 +6,7 @@
     @if (Model.Count() > 0)
     {
         int indice = 0; decimal totale = 0;
-        <table class="table table-hover table-bordered container text-center">
+        <table class="table table-hover table-bordered container text-center carrello">
             <tr>
                 <th>Nome</th>
                 <th>Prezzo</th>
@@ -31,7 +31,7 @@
                         @c.qta
                     </td>
                     <td>
-                        @Html.ActionLink("🗑", "Elimina", "Carrello", new { id = indice }, new { @class = "btn btn-danger" })
+                         @Html.ActionLink(" ", "Elimina", "Carrello", new { id = indice }, new { @class = "fas fa-circle-xmark" })
                     </td>
                 </tr>
             }

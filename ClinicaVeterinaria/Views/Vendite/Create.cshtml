@@ -4,7 +4,6 @@
     ViewBag.Title = "Create";
 }
 
-<div class="row row-cols-3">
     <div class="col">
         @using (Html.BeginForm("Create", "Vendite", FormMethod.Post, new { id = "FormVendite" }))
         {
@@ -32,10 +31,9 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" form="FormVendite" value="Conferma" class="btn btn-default" />
+                        <input type="submit" form="FormVendite" value="Concludi vendita" class="btn btn-primary" />
                     </div>
                 </div>
             </div>
         }
     </div>
-</div>
