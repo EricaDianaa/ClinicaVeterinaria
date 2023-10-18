@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Carrello>
+
+<div>
+    <h4>Carrello</h4>
+    <hr />
+    @if (Model.Count() > 0)
+    {
+        int indice = 0; decimal totale = 0;
+        <table class="table table-hover table-bordered container text-center">
+            <tr>
+                <th>Nome</th>
+                <th>Prezzo</th>
+                <th>Quantità</th>
+                <th>Elimina</th>
+            </tr>
+
+
+            @foreach (ClinicaVeterinaria.Models.Carrello c in Model)
+            {
+                indice++;
+                totale += c.Prezzo * c.qta;
+                <tr>
+                    <td>
+                        @c.Nome
+                    </td>
+                    <td>
+                        @c.Prezzo
+                    </td>
+
+                    <td>
+                        @c.qta
+                    </td>
+                    <td>
+                        @Html.ActionLink("🗑", "Elimina", "Carrello", new { id = indice }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </table>
+    <h2>Totale = <b> @totale.ToString("C2") </b></h2>
+    <div>
+
+                @Html.ActionLink("Conferma", "Create", "Vendite", "", new { @class = "btn btn-success" })
+    </div>
+    }
+            
+
+
+</div>

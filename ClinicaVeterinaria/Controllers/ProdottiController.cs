@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -29,25 +30,6 @@ namespace ClinicaVeterinaria.Controllers
                 return list;
             }
         }
-
-        //private List<SelectListItem> ArmadiettiDisponibili
-        //{
-        //    get
-        //    {
-        //        List<SelectListItem> list = new List<SelectListItem>();
-        //        List<Armadietti> listarm = db.Armadietti.ToList();
-        //        foreach (Armadietti arm in listarm)
-        //        {
-        //            list.Add(new SelectListItem { Text = arm.CodiceArmadietto, Value = arm.IdArmadietto.ToString() });
-        //            List<SelectListItem> listCass = new List<SelectListItem>();
-        //            foreach (Cassetti c in arm.Cassetti)
-        //            {
-        //                listCass.Add(new SelectListItem { Text = c.NomeCassetto, Value = c.IdCassetto.ToString() });
-        //            }
-        //        }
-        //        return list;
-        //    }
-        //}
 
         // GET: Prodotti
         public ActionResult Index()
@@ -82,7 +64,7 @@ namespace ClinicaVeterinaria.Controllers
                 new SelectListItem { Text = "Medicinale", Value = "Medicinale" },
                 new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
             };
-            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
+            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona armadietto--", Value = "0" } };
             SelectList selArm = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", 0);
             ViewBag.Armadietti = arm.Concat(selArm);
             ViewBag.Cassetti = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
@@ -94,7 +76,7 @@ namespace ClinicaVeterinaria.Controllers
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdProdotto,Tipo,Nome,Descrizione,IdDitta")] Prodotti prodotti, FormCollection cheks)
+        public ActionResult Create(Prodotti prodotti, FormCollection cheks)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +85,7 @@ namespace ClinicaVeterinaria.Controllers
                 {
                     prodotti.ProdottiUsi.Add(new ProdottiUsi { IdUsi = Convert.ToInt16(s) });
                 }
-
+                prodotti.Cassetto_Prodotti.Add(new Cassetto_Prodotti { IdCassetto = Convert.ToInt16(prodotti.CassettoId), IdProdotti = prodotti.IdProdotto });
                 db.Prodotti.Add(prodotti);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -116,7 +98,7 @@ namespace ClinicaVeterinaria.Controllers
                 new SelectListItem { Text = "Medicinale", Value = "Medicinale" },
                 new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
             };
-            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
+            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona armadietto--", Value = "0" } };
             SelectList selArm = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", prodotti.Cassetto_Prodotti);
             ViewBag.Armadietti = arm.Concat(selArm);
             ViewBag.Cassetti = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
@@ -173,11 +155,16 @@ namespace ClinicaVeterinaria.Controllers
         // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "IdProdotto,Tipo,Nome,Descrizione,IdDitta")] Prodotti prodotti)
+        public ActionResult Edit(Prodotti prodotti)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(prodotti).State = EntityState.Modified;
+                prodotti.Cassetto_Prodotti.Add(new Cassetto_Prodotti { 
+                    IdCassetto = Convert.ToInt16(prodotti.CassettoId), 
+                    IdProdotti = prodotti.IdProdotto 
+                });
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -195,7 +182,7 @@ namespace ClinicaVeterinaria.Controllers
                 new SelectListItem { Text = "Alimentare", Value = "Alimentare" }
             };
 
-            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };
+            List<SelectListItem> arm = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona armadietto--", Value = "0" } };
             SelectList selArm = new SelectList(db.Armadietti, "IdArmadietto", "CodiceArmadietto", prodotti.Cassetto_Prodotti);
             ViewBag.Armadietti = arm.Concat(selArm);
             ViewBag.Cassetti = new List<SelectListItem> { new SelectListItem { Text = "--Seleziona cassetto--", Value = "0" } };

@@ -24,6 +24,9 @@
             @Html.DisplayNameFor(model => model.Descrizione)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ProdottiUsi)
         </th>
         <th>
@@ -32,39 +35,42 @@
         <th>Gestione</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ditte.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descrizione)
-        </td>
-        <td>
-            @foreach (ClinicaVeterinaria.Models.ProdottiUsi usi in item.ProdottiUsi)
-            {
-                <p>@usi.UsiDisponibili.Descrizione</p>
-            }
-        </td>
-        <td>
-            @foreach (ClinicaVeterinaria.Models.Cassetto_Prodotti cassetto in item.Cassetto_Prodotti)
-            {
-                <p>Armadietto Codice: @cassetto.Cassetti.Armadietti.CodiceArmadietto</p>
-                <p>Nome cassetto: @cassetto.Cassetti.NomeCassetto</p>
-            }
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.IdProdotto }) |
-            @Html.ActionLink("Details", "Details", new { id = item.IdProdotto }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.IdProdotto })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ditte.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descrizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezzo)
+            </td>
+            <td>
+                @foreach (ClinicaVeterinaria.Models.ProdottiUsi usi in item.ProdottiUsi)
+                {
+                    <p>@usi.UsiDisponibili.Descrizione</p>
+                }
+            </td>
+            <td>
+                @foreach (ClinicaVeterinaria.Models.Cassetto_Prodotti cassetto in item.Cassetto_Prodotti)
+                {
+                    <p>Armadietto Codice: @cassetto.Cassetti.Armadietti.CodiceArmadietto</p>
+                    <p>Nome cassetto: @cassetto.Cassetti.NomeCassetto</p>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdProdotto }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdProdotto }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdProdotto })
+            </td>
+        </tr>
+    }
 </table>

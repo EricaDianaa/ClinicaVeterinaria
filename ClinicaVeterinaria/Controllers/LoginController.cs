@@ -29,7 +29,7 @@ namespace ClinicaVeterinaria.Controllers
                 if(u != null)
                 {
                     FormsAuthentication.SetAuthCookie(u.Email, false);
-                    return RedirectToAction("Index", "AnimaliRicoverati");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

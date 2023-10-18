@@ -164,6 +164,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnimaliRicoveratiController.cs" />
     <Compile Include="Controllers\ArmadiettiController.cs" />
+    <Compile Include="Controllers\CarrelloController.cs" />
     <Compile Include="Controllers\CassettiController.cs" />
     <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
     <Compile Include="Controllers\CatalogoProdottiController.cs" />
@@ -195,6 +196,10 @@
     <Compile Include="Migrations\202310171442063_ProdottiQuantita.cs" />
     <Compile Include="Migrations\202310171442063_ProdottiQuantita.designer.cs">
       <DependentUpon>202310171442063_ProdottiQuantita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310181040215_ProdottiPrezzo.cs" />
+    <Compile Include="Migrations\202310181040215_ProdottiPrezzo.designer.cs">
+      <DependentUpon>202310181040215_ProdottiPrezzo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnimaliRicoverati.cs" />
@@ -463,8 +468,6 @@
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\ServiziOfferti\Index.cshtml" />
     <Content Include="Views\Home\RicercaAnimale.cshtml" />
-    <Content Include="Views\Home\AnimaleRicercato.cshtml" />
-    <Content Include="Views\Home\VisitaAnimale.cshtml" />
     <Content Include="Views\Tipologia\Create.cshtml" />
     <Content Include="Views\Tipologia\Delete.cshtml" />
     <Content Include="Views\Tipologia\Details.cshtml" />
@@ -487,6 +490,8 @@
     <Content Include="Views\VisiteVeterinarie\Details.cshtml" />
     <Content Include="Views\VisiteVeterinarie\Edit.cshtml" />
     <Content Include="Views\VisiteVeterinarie\Index.cshtml" />
+    <Content Include="Views\Carrello\CreaCarrello.cshtml" />
+    <Content Include="Views\Carrello\_MostraCarrello.cshtml" />
     <Content Include="Views\CatalogoProdotti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -532,6 +537,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310171442063_ProdottiQuantita.resx">
       <DependentUpon>202310171442063_ProdottiQuantita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310181040215_ProdottiPrezzo.resx">
+      <DependentUpon>202310181040215_ProdottiPrezzo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\ClinicaVeterinaria.Migrations.Inital.resources" />
   </ItemGroup>

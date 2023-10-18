@@ -38,6 +38,11 @@ namespace ClinicaVeterinaria.Models
 
         public int IdDitta { get; set; }
 
+        public decimal Prezzo { get; set; }
+
+        [NotMapped]
+        public int CassettoId { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cassetto_Prodotti> Cassetto_Prodotti { get; set; }
 
