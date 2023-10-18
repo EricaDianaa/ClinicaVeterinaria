@@ -22,7 +22,7 @@ namespace ClinicaVeterinaria.Controllers
         public ActionResult RicercaAnimale()
         {
             Session["Animale"] = null;
-            Session["Visite"] = null;
+            Session["NessunAnimale"] = null;
             return View();
         }
         [HttpPost]
@@ -31,14 +31,18 @@ namespace ClinicaVeterinaria.Controllers
 
             AnimaliRicoverati a = db.AnimaliRicoverati.FirstOrDefault(m => m.NumeroMicrochip == animale.NumeroMicrochip);
             Session["Animale"] = a;
-            if (Session["Animale"] == null)
+
+            List<AnimaliRicoverati> animal = new List<AnimaliRicoverati>();
+            if (a != null)
+            {
+            animal.Add(new AnimaliRicoverati { CognomeProprietario=a.CognomeProprietario,NomeProprietario=a.NomeProprietario,Nome=a.Nome,IdAnimali=a.IdAnimali,IdUtente=a.IdUtente,DataInizioRicovero=a.DataInizioRicovero,DataNascita=a.DataNascita,ColoreMantello=a.ColoreMantello});
+            ViewBag.Nome = a.Tipologia1.Nome;
+            }
+            else
             {
                 Session["NessunAnimale"] = "null";
             }
-
-            List<AnimaliRicoverati> animal = new List<AnimaliRicoverati>();
-            animal.Add(new AnimaliRicoverati { CognomeProprietario=a.CognomeProprietario,NomeProprietario=a.NomeProprietario,Nome=a.Nome,IdAnimali=a.IdAnimali,IdUtente=a.IdUtente,DataInizioRicovero=a.DataInizioRicovero,DataNascita=a.DataNascita,ColoreMantello=a.ColoreMantello});
-            ViewBag.Nome = a.Tipologia1.Nome;
+           
             return Json(animal);
         }
 

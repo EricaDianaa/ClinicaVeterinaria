@@ -21,6 +21,8 @@ namespace ClinicaVeterinaria.Models
         [Column(TypeName = "date")]
         [Display(Name ="Data Registrazione")]
         public DateTime DataRegistrazione { get; set; }
+        [NotMapped]
+        public string DataregistrazioneString { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -37,6 +39,8 @@ namespace ClinicaVeterinaria.Models
         [Display(Name = "Data di nascita")]
         [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString ="{0:d}")]
         public DateTime? DataNascita { get; set; }
+        [NotMapped]
+        public string DataNascitaString { get; set; }
 
         public bool? Microchip { get; set; }
 
@@ -60,6 +64,10 @@ namespace ClinicaVeterinaria.Models
         [Column(TypeName = "date")]
         [Display(Name = "Data inizio ricovero")]
         public DateTime? DataInizioRicovero { get; set; }
+
+        [NotMapped]
+        public string DataInizioRicoveroString { get; set; }
+
         [Display(Name = "Cliente")]
         public int? IdUtente { get; set; }
 

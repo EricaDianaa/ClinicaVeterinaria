@@ -208,7 +208,6 @@
     <Compile Include="Models\ModelDBContext.cs" />
     <Compile Include="Models\Prodotti.cs" />
     <Compile Include="Models\ProdottiUsi.cs" />
-    <Compile Include="Models\RicercaAnimali.cs" />
     <Compile Include="Models\SiteRole.cs" />
     <Compile Include="Models\Tipologia.cs" />
     <Compile Include="Models\User.cs" />
