@@ -29,6 +29,8 @@ namespace ClinicaVeterinaria.Models
         public string Nome { get; set; }
 
         public int Tipologia { get; set; }
+        [NotMapped]
+        public string TipologiaNome { get; set; }
 
         [Required]
         [StringLength(50)]
