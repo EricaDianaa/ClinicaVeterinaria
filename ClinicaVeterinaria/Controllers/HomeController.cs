@@ -34,7 +34,7 @@ namespace ClinicaVeterinaria.Controllers
             List<AnimaliRicoverati> animal = new List<AnimaliRicoverati>();
             if (a != null)
             {
-            animal.Add(new AnimaliRicoverati { CognomeProprietario=a.CognomeProprietario,NomeProprietario=a.NomeProprietario,Nome=a.Nome,IdAnimali=a.IdAnimali,IdUtente=a.IdUtente,DataInizioRicovero=a.DataInizioRicovero, DataInizioRicoveroString = a.DataInizioRicovero?.ToShortDateString().ToString(), DataNascita=a.DataNascita,DataNascitaString= a.DataNascita?.ToShortDateString().ToString(), ColoreMantello=a.ColoreMantello,TipologiaNome=a.Tipologia1.Nome});
+            animal.Add(new AnimaliRicoverati { CognomeProprietario=a.CognomeProprietario,NomeProprietario=a.NomeProprietario,Nome=a.Nome,IdAnimali=a.IdAnimali,IdUtente=a.IdUtente,DataInizioRicovero=a.DataInizioRicovero, DataInizioRicoveroString = a.DataInizioRicovero?.ToShortDateString().ToString(), DataNascita=a.DataNascita,DataNascitaString= a.DataNascita?.ToShortDateString().ToString(),DataregistrazioneString=a.DataRegistrazione.ToShortDateString().ToString(), ColoreMantello=a.ColoreMantello,TipologiaNome=a.Tipologia1.Nome});
             ViewBag.Nome = a.Tipologia1.Nome;
             }
             else
