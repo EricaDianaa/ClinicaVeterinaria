@@ -28,18 +28,18 @@ namespace ClinicaVeterinaria.Controllers
             }
             return Json(Totale);
         }
+
         [HttpPost]
         public JsonResult RicercaMedicinaleCF(string CodiceFiscale)
         {
-             Utenti user = db.Utenti.FirstOrDefault(m => m.CodiceFiscale == CodiceFiscale);
-            List<Vendite> vendita= db.Vendite.Where(m => m.IdUtente == user.IdUtente).ToList();
+            Utenti user = db.Utenti.FirstOrDefault(m => m.CodiceFiscale == CodiceFiscale);
+            List<Vendite> vendita = db.Vendite.Where(m => m.IdUtente == user.IdUtente).ToList();
             List<Vendite> v = new List<Vendite>();
             foreach (Vendite ve in vendita)
             {
-                v.Add(new Vendite {IdVendita=ve.IdVendita, IdUtente = ve.IdUtente, DataVendita= ve.DataVendita,NumeroRicetta=ve.NumeroRicetta });
+                v.Add(new Vendite { IdVendita = ve.IdVendita, IdUtente = ve.IdUtente, DateVenditaString = ve.DataVendita.ToShortDateString().ToString(), NumeroRicetta = ve.NumeroRicetta });
             }
             return Json(v);
         }
-
     }
 }

@@ -23,6 +23,9 @@ namespace ClinicaVeterinaria.Models
         [Column(TypeName = "date")]
         public DateTime DataVendita { get; set; }
 
+        [NotMapped]
+        public string DateVenditaString { get; set; }
+
         [StringLength(50)]
         public string NumeroRicetta { get; set; }
 
