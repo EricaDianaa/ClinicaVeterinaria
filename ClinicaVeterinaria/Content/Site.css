@@ -91,6 +91,7 @@ nav {
 
 .cardheadertrio {
     text-align: center;
-    
-    height: 660px !important
+    width: 80%;
+    height: 610px !important;
+    margin-bottom:40%;
 }
