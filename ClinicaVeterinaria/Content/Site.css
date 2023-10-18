@@ -91,6 +91,24 @@ nav {
 
 .cardheadertrio {
     text-align: center;
-    
-    height: 660px !important
+    width: 80%;
+    height: 610px !important;
+    margin-bottom:40%;
+}
+
+
+.card-img-top.rounded-circle {
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.card {
+    margin: 0 5px;
+}
+
+.carousel-inner {
+    padding: 20px 0;
 }

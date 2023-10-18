@@ -14,6 +14,8 @@ namespace ClinicaVeterinaria.Models
 
         [Column(TypeName = "date")]
         public DateTime Data { get; set; }
+        [NotMapped]
+        public string DataString { get; set; }
 
         public int IdAnimale { get; set; }
 

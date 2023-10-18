@@ -18,53 +18,56 @@ namespace ClinicaVeterinaria.Controllers
             return View();
         }
 
-        //-------------RicercaAnimale----------
+       // -------------RicercaAnimale----------
         public ActionResult RicercaAnimale()
         {
             Session["Animale"] = null;
-            Session["Visite"] = null;
+            Session["NessunAnimale"] = null;
             return View();
         }
         [HttpPost]
-        public ActionResult RicercaAnimale(AnimaliRicoverati animale)
+        public JsonResult RicercaAnimale1(AnimaliRicoverati animale)
         {
-            Session["Animale"] = null;
-            Session["Visite"] = null;
-            Session["NessunAnimale"] = null;
+
             AnimaliRicoverati a = db.AnimaliRicoverati.FirstOrDefault(m => m.NumeroMicrochip == animale.NumeroMicrochip);
             Session["Animale"] = a;
-            if (Session["Animale"] == null)
-            {
-                Session["NessunAnimale"] = "null";
-            }
-            if (Session["Animale"] != null)
-            {
-                int ID = a.IdAnimali;
-                List<VisiteVeterinarie> v = db.VisiteVeterinarie.Where(m => m.IdAnimale == ID).ToList();
-                Session["Visite"] = v;
-            }
 
-            return View(a);
-        }
-        public ActionResult AnimaleRicercato()
-        {
-            AnimaliRicoverati a = (AnimaliRicoverati)Session["Animale"];
-            if (a.Foto == null)
+            List<AnimaliRicoverati> animal = new List<AnimaliRicoverati>();
+            if (a != null)
             {
-                Session["Foto"] = null;
+            animal.Add(new AnimaliRicoverati { CognomeProprietario=a.CognomeProprietario,NomeProprietario=a.NomeProprietario,Nome=a.Nome,IdAnimali=a.IdAnimali,IdUtente=a.IdUtente,DataInizioRicovero=a.DataInizioRicovero,DataNascita=a.DataNascita,ColoreMantello=a.ColoreMantello});
+            ViewBag.Nome = a.Tipologia1.Nome;
             }
             else
             {
-                Session["Foto"] = "not null";
+                Session["NessunAnimale"] = "null";
             }
-            ViewBag.Nome = a.Tipologia1.Nome;
-            return PartialView(a);
+           
+            return Json(animal);
         }
-        public ActionResult VisitaAnimale()
+
+        public JsonResult RicercaAnimale2()
         {
-            List<VisiteVeterinarie> Visite = (List<VisiteVeterinarie>)Session["Visite"];
-            return PartialView(Visite);
+          AnimaliRicoverati a = (AnimaliRicoverati) Session["Animale"];
+             List<VisiteVeterinarie> v= new List<VisiteVeterinarie>();
+            List<VisiteVeterinarie> visite = new List<VisiteVeterinarie>();
+            if (a != null)
+            {  
+                AnimaliRicoverati an = db.AnimaliRicoverati.FirstOrDefault(m => m.NumeroMicrochip == a.NumeroMicrochip);
+               int ID = an.IdAnimali;
+               v = db.VisiteVeterinarie.Where(m => m.IdAnimale == ID).ToList();
+           
+            foreach(VisiteVeterinarie vis in v)
+            {
+              visite.Add(new VisiteVeterinarie { Descrizione= vis.Descrizione,idVisite=vis.idVisite,IdAnimale=vis.IdAnimale,Data=vis.Data});
+            }
+          
+            }
+           
+           
+            return Json(visite,JsonRequestBehavior.AllowGet);
         }
+      
         //--------------------------------------
 
     }

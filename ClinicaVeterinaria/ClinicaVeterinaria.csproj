@@ -167,6 +167,7 @@
     <Compile Include="Controllers\CarrelloController.cs" />
     <Compile Include="Controllers\CassettiController.cs" />
     <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
+    <Compile Include="Controllers\CatalogoProdottiController.cs" />
     <Compile Include="Controllers\DettagliController.cs" />
     <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -457,8 +458,6 @@
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\ServiziOfferti\Index.cshtml" />
     <Content Include="Views\Home\RicercaAnimale.cshtml" />
-    <Content Include="Views\Home\AnimaleRicercato.cshtml" />
-    <Content Include="Views\Home\VisitaAnimale.cshtml" />
     <Content Include="Views\Tipologia\Create.cshtml" />
     <Content Include="Views\Tipologia\Delete.cshtml" />
     <Content Include="Views\Tipologia\Details.cshtml" />
@@ -483,6 +482,7 @@
     <Content Include="Views\VisiteVeterinarie\Index.cshtml" />
     <Content Include="Views\Carrello\CreaCarrello.cshtml" />
     <Content Include="Views\Carrello\_MostraCarrello.cshtml" />
+    <Content Include="Views\CatalogoProdotti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
