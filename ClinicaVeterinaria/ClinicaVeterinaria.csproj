@@ -179,6 +179,7 @@
     <Compile Include="Controllers\ValidazioniController.cs" />
     <Compile Include="Controllers\TipologiaController.cs" />
     <Compile Include="Controllers\VenditeController.cs" />
+    <Compile Include="Controllers\VisiteVeterinarieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -470,6 +471,11 @@
     <Content Include="Views\Vendite\Edit.cshtml" />
     <Content Include="Views\Vendite\Index.cshtml" />
     <Content Include="Views\RicercaMedicinali\RicercaMedicinale.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Create.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Delete.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Details.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Edit.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
