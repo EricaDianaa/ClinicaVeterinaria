@@ -166,6 +166,7 @@
     <Compile Include="Controllers\ArmadiettiController.cs" />
     <Compile Include="Controllers\CassettiController.cs" />
     <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
+    <Compile Include="Controllers\CatalogoProdottiController.cs" />
     <Compile Include="Controllers\DettagliController.cs" />
     <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Controllers\ValidazioniController.cs" />
     <Compile Include="Controllers\TipologiaController.cs" />
     <Compile Include="Controllers\VenditeController.cs" />
+    <Compile Include="Controllers\VisiteVeterinarieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -469,6 +471,12 @@
     <Content Include="Views\Vendite\Edit.cshtml" />
     <Content Include="Views\Vendite\Index.cshtml" />
     <Content Include="Views\RicercaMedicinali\RicercaMedicinale.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Create.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Delete.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Details.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Edit.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Index.cshtml" />
+    <Content Include="Views\CatalogoProdotti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,9 +5,9 @@
 }
 
 
-@*@using (Html.BeginForm())
+@using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()*@
+    @Html.AntiForgeryToken()
 
 <div class="form-horizontal bg-info mx-auto align-items-center justify-content-around  d-flex text-center border border-info border-2 rounded-4">
     <img class="w-50 p-3 rounded-5" src="https://www.animalidacompagnia.it/wp-content/uploads/2022/03/animali-da-compagnia-quali-sono.jpg" alt="Alternate Text" />
@@ -24,6 +24,22 @@
                 @Html.ValidationMessageFor(model => model.NumeroMicrochip, "", new { @class = "text-danger" })
             </div>*@
     </div>
+    <div class="form-horizontal bg-info mx-auto align-items-center justify-content-around  d-flex text-center border border-info border-2 rounded-4">
+        <img class="w-50 p-3 rounded-5" src="https://www.animalidacompagnia.it/wp-content/uploads/2022/03/animali-da-compagnia-quali-sono.jpg" alt="Alternate Text" />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="">
+            <h2>Hai smarrito il tuo animale?</h2>
+            <p>Potrebbe essere ricoverato o al sicuro in una delle nostre cliniche!</p>
+               <p> Inserisci il numero di microchip nel form sottostante </p>
+               <p> Nel caso ci fosse un riscontro positivo contattaci per organizzare il recupero in una delle nostre sedi.
+            </p>
+            <div class="form-group ">
+                @Html.LabelFor(model => model.NumeroMicrochip, htmlAttributes: new { @class = "" })
+                <div class="">
+                    @Html.EditorFor(model => model.NumeroMicrochip, new { htmlAttributes = new { @class = "me-2 rounded-3" } })
+                    @Html.ValidationMessageFor(model => model.NumeroMicrochip, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
     @*<div class="form-group">
                 <div class="col-md-offset-2 ">
