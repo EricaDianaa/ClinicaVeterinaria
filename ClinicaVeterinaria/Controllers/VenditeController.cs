@@ -52,9 +52,31 @@ namespace ClinicaVeterinaria.Controllers
         {
             if (ModelState.IsValid)
             {
+                vendite.DataVendita = DateTime.Now;
+
+                if (Session["cart"] == null)
+                {
+                    return RedirectToAction("CreaCarrello", "Carrello");
+                }
+                else
+                {
+
                 db.Vendite.Add(vendite);
-                db.SaveChanges();
+
+                    List<Carrello> cart = (List<Carrello>)Session["cart"];
+                    foreach(Carrello cartItem in cart)
+                    {
+                        vendite.Dettagli.Add(new Dettagli { 
+                            IdProdotto = cartItem.IdProduct, 
+                            Quantita = cartItem.qta,
+                            Prezzo = cartItem.Prezzo,
+                        });
+                    }
+
+                    db.SaveChanges();
                 return RedirectToAction("Index");
+                }
+
             }
 
             ViewBag.IdUtente = new SelectList(db.Utenti, "IdUtente", "Nome", vendite.IdUtente);

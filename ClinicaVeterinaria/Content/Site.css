@@ -1,4 +1,10 @@
-﻿ Set padding to keep content from hitting the edges 
+﻿@import url('https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@400;600&family=Klee+One:wght@400;600&display=swap');
+
+
+
+
+
+Set padding to keep content from hitting the edges 
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
@@ -15,6 +21,7 @@ textarea {
 
 
 body {
+    font-family: 'Anek Gurmukhi', sans-serif!important;
     font-size: 1.5em !important
 }
 
@@ -88,6 +95,10 @@ nav {
     border-color: rgb(37, 150, 190)
 }
 
+hr {
+    height: 2px!important;
+    
+}
 
 .cardheadertrio {
     text-align: center;
@@ -99,9 +110,10 @@ nav {
 
 .card-img-top.rounded-circle {
     object-fit: cover;
-    width: 40px;
-    height: 40px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+    
 }
 
 
@@ -109,6 +121,86 @@ nav {
     margin: 0 5px;
 }
 
-.carousel-inner {
-    padding: 20px 0;
+
+
+
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-wrapper {
+    display: flex;
+    animation: scrolling 30s linear infinite;
+}
+
+.carousel-content {
+    flex: 1;
+}
+
+.carousel-card {
+    width: 340px;
+    margin-right: 20px;
+    background-color: rgb(37, 150, 190)!important;
+    color:white!important;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (min-width: 1025px) {
+    .h-custom {
+        height: 100vh !important;
+    }
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+/*.gradient-custom-2 {*/
+    /* fallback for old browsers */
+    /*background: #a1c4fd;*/
+    /* Chrome 10-25, Safari 5.1-6 */
+    /*background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));*/
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
+}*/
+
+.bg-indigo {
+    background-color: #2596be;
+}
+.card-registration {
+    -webkit-box-shadow: -2px 0px 15px 2px #000000 !important;
+    box-shadow: -2px 0px 15px 2px #000000 !important;
+}
+
+@media (min-width: 992px) {
+    .card-registration-2 .bg-indigo {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .card-registration-2 .bg-indigo {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
 }

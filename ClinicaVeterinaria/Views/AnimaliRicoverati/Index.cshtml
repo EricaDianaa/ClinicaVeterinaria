@@ -5,18 +5,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 
 <!--Main layout-->
 <main class="my-5">
     <div class="container">
         <!--Section: Content-->
         <section class="text-center">
-            <h4 class="mb-5 text-danger"><strong>Animali anagrafati</strong></h4>
+            <h4 class="mb-5 text-primary"><strong>Animali anagrafati</strong></h4>
             <div class="row">
                 @foreach (var a in Model)
                 {
@@ -29,20 +26,20 @@
                                 </a>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">@a.Nome</h5>
-                                <p class="card-text">
-                                    @a.NumeroMicrochip
-                                </p>
+                                <h5 class="card-title">Nome:@a.Nome</h5>
+                                <p class="card-text">Data ricovero: @string.Format("{0:d}",@a.DataInizioRicovero)</p>
                                 @*<a href="/Home/Details" class="btn btn-danger">Dettagli</a>*@
-                                <a href="@Url.Action("Details", new { id = a.IdAnimali })" class="btn btn-danger">Dettagli</a>
-                                <a href="@Url.Action("Edit", new { id = a.IdAnimali })" class="btn btn-danger">Modifica</a>
-                                <a href="@Url.Action("Delete", new { id = a.IdAnimali })" class="btn btn-danger">Elimina</a>
+                                <a href="@Url.Action("Details", new { id = a.IdAnimali })" class="btn btn-primary">Dettagli</a>
+                                <a href="@Url.Action("Edit", new { id = a.IdAnimali })" class="btn btn-primary">Modifica</a>
+                                <a href="@Url.Action("Delete", new { id = a.IdAnimali })" class="btn btn-primary">Elimina</a>
                             </div>
                         </div>
                     </div>
                 }
             </div>
-
+            <p class="text-center">
+                @Html.ActionLink("Registra nuovo animale", "Create")
+            </p>
 
         </section>
         <!--Section: Content-->

@@ -23,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DataVendita)
+            @Model.DataVendita.ToShortDateString()
         </dd>
 
         <dt>
@@ -35,6 +35,13 @@
         </dd>
 
     </dl>
+    <ul>
+        @foreach(ClinicaVeterinaria.Models.Dettagli dettagli in Model.Dettagli)
+            {
+        <li>Nome: @dettagli.Prodotti.Nome Q.tà: @dettagli.Quantita Prezzo Cad: @dettagli.Prezzo.ToString("C2")</li>
+
+            }
+    </ul>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.IdVendita }) |
