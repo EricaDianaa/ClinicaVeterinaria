@@ -1,4 +1,10 @@
-﻿ Set padding to keep content from hitting the edges 
+﻿@import url('https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@400;600&family=Klee+One:wght@400;600&display=swap');
+
+
+
+
+
+Set padding to keep content from hitting the edges 
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
@@ -15,6 +21,7 @@ textarea {
 
 
 body {
+    font-family: 'Anek Gurmukhi', sans-serif!important;
     font-size: 1.5em !important
 }
 
