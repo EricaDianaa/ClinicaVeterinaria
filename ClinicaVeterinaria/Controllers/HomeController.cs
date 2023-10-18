@@ -63,25 +63,7 @@ namespace ClinicaVeterinaria.Controllers
            
             return Json(visite,JsonRequestBehavior.AllowGet);
         }
-        public ActionResult AnimaleRicercato()
-        {
-            AnimaliRicoverati a = (AnimaliRicoverati)Session["Animale"];
-            if (a.Foto == null)
-            {
-                Session["Foto"] = null;
-            }
-            else
-            {
-                Session["Foto"] = "not null";
-            }
-            ViewBag.Nome = a.Tipologia1.Nome;
-            return PartialView(a);
-        }
-        public ActionResult VisitaAnimale()
-        {
-            List<VisiteVeterinarie> Visite = (List<VisiteVeterinarie>)Session["Visite"];
-            return PartialView(Visite);
-        }
+      
         //--------------------------------------
 
     }
