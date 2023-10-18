@@ -4,119 +4,141 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>AnimaliRicoverati</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipologia1.Nome)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tipologia1.Nome)
-        </dd>
+<hr />
+@*<div>*@
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Utenti.Nome)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Utenti.Nome)
-        </dd>
+    @*<dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Tipologia1.Nome)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataRegistrazione)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Tipologia1.Nome)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DataRegistrazione)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Utenti.Nome)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Utenti.Nome)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DataRegistrazione)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ColoreMantello)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DataRegistrazione)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ColoreMantello)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataNascita)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DataNascita)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ColoreMantello)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Microchip)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ColoreMantello)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Microchip)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DataNascita)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NumeroMicrochip)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DataNascita)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NumeroMicrochip)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Microchip)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NomeProprietario)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Microchip)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NomeProprietario)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroMicrochip)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CognomeProprietario)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NumeroMicrochip)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CognomeProprietario)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeProprietario)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsComune)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NomeProprietario)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsComune)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CognomeProprietario)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CognomeProprietario)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Foto)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IsComune)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataInizioRicovero)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsComune)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DataInizioRicovero)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Foto)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Foto)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DataInizioRicovero)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DataInizioRicovero)
+            </dd>
+
+        </dl>*@
+@*</div>*@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
+            <img style="width:500px;" src="~/Content/ImgProgetto/@Model.Foto" />
+        </div>
+        <div class="col-md-4">
+            <h2>Anagrafe animale</h2>
+            <hr />
+            <p>Nome animale: <strong>@Model.Nome</strong></p>
+            <p>Data di nascita: <strong>@string.Format("{0:d}", @Model.DataNascita)</strong></p>
+            <p>Data di ricovero: <strong>@string.Format("{0:d}", @Model.DataInizioRicovero)</strong></p>
+            <p>Canile comunale: <strong>@Model.IsComune</strong></p>
+            <p>Numero microchip: <strong>@Model.NumeroMicrochip</strong></p>
+            <p>Colore mantello: <strong>@Model.ColoreMantello</strong></p>
+            <p>Nome proprietario: <strong>@Model.NomeProprietario</strong></p>
+            <p>Cognome proprietario: <strong>@Model.CognomeProprietario</strong></p>
+            <p>Data di registrazione: <strong>@string.Format("{0:d}", @Model.DataRegistrazione)</strong></p>
+            <p>
+                @Html.ActionLink("Modifica dati", "Edit", new { id = Model.IdAnimali }, new {@class= "btn btn-primary"}) |
+                @Html.ActionLink("Torna indietro", "Index","", new {@class= "btn btn-default"})
+            </p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAnimali }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

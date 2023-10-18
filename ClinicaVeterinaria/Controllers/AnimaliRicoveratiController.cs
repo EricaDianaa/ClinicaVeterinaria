@@ -23,6 +23,7 @@ namespace ClinicaVeterinaria.Controllers
 
         public ActionResult Details(int? id)
         {
+            Session["NumeroMicrochip"] = id;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -46,6 +47,9 @@ namespace ClinicaVeterinaria.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(/*[Bind(Include = "IdAnimali,DataRegistrazione,Nome,Tipologia,ColoreMantello,DataNascita,Microchip,NumeroMicrochip,NomeProprietario,CognomeProprietario,IsComune,Foto,DataInizioRicovero,IdUtente")] */AnimaliRicoverati animaliRicoverati, HttpPostedFileBase foto)
         {
+            int? microchipNull = Session["NumeroMicrochip"] as int?;
+           
+            //var microchip = db.AnimaliRicoverati.FirstOrDefault(a => a.NumeroMicrochip == "L'animale non possiede alcun microchip" && a.IdAnimali == microchipNull);
             if (ModelState.IsValid)
             {
                 if (foto != null && foto.ContentLength > 0)
@@ -54,9 +58,16 @@ namespace ClinicaVeterinaria.Controllers
                     string pathToSave = Server.MapPath("~/Content/ImgProgetto/") + foto.FileName;
                     foto.SaveAs(pathToSave);
                 }
+                if(animaliRicoverati.NumeroMicrochip == null)
+                {
+                    animaliRicoverati.NumeroMicrochip = "L'animale non possiede alcun microchip";
+                    //db.AnimaliRicoverati.Add(animaliRicoverati);
+                    //db.SaveChanges();
+                }
                 db.AnimaliRicoverati.Add(animaliRicoverati);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+                
             }
 
             ViewBag.Tipologia = new SelectList(db.Tipologia, "IdTipologia", "Nome", animaliRicoverati.Tipologia);
@@ -86,6 +97,12 @@ namespace ClinicaVeterinaria.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (animaliRicoverati.NumeroMicrochip == null)
+                {
+                    animaliRicoverati.NumeroMicrochip = "L'animale non possiede alcun microchip";
+                    //db.AnimaliRicoverati.Add(animaliRicoverati);
+                    //db.SaveChanges();
+                }
                 db.Entry(animaliRicoverati).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
