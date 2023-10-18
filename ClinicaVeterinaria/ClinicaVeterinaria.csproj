@@ -320,6 +320,8 @@
     <Content Include="Content\ImgsLayout\Endoscopia.png" />
     <Content Include="Content\ImgsLayout\gattobianco.jpg" />
     <Content Include="Content\ImgsLayout\gattocarosello.jpg" />
+    <Content Include="Content\ImgsLayout\harley.JPG" />
+    <Content Include="Content\ImgsLayout\harley2.jpg" />
     <Content Include="Content\ImgsLayout\Interna.png" />
     <Content Include="Content\ImgsLayout\jackrussel.jpg" />
     <Content Include="Content\ImgsLayout\logosfondoblu.png" />
