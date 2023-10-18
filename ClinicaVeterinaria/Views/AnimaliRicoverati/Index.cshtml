@@ -26,8 +26,10 @@
                                 </a>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Nome:@a.Nome</h5>
-                                <p class="card-text">Data ricovero: @string.Format("{0:d}",@a.DataInizioRicovero)</p>
+                                <h3 class="card-title">Nome: <strong>@a.Nome</strong></h3>
+                                <p>Tipologia: <strong>@a.Tipologia1.Nome</strong></p>
+                                <p>Microchip: <strong>@a.NumeroMicrochip</strong></p>
+                                <p class="card-text">Data ricovero: @string.Format("{0:d}", @a.DataInizioRicovero)</p>
                                 @*<a href="/Home/Details" class="btn btn-danger">Dettagli</a>*@
                                 <a href="@Url.Action("Details", new { id = a.IdAnimali })" class="btn btn-primary">Dettagli</a>
                                 <a href="@Url.Action("Edit", new { id = a.IdAnimali })" class="btn btn-primary">Modifica</a>

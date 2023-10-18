@@ -23,7 +23,6 @@ namespace ClinicaVeterinaria.Controllers
 
         public ActionResult Details(int? id)
         {
-            Session["NumeroMicrochip"] = id;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -47,9 +46,6 @@ namespace ClinicaVeterinaria.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(/*[Bind(Include = "IdAnimali,DataRegistrazione,Nome,Tipologia,ColoreMantello,DataNascita,Microchip,NumeroMicrochip,NomeProprietario,CognomeProprietario,IsComune,Foto,DataInizioRicovero,IdUtente")] */AnimaliRicoverati animaliRicoverati, HttpPostedFileBase foto)
         {
-            int? microchipNull = Session["NumeroMicrochip"] as int?;
-           
-            //var microchip = db.AnimaliRicoverati.FirstOrDefault(a => a.NumeroMicrochip == "L'animale non possiede alcun microchip" && a.IdAnimali == microchipNull);
             if (ModelState.IsValid)
             {
                 if (foto != null && foto.ContentLength > 0)
@@ -61,8 +57,6 @@ namespace ClinicaVeterinaria.Controllers
                 if(animaliRicoverati.NumeroMicrochip == null)
                 {
                     animaliRicoverati.NumeroMicrochip = "L'animale non possiede alcun microchip";
-                    //db.AnimaliRicoverati.Add(animaliRicoverati);
-                    //db.SaveChanges();
                 }
                 db.AnimaliRicoverati.Add(animaliRicoverati);
                 db.SaveChanges();
@@ -93,15 +87,19 @@ namespace ClinicaVeterinaria.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdAnimali,DataRegistrazione,Nome,Tipologia,ColoreMantello,DataNascita,Microchip,NumeroMicrochip,NomeProprietario,CognomeProprietario,IsComune,Foto,DataInizioRicovero,IdUtente")] AnimaliRicoverati animaliRicoverati)
+        public ActionResult Edit(/*[Bind(Include = "IdAnimali,DataRegistrazione,Nome,Tipologia,ColoreMantello,DataNascita,Microchip,NumeroMicrochip,NomeProprietario,CognomeProprietario,IsComune,Foto,DataInizioRicovero,IdUtente")] */AnimaliRicoverati animaliRicoverati, HttpPostedFileBase foto)
         {
             if (ModelState.IsValid)
             {
+                if (foto != null && foto.ContentLength > 0)
+                {
+                    animaliRicoverati.Foto = foto.FileName;
+                    string pathToSave = Server.MapPath("~/Content/ImgProgetto/") + foto.FileName;
+                    foto.SaveAs(pathToSave);
+                }
                 if (animaliRicoverati.NumeroMicrochip == null)
                 {
                     animaliRicoverati.NumeroMicrochip = "L'animale non possiede alcun microchip";
-                    //db.AnimaliRicoverati.Add(animaliRicoverati);
-                    //db.SaveChanges();
                 }
                 db.Entry(animaliRicoverati).State = EntityState.Modified;
                 db.SaveChanges();

@@ -119,13 +119,14 @@
 @*</div>*@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
-            <img style="width:500px;" src="~/Content/ImgProgetto/@Model.Foto" />
+        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+            <img style="width:400px;" src="~/Content/ImgProgetto/@Model.Foto" />
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <h2>Anagrafe animale</h2>
             <hr />
             <p>Nome animale: <strong>@Model.Nome</strong></p>
+            <p>Tipologia: <strong>@Model.Tipologia1.Nome</strong></p>
             <p>Data di nascita: <strong>@string.Format("{0:d}", @Model.DataNascita)</strong></p>
             <p>Data di ricovero: <strong>@string.Format("{0:d}", @Model.DataInizioRicovero)</strong></p>
             <p>Canile comunale: <strong>@Model.IsComune</strong></p>
@@ -135,8 +136,8 @@
             <p>Cognome proprietario: <strong>@Model.CognomeProprietario</strong></p>
             <p>Data di registrazione: <strong>@string.Format("{0:d}", @Model.DataRegistrazione)</strong></p>
             <p>
-                @Html.ActionLink("Modifica dati", "Edit", new { id = Model.IdAnimali }, new {@class= "btn btn-primary"}) |
-                @Html.ActionLink("Torna indietro", "Index","", new {@class= "btn btn-default"})
+                @Html.ActionLink("Modifica dati", "Edit", new { id = Model.IdAnimali }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Indietro", "Index", "", new { @class = "btn btn-default" })
             </p>
         </div>
     </div>
