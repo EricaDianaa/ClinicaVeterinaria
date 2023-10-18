@@ -88,6 +88,10 @@ nav {
     border-color: rgb(37, 150, 190)
 }
 
+hr {
+    height: 2px!important;
+    
+}
 
 .cardheadertrio {
     text-align: center;
@@ -99,9 +103,10 @@ nav {
 
 .card-img-top.rounded-circle {
     object-fit: cover;
-    width: 40px;
-    height: 40px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+    
 }
 
 
@@ -109,6 +114,39 @@ nav {
     margin: 0 5px;
 }
 
-.carousel-inner {
-    padding: 20px 0;
+
+
+
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
+
+.carousel-wrapper {
+    display: flex;
+    animation: scrolling 30s linear infinite;
+}
+
+.carousel-content {
+    flex: 1;
+}
+
+.carousel-card {
+    width: 340px;
+    margin-right: 20px;
+    background-color: rgb(37, 150, 190)!important;
+    color:white!important;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
