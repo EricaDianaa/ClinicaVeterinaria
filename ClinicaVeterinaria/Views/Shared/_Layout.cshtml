@@ -28,7 +28,7 @@
     @if (User.IsInRole("Admin"))
     {
 
-        <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <nav class="navbar navbar-expand-lg navbar-dark d-lg-block" style="z-index: 2000;">
             <div class="container-fluid">
                 <!-- Navbar brand -->
 
@@ -96,7 +96,7 @@
     @if (User.IsInRole("User"))
     {
 
-        <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <nav class="navbar navbar-expand-lg navbar-dark d-lg-block" style="z-index: 2000;">
             <div class="container-fluid">
                 <!-- Navbar brand -->
 
@@ -162,7 +162,7 @@
     }
     @if (!User.IsInRole("User") && !User.IsInRole("Admin"))
     {
-        <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <nav class="navbar navbar-expand-lg navbar-dark d-lg-block" style="z-index: 2000;">
             <div class="container-fluid">
                 <!-- Navbar brand -->
 
