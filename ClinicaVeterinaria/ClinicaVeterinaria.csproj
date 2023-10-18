@@ -164,8 +164,10 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnimaliRicoveratiController.cs" />
     <Compile Include="Controllers\ArmadiettiController.cs" />
+    <Compile Include="Controllers\CarrelloController.cs" />
     <Compile Include="Controllers\CassettiController.cs" />
     <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
+    <Compile Include="Controllers\CatalogoProdottiController.cs" />
     <Compile Include="Controllers\DettagliController.cs" />
     <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -173,11 +175,13 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ProdottiController.cs" />
     <Compile Include="Controllers\ProdottiUsiController.cs" />
+    <Compile Include="Controllers\RicercaMedicinaliController.cs" />
     <Compile Include="Controllers\UsiDisponibiliController.cs" />
     <Compile Include="Controllers\ServiziOffertiController.cs" />
     <Compile Include="Controllers\ValidazioniController.cs" />
     <Compile Include="Controllers\TipologiaController.cs" />
     <Compile Include="Controllers\VenditeController.cs" />
+    <Compile Include="Controllers\VisiteVeterinarieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,6 +197,10 @@
     <Compile Include="Migrations\202310171442063_ProdottiQuantita.designer.cs">
       <DependentUpon>202310171442063_ProdottiQuantita.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310181040215_ProdottiPrezzo.cs" />
+    <Compile Include="Migrations\202310181040215_ProdottiPrezzo.designer.cs">
+      <DependentUpon>202310181040215_ProdottiPrezzo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnimaliRicoverati.cs" />
     <Compile Include="Models\Armadietti.cs" />
@@ -201,6 +209,7 @@
     <Compile Include="Models\Cassetto_Prodotti.cs" />
     <Compile Include="Models\Dettagli.cs" />
     <Compile Include="Models\Ditte.cs" />
+    <Compile Include="Models\ElencoMedicinaliVenduti.cs" />
     <Compile Include="Models\ModelDBContext.cs" />
     <Compile Include="Models\Prodotti.cs" />
     <Compile Include="Models\ProdottiUsi.cs" />
@@ -297,6 +306,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\ImgsLayout\canecarosello.jpg" />
+    <Content Include="Content\ImgsLayout\canemalato.jpg" />
     <Content Include="Content\ImgsLayout\Chirurgia.png" />
     <Content Include="Content\ImgsLayout\conigliocarosello.jpg" />
     <Content Include="Content\ImgsLayout\Degenza.png" />
@@ -448,8 +458,6 @@
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\ServiziOfferti\Index.cshtml" />
     <Content Include="Views\Home\RicercaAnimale.cshtml" />
-    <Content Include="Views\Home\AnimaleRicercato.cshtml" />
-    <Content Include="Views\Home\VisitaAnimale.cshtml" />
     <Content Include="Views\Tipologia\Create.cshtml" />
     <Content Include="Views\Tipologia\Delete.cshtml" />
     <Content Include="Views\Tipologia\Details.cshtml" />
@@ -466,6 +474,15 @@
     <Content Include="Views\Vendite\Details.cshtml" />
     <Content Include="Views\Vendite\Edit.cshtml" />
     <Content Include="Views\Vendite\Index.cshtml" />
+    <Content Include="Views\RicercaMedicinali\RicercaMedicinale.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Create.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Delete.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Details.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Edit.cshtml" />
+    <Content Include="Views\VisiteVeterinarie\Index.cshtml" />
+    <Content Include="Views\Carrello\CreaCarrello.cshtml" />
+    <Content Include="Views\Carrello\_MostraCarrello.cshtml" />
+    <Content Include="Views\CatalogoProdotti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -510,6 +527,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310171442063_ProdottiQuantita.resx">
       <DependentUpon>202310171442063_ProdottiQuantita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310181040215_ProdottiPrezzo.resx">
+      <DependentUpon>202310181040215_ProdottiPrezzo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\ClinicaVeterinaria.Migrations.Inital.resources" />
   </ItemGroup>
