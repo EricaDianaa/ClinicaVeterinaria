@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Prodotti>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Catalogo Prodotti";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var prodotto in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@prodotto.Nome</h5>
+                        <p class="card-text">
+                            <strong>Tipo:</strong> @prodotto.Tipo<br />
+                            <strong>Descrizione:</strong> @prodotto.Descrizione<br />
+                            <strong>Ditta:</strong> @prodotto.Ditte?.NomeDitta ?? "Sconosciuta"<br />
+                            <strong>Quantità:</strong> @prodotto.Quantita
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,13 +1,16 @@
-﻿<main class="p-5">
+﻿@model ClinicaVeterinaria.Models.Utenti
+
+
+<main class="p-5">
 
     <header>
         <div id="imgcontainer" class="d-flex flex-row flex-wrap">
-            <div class="col-xl-8 col-lg-12">
+            <div class="col-l-12 col-xl-12 col-xxl-6 col-lg-12">
                 <div id="imgheader" class="mt-5">
                     <img src="~/Content/ImgsLayout/canecarosello.jpg" class="d-block w-100" alt="Wild Landscape" />
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-12">
+            <div class="col-l-12 col-xl-12 col-xxl-6 col-lg-12">
                 <div class="mt-5">
                     <div id="cardheader" class="card">
                         <div class="card-body">
@@ -23,15 +26,15 @@
                                 <h2 class="card-title mb-auto">Veterinaria di base e specialistica</h2>
                                 <img src="~/content/ImgsLayout/Ecografia.png" alt="Logo" style="max-height:240px; margin-bottom: auto;">
                             </div>
-                            <p class="card-text">Nella nostra clinica puoi trovare servizi di diagnosi, cura, prevenzione e degenza assistita per tutte le tipologie di animali domestici</p>
+                            <p class="card-text">Nella nostra clinica puoi trovare servizi di diagnosi, cura, prevenzione, degenza assistita e prodotti farmacologici per tutte le tipologie di animali domestici</p>
                         </div>
                     </div>
 
                     <div class="col-xl-4 col-lg-12 mt-5">
                         <div class="cardheadertrio d-flex flex-column justify-content-between" style="height: 100%;">
                             <div>
-                                <h2 class="card-title mb-auto">Veterinaria d'urgenza</h2> 
-                                <img src="~/content/ImgsLayout/vaccini.png" alt="Logo" style="max-height:240px; margin-bottom: auto;"> 
+                                <h2 class="card-title mb-auto">Veterinaria d'urgenza e preventiva</h2>
+                                <img src="~/content/ImgsLayout/vaccini.png" alt="Logo" style="max-height:240px; margin-bottom: auto;">
                             </div>
                             <p class="card-text">Un team di veterinari  specializzati in ambiti differenti per visite specialistiche rivolte a tutti gli animali domestici in ogni fase della loro vita.</p>
                         </div>
@@ -39,8 +42,8 @@
                     <div class="col-xl-4 col-lg-12 mt-5">
                         <div class="cardheadertrio d-flex flex-column justify-content-between" style="height: 100%;">
                             <div>
-                                <h2 class="card-title mb-auto">Servizi di Salute e di Benessere</h2> 
-                                <img src="~/content/ImgsLayout/PianoSalute.png" alt="Logo" style="max-height:240px; margin-bottom: auto;"> 
+                                <h2 class="card-title mb-auto">Servizi di Salute e di Benessere</h2>
+                                <img src="~/content/ImgsLayout/PianoSalute.png" alt="Logo" style="max-height:240px; margin-bottom: auto;">
                             </div>
                             <p class="card-text">I cani, sia cuccioli che adulti, hanno accesso a servizi di educazione comportamentale che si sviluppano in sessioni di lavoro individuali o di gruppo.</p>
                         </div>
@@ -52,6 +55,8 @@
     </header>
 
 
+    <hr class="my-5" style="color: rgb(37, 150, 190); " />
+
     <main class="mt-5 ">
         <div class="container ">
             <!--Section: Content-->
@@ -59,34 +64,27 @@
                 <div class="row">
                     <div class="col-md-6 gx-5 mb-4">
                         <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                            <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
+                            <img src="~/Content/ImgsLayout/canemalato.jpg" class="img-fluid" />
+
                         </div>
                     </div>
 
                     <div class="col-md-6 gx-5 mb-4">
-                        <h4><strong>Facilis consequatur eligendi</strong></h4>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-                            consequatur eligendi quisquam doloremque vero ex debitis
-                            veritatis placeat unde animi laborum sapiente illo possimus,
-                            commodi dignissimos obcaecati illum maiores corporis.
-                        </p>
-                        <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                            itaque voluptate nesciunt laborum incidunt. Officia, quam
-                            consectetur. Earum eligendi aliquam illum alias, unde optio
-                            accusantium soluta, iusto molestiae adipisci et?
-                        </p>
+                        <h2 class="text-center"><strong>Hai smarrito il tuo animale? </strong></h2>
+
+                        <p class="fs-3 my-5 text-center">Inserisci il numero di microchip e controlla se è ricoverato in una delle nostre cliniche</p>
+                        <p class="fs-3 text-center ">Clicca qui e segui la procedura</p>
+                        <div class="text-center">
+                            <button class="nav-item btn btn-primary ">
+                                @Html.ActionLink("Avvia Ricerca", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
             <!--Section: Content-->
 
-            <hr class="my-5" />
+            <hr class="my-5" style="color: rgb(37, 150, 190); " />
 
             <!--Section: Content-->
             <section class="text-center">
@@ -153,84 +151,107 @@
             </section>
             <!--Section: Content-->
 
-            <hr class="my-5" />
+            <hr class="my-5" style="color: rgb(37, 150, 190); " />
 
-            <!--Section: Content-->
-            <section class="mb-5">
-                <h4 class="mb-5 text-center">
-                    <strong>Facilis consequatur eligendi</strong>
-                </h4>
 
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-6">
-                        <form>
-                            <!-- 2 column grid layout with text inputs for the first and last names -->
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1" class="form-control" />
-                                        <label class="form-label" for="form3Example1">First name</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example2" class="form-control" />
-                                        <label class="form-label" for="form3Example2">Last name</label>
-                                    </div>
+            <div id="recensioniCarosello" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-around">
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
                                 </div>
                             </div>
-
-                            <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <input type="email" id="form3Example3" class="form-control" />
-                                <label class="form-label" for="form3Example3">Email address</label>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
                             </div>
-
-                            <!-- Password input -->
-                            <div class="form-outline mb-4">
-                                <input type="password" id="form3Example4" class="form-control" />
-                                <label class="form-label" for="form3Example4">Password</label>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
                             </div>
-
-                            <!-- Checkbox -->
-                            <div class="form-check d-flex justify-content-center mb-4">
-                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" checked />
-                                <label class="form-check-label" for="form2Example3">
-                                    Subscribe to our newsletter
-                                </label>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
                             </div>
-
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-block mb-4">
-                                Sign up
-                            </button>
-
-                            <!-- Register buttons -->
-                            <div class="text-center">
-                                <p>or sign up with:</p>
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-facebook-f"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-google"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-github"></i>
-                                </button>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
                             </div>
-                        </form>
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image2" class="card-img-top rounded-circle" alt="immagine2">
+                                <div class="card-body">
+                                    <p class="card-text">Testo2</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
+                            </div>
+                            <div class="card" style="width: 160px;">
+                                <img src="path_to_image" class="card-img-top rounded-circle" alt="immagine1">
+                                <div class="card-body">
+                                    <p class="card-text">Testo1</p>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <!--Section: Content-->
-        </div>
-    </main>
+                <button class="carousel-control-prev" type="button" data-bs-target="#recensioniCarosello" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Precedente</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#recensioniCarosello" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Successivo</span>
+                </button>
+            </div>
+
+
+
+</main>
     <!--Main layout-->
 
 
