@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ClinicaVeterinaria.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         // GET: Admin

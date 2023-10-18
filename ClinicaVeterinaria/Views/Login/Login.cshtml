@@ -22,13 +22,13 @@
                                     <div class="form-outline mb-4">
                                         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @id = "Email" } })
                                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label col-md-2", @for = "Email" })
+                                        <label class="form-label pt-0" for="Email">Email</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
                                         @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password", @id = "Password" } })
                                         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "form-label col-md-2", @for = "Password" })
+                                        <label class="form-label pt-0" for="Password">Password</label>
                                     </div>
 
                                     <div class="form-check d-flex justify-content-center mb-5">
