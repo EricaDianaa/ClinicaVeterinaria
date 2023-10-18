@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Carrello>
+
+<div>
+    <h4>Carrello</h4>
+    <hr />
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-hover table-bordered container text-center">
+            <tr>
+                <th>Nome</th>
+                <th>Prezzo</th>
+                <th>Quantità</th>
+                <th>Elimina</th>
+            </tr>
+
+            @{int indice = 0; }
+            @foreach (ClinicaVeterinaria.Models.Carrello c in Model)
+            {
+                <tr>
+                    indice++;
+                    <td>
+                        @c.Nome
+                    </td>
+                    <td>
+                        @c.Prezzo
+                    </td>
+
+                    <td>
+                        @c.qta
+                    </td>
+                    <td>
+                        @Html.ActionLink("🗑", "Elimina", new { id = indice }) |
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>

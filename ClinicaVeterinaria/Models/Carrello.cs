@@ -7,12 +7,11 @@ namespace ClinicaVeterinaria.Models
 {
     public class Carrello
     {
-        public List<OggettoCarrello> carrello = new List<OggettoCarrello>();
-    }
+        public List<Carrello> carrello = new List<Carrello>();
 
-    public class OggettoCarrello
-    {
         public int IdProduct { get; set; }
         public int qta { get; set; }
+        public string Nome { get; set; }
+        public decimal Prezzo { get; set; }
     }
 }
