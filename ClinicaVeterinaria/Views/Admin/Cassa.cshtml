@@ -1,0 +1,17 @@
+﻿<div class="row row-cols-3">
+    <div class="col">
+        @{
+            Html.RenderAction("Create", "Vendite");
+        }
+    </div>
+    <div class="col">
+        @{
+            Html.RenderAction("CreaCarrello", "Carrello");
+        }
+    </div>
+    <div class="col">
+        @{
+            Html.RenderAction("MostraCarrello", "Carrello");
+        }
+    </div>
+</div>

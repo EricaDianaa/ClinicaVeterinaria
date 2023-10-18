@@ -35,7 +35,8 @@ namespace ClinicaVeterinaria.Controllers
             }
 
             ViewBag.prodotti = prodotti;
-            return View();
+            //return View();
+            return PartialView("CreaCarrello");
         }
 
         [HttpPost]
@@ -63,7 +64,7 @@ namespace ClinicaVeterinaria.Controllers
                 Session["cart"] = cart;
             }
             ViewBag.prodotti = prodotti;
-            return View(oc);
+            return RedirectToAction("Cassa","Admin");
         }
 
         public ActionResult MostraCarrello()
@@ -75,9 +76,9 @@ namespace ClinicaVeterinaria.Controllers
         public ActionResult Elimina(int id)
         {
             List<Carrello> cart = (List<Carrello>)Session["cart"];
-            cart.RemoveAt(id-1);
+            cart.RemoveAt(id - 1);
             Session["cart"] = cart;
-            return RedirectToAction("CreaCarrello");
+            return RedirectToAction("Cassa", "Admin");
         }
     }
 }
