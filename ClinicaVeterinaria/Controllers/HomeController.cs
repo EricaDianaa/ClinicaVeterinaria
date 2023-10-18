@@ -34,7 +34,7 @@ namespace ClinicaVeterinaria.Controllers
             List<AnimaliRicoverati> animal = new List<AnimaliRicoverati>();
             if (a != null)
             {
-            animal.Add(new AnimaliRicoverati { CognomeProprietario=a.CognomeProprietario,NomeProprietario=a.NomeProprietario,Nome=a.Nome,IdAnimali=a.IdAnimali,IdUtente=a.IdUtente,DataInizioRicovero=a.DataInizioRicovero,DataNascita=a.DataNascita,ColoreMantello=a.ColoreMantello});
+            animal.Add(new AnimaliRicoverati { CognomeProprietario=a.CognomeProprietario,NomeProprietario=a.NomeProprietario,Nome=a.Nome,IdAnimali=a.IdAnimali,IdUtente=a.IdUtente,DataInizioRicovero=a.DataInizioRicovero, DataInizioRicoveroString = a.DataInizioRicovero?.ToShortDateString().ToString(), DataNascita=a.DataNascita,DataNascitaString= a.DataNascita?.ToShortDateString().ToString(), ColoreMantello=a.ColoreMantello,TipologiaNome=a.Tipologia1.Nome});
             ViewBag.Nome = a.Tipologia1.Nome;
             }
             else
@@ -58,7 +58,7 @@ namespace ClinicaVeterinaria.Controllers
            
             foreach(VisiteVeterinarie vis in v)
             {
-              visite.Add(new VisiteVeterinarie { Descrizione= vis.Descrizione,idVisite=vis.idVisite,IdAnimale=vis.IdAnimale,Data=vis.Data});
+              visite.Add(new VisiteVeterinarie { Descrizione= vis.Descrizione,idVisite=vis.idVisite,IdAnimale=vis.IdAnimale,Data=vis.Data,DataString=vis.Data.ToShortDateString().ToString()});
             }
           
             }
