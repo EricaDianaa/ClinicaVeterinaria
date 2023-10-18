@@ -159,7 +159,7 @@ hr {
 
 .carousel-wrapper {
     display: flex;
-    animation: scrolling 30s linear infinite;
+    animation: scrolling 60s linear infinite;
 }
 
 .carousel-content {
