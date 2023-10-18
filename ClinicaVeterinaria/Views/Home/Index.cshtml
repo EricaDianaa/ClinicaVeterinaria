@@ -62,20 +62,20 @@
                     <div class="col-md-6 gx-5 mb-4">
                         <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
                             <img src="~/Content/ImgsLayout/canemalato.jpg" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
+                                                     
                         </div>
                     </div>
 
                     <div class="col-md-6 gx-5 mb-4">
                         <h2 class="text-center"><strong>Hai smarrito il tuo animale? </strong></h2>
-                       
+
                         <p class="fs-3 my-5 text-center">Inserisci il numero di microchip e controlla se è ricoverato in una delle nostre cliniche</p>
-                        <p class="fs-3 text-center">Clicca qui e segui la procedura</p>
-                        <button class="nav-item btn btn-primary ">
+                        <p class="fs-3 text-center ">Clicca qui e segui la procedura</p>
+                        <div class="text-center">
+                            <button class="nav-item btn btn-primary ">
                             @Html.ActionLink("Avvia Ricerca", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
-                        </button>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
