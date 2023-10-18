@@ -307,6 +307,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\ImgsLayout\bengal.jpg" />
     <Content Include="Content\ImgsLayout\border.jpg" />
+    <Content Include="Content\ImgsLayout\boxer.png" />
     <Content Include="Content\ImgsLayout\bulldog.jpg" />
     <Content Include="Content\ImgsLayout\canecarosello.jpg" />
     <Content Include="Content\ImgsLayout\canemalato.jpg" />
@@ -320,12 +321,12 @@
     <Content Include="Content\ImgsLayout\Endoscopia.png" />
     <Content Include="Content\ImgsLayout\gattobianco.jpg" />
     <Content Include="Content\ImgsLayout\gattocarosello.jpg" />
-    <Content Include="Content\ImgsLayout\harley.JPG" />
     <Content Include="Content\ImgsLayout\harley2.jpg" />
     <Content Include="Content\ImgsLayout\Interna.png" />
     <Content Include="Content\ImgsLayout\jackrussel.jpg" />
     <Content Include="Content\ImgsLayout\logosfondoblu.png" />
     <Content Include="Content\ImgsLayout\maincoon.jpg" />
+    <Content Include="Content\ImgsLayout\meticcio.jpeg" />
     <Content Include="Content\ImgsLayout\Odontostomatologia.png" />
     <Content Include="Content\ImgsLayout\Oftalmologia.png" />
     <Content Include="Content\ImgsLayout\PianoSalute.png" />
