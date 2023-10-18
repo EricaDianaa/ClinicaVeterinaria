@@ -166,6 +166,7 @@
     <Compile Include="Controllers\ArmadiettiController.cs" />
     <Compile Include="Controllers\CassettiController.cs" />
     <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
+    <Compile Include="Controllers\CatalogoProdottiController.cs" />
     <Compile Include="Controllers\DettagliController.cs" />
     <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -476,6 +477,7 @@
     <Content Include="Views\VisiteVeterinarie\Details.cshtml" />
     <Content Include="Views\VisiteVeterinarie\Edit.cshtml" />
     <Content Include="Views\VisiteVeterinarie\Index.cshtml" />
+    <Content Include="Views\CatalogoProdotti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
