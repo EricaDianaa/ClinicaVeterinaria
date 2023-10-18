@@ -72,12 +72,12 @@ namespace ClinicaVeterinaria.Controllers
             return PartialView("_MostraCarrello", cart);
         }
 
-        public ActionResult Elimina(int indice)
+        public ActionResult Elimina(int id)
         {
             List<Carrello> cart = (List<Carrello>)Session["cart"];
-            cart.RemoveAt(indice);
+            cart.RemoveAt(id-1);
             Session["cart"] = cart;
-            return View();
+            return RedirectToAction("CreaCarrello");
         }
     }
 }
