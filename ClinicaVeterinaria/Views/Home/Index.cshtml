@@ -4,6 +4,9 @@
 <main class="p-5">
 
     <header>
+        <h1 class="text-center mt-5"><strong>ANIMAL HOUSE SERVIZI </strong></h1>
+        <h2 class="text-center mb-5 h2index">cosa posso fare?</h2>
+
         <div id="imgcontainer" class="d-flex flex-row flex-wrap">
             <div class="col-l-12 col-xl-12 col-xxl-6 col-lg-12">
                 <div id="imgheader" class="mt-5">
@@ -52,124 +55,205 @@
                 </div>
             </div>
         </div>
+
     </header>
 
 
-    <hr class="my-5" style="color: rgb(37, 150, 190); " />
+    <hr class="mb-5" style="color: rgb(37, 150, 190); " />
 
     <main class="mt-5 ">
         <div class="container ">
-            <!--Section: Content-->
-            <section>
-                <div class="row">
-                    <div class="col-md-6 gx-5 mb-4">
-                        <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                            <img src="~/Content/ImgsLayout/canemalato.jpg" class="img-fluid" />
+            <h1 class="text-center mt-5"><strong>HAI SMARRITO IL TUO ANIMALE? </strong></h1>
+            <h2 class="text-center mb-5 h2index">ti aiutiamo noi!</h2>
 
-                        </div>
-                    </div>
+                <section>
+                    <div class="row">
+                        <div class="col-md-6 gx-5 mb-4">
+                            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                                <img src="~/Content/ImgsLayout/canemalato.jpg" class="img-fluid" />
 
-                    <div class="col-md-6 gx-5 mb-4">
-                        <h2 class="text-center"><strong>Hai smarrito il tuo animale? </strong></h2>
-
-                        <p class="fs-3 my-5 text-center">Inserisci il numero di microchip e controlla se è ricoverato in una delle nostre cliniche</p>
-                        <p class="fs-3 text-center ">Clicca qui e segui la procedura</p>
-                        <div class="text-center">
-                            <button class="nav-item btn btn-primary ">
-                                @Html.ActionLink("Avvia Ricerca", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-         </div>
-
-            <hr class="my-5" style="color: rgb(37, 150, 190); " />
-
-            <!--Section: Content-->
-            <section class="text-center">
-                <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <div class="card">
-                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                </a>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make
-                                    up the bulk of the card's content.
-                                </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                        </div>
+
+
+                        <div class="col-md-6 gx-5 mb-4">
+
+
+                            <p class="fs-3 my-5 text-center">Inserisci il numero di microchip e controlla se è ricoverato in una delle nostre cliniche</p>
+                            <p class="fs-3 text-center ">Clicca qui e segui la procedura</p>
+                            <div class="text-center">
+                                <button class="nav-item btn btn-primary ">
+                                    @Html.ActionLink("Avvia Ricerca", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
+                                </button>
                             </div>
                         </div>
                     </div>
+                </section>
+        </div>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card">
-                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make
-                                    up the bulk of the card's content.
-                                </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
-                            </div>
+        <hr class="my-5" style="color: rgb(37, 150, 190); " />
+
+        <!--Section: Content-->
+        <section class="text-center">
+            <h1 class="text-center mt-5"><strong>SCOPRI LE RAZZE PIU' FAMOSE</strong></h1>
+            <h2 class="text-center mb-5 h2index">impara con noi!</h2>
+
+            <div class="row">
+
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-razze">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="~/Content/ImgsLayout/boxer.png" style="max-height:600px" class="img-fluid" />
+                            <a href="https://it.wikipedia.org/wiki/Deutscher_boxer">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card">
-                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make
-                                    up the bulk of the card's content.
-                                </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
-                            </div>
+                        <div class="card-body ">
+                            <h3 class="card-title">Boxer</h3>
+                            <p class="card-text">
+                                Il boxer è una razza canina appartenente alla famiglia dei Molossoidi. Affonda le sue radici in Germania dove, intorno al 1870, alcuni cinofili di Monaco di Baviera tentarono l'incrocio tra il Bullenbeisser e l'Old English bulldog...
+                            </p>
+                            <a href="https://it.wikipedia.org/wiki/Deutscher_boxer" class="btn btn-primary">Scopri di più</a>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!--Section: Content-->
 
-            <hr class="my-5" style="color: rgb(37, 150, 190); " />
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card card-razze">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="~/Content/ImgsLayout/harley2.jpg" style="max-height:600px" class="img-fluid" />
+                            <a href="https://it.wikipedia.org/wiki/American_Staffordshire_terrier">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">American Staffordshire Terrier</h3>
+                            <p class="card-text">
+                                L'American Staffordshire Terrier , o AmStaff/Pitbull Amstaff, è una razza canina che si cominciò a selezionare negli Stati Uniti d'America dal 1936.
+                                È una delle tre varianti selettive dell'American Pit Bull Terrier..
+                            </p>
+                            <a href="https://it.wikipedia.org/wiki/American_Staffordshire_terrier" class="btn btn-primary">Scopri di più</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-razze">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="~/Content/ImgsLayout/meticcio.jpeg" style="max-height:600px" class="img-fluid" />
+                            <a href="https://it.wikipedia.org/wiki/Cane_meticcio">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body ">
+                            <h3 class="card-title">Meticcio</h3>
+                            <p class="card-text">
+                                Meticcio è un termine con cui si indica normalmente un cane frutto di un incrocio di razze canine diverse oppure di altri meticci. Essi rappresentano una tipologia di cani molto eterogenea, ma da considerarsi nel complesso la più diffusa...
+                            </p>
+                            <a href="https://it.wikipedia.org/wiki/Cane_meticcio" class="btn btn-primary">Scopri di più</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Section: Content-->
+
+        <hr class="my-5" style="color: rgb(37, 150, 190); " />
 
 
 
-        <h2>Scopri cosa dicono di noi!</h2>
+        <h1 class="text-center mt-5"><strong>SCOPRI COSA DICONO DI NOI </strong></h1>
+        <h2 class="text-center mb-5 h2index">Solo cose belle!</h2>
 
+        <div class="carousel-container my-5">
+            <div class="carousel-wrapper">
+                <!-- Prima copia delle card -->
+                <div class="carousel-content d-flex justify-content-around">
+                    <!-- 8 Card totali, riportate sotto -->
+                    <!-- Card 1 -->
+                    <div class="card carousel-card text-center d-flex flex-column align-items-center">
+                        <img src="~/Content/ImgsLayout/bulldog.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <cite>“Gentilezza, professionalità e tanta disponibilità nello spiegare le cose riguardanti i nostri pet. Pazienza e dolcezza. Ci siamo sentiti accolti a braccia aperte. Grazie!”</cite>
+                            <br />
 
-            <div class="carousel-container">
-                <div class="carousel-wrapper">
-                    <!-- Prima copia delle card -->
+                            <b>Lorena consiglia Animal House</b>
+                        </div>
+                    </div>
+                    <div class="card carousel-card text-center d-flex flex-column align-items-center">
+                        <img src="~/Content/ImgsLayout/border.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <cite>“Continuare con questa organizzazione e con questo personale che è il top della gentilezza e della familiarità. Alto livello di professionalità.” </cite>                                    <br />
+                            <br />
+
+                            <b>Gerardo consiglia Animal House</b>
+                        </div>
+                    </div>
+                    <div class="card carousel-card text-center d-flex flex-column align-items-center">
+                        <img src="~/Content/ImgsLayout/bengal.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <cite>“Io e la mia Zoe abbiamo visitato Animal House a Roma.. beh torneremo sicuramente. La mia gattina è molto paurosa, ma il personale gentilissimo e qualificato e l’empatia che abbiamo percepito l’hanno resa serena.” </cite>                                    <br />
+                            <br />
+
+                            <b>Sandra consiglia Animal House</b>
+                        </div>
+                    </div>
+                    <div class="card carousel-card text-center d-flex flex-column align-items-center">
+                        <img src="~/Content/ImgsLayout/gattobianco.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <cite>“Ho portato d’urgenza la mia gattina e sono stati prontissimi! Lo consiglio perchè sanno trasmettere tranquillità e amore ai bimbi pelosi che arrivano. Semplicemente fantastici!”</cite>                                    <br />
+                            <br />
+
+                            <b>Romina consiglia Animal House</b>
+                        </div>
+                    </div>
+                    <div class="card carousel-card text-center d-flex flex-column align-items-center">
+                        <img src="~/Content/ImgsLayout/shitzu.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
+
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <cite>“Ho portato il mio shitzu e mi sono trovata bene… accoglienza e professionalità ottime. Grazie per la pazienza che avete avuto con la mia bimba cieca e con dermatite” </cite>                                    <br />
+                            <br />
+
+                            <b>Morena consiglia Animal House</b>
+                        </div>
+
+                    </div>
+                    <div class="card carousel-card text-center d-flex flex-column align-items-center">
+                        <img src="~/Content/ImgsLayout/scottish.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <cite>“Ho portato il mio shitzu e mi sono trovata bene… accoglienza e professionalità ottime. Grazie per la pazienza che avete avuto con la mia bimba cieca e con dermatite” </cite>                                    <br />
+                            <br />
+
+                            <b>Lorena consiglia Animal House</b>
+                        </div>
+                    </div>
+                    <div class="card carousel-card text-center d-flex flex-column align-items-center">
+                        <img src="~/Content/ImgsLayout/chihuahua.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <cite>“Interessanti i workshop aperti al pubblico, che ritengo un mezzo efficace per rafforzare i rapporti cliente/personale e per/compagno umano ”</cite>                                    <br />
+                            <br />
+
+                            <b>Antonella consiglia Animal House</b>
+                        </div>
+                    </div>
+                    <div class="card carousel-card text-center d-flex flex-column align-items-center">
+                        <img src="~/Content/ImgsLayout/jackrussel.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <cite>“Straconsigliato! Ad aprile scorso la mia gatta è volata sul ponte, ora ne ho un altra, di 15 anni, si prendono cura di lei… come fosse la loro! per citare un servizio compreso nel pacchetto benessere, gli esami del sangue… migliori di quelli che faccio io. Avrei voluto scoprirla prima…” </cite>                                    <br />
+                            <br />
+
+                            <b>Paolo consiglia Animal House</b>
+                        </div>
+                    </div>
                     <div class="carousel-content d-flex justify-content-around">
-                        <!-- 8 Card totali, riportate sotto -->
-                        <!-- Card 1 -->
+
                         <div class="card carousel-card text-center d-flex flex-column align-items-center">
                             <img src="~/Content/ImgsLayout/bulldog.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <cite>“Gentilezza, professionalità e tanta disponibilità nello spiegare le cose riguardanti i nostri pet. Pazienza e dolcezza. Ci siamo sentiti accolti a braccia aperte. Grazie!”</cite>
                                 <br />
-                                <br />
+
                                 <b>Lorena consiglia Animal House</b>
                             </div>
                         </div>
@@ -178,16 +262,16 @@
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <cite>“Continuare con questa organizzazione e con questo personale che è il top della gentilezza e della familiarità. Alto livello di professionalità.” </cite>                                    <br />
                                 <br />
-                                <br />
+
                                 <b>Gerardo consiglia Animal House</b>
                             </div>
                         </div>
                         <div class="card carousel-card text-center d-flex flex-column align-items-center">
                             <img src="~/Content/ImgsLayout/bengal.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
                             <div class="card-body d-flex flex-column justify-content-between">
-                                <cite>“Io e la mia Zoe abbiamo visitato Animal House a Roma.. beh torneremo sicuramente. La mia gattina è molto paurosa, ma il personale gentilissimo e qualificato e l’empatia che abbiamo percepito l’hanno resa serena.” </cite>                                    <br />
+                                <cite>“Io e la mia Zoe abbiamo visitato Ca’ Zampa a Roma.. beh torneremo sicuramente. La mia cagnetta è molto paurosa, ma il personale gentilissimo e qualificato e l’empatia che abbiamo percepito l’hanno resa serena.” </cite>                                    <br />
                                 <br />
-                                <br />
+
                                 <b>Sandra consiglia Animal House</b>
                             </div>
                         </div>
@@ -196,7 +280,7 @@
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <cite>“Ho portato d’urgenza la mia gattina e sono stati prontissimi! Lo consiglio perchè sanno trasmettere tranquillità e amore ai bimbi pelosi che arrivano. Semplicemente fantastici!”</cite>                                    <br />
                                 <br />
-                                <br />
+
                                 <b>Romina consiglia Animal House</b>
                             </div>
                         </div>
@@ -206,7 +290,7 @@
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <cite>“Ho portato il mio shitzu e mi sono trovata bene… accoglienza e professionalità ottime. Grazie per la pazienza che avete avuto con la mia bimba cieca e con dermatite” </cite>                                    <br />
                                 <br />
-                                <br />
+
                                 <b>Morena consiglia Animal House</b>
                             </div>
 
@@ -216,7 +300,7 @@
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <cite>“Ho portato il mio shitzu e mi sono trovata bene… accoglienza e professionalità ottime. Grazie per la pazienza che avete avuto con la mia bimba cieca e con dermatite” </cite>                                    <br />
                                 <br />
-                                <br />
+
                                 <b>Lorena consiglia Animal House</b>
                             </div>
                         </div>
@@ -225,7 +309,7 @@
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <cite>“Interessanti i workshop aperti al pubblico, che ritengo un mezzo efficace per rafforzare i rapporti cliente/personale e per/compagno umano ”</cite>                                    <br />
                                 <br />
-                                <br />
+
                                 <b>Antonella consiglia Animal House</b>
                             </div>
                         </div>
@@ -234,96 +318,20 @@
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <cite>“Straconsigliato! Ad aprile scorso la mia gatta è volata sul ponte, ora ne ho un altra, di 15 anni, si prendono cura di lei… come fosse la loro! per citare un servizio compreso nel pacchetto benessere, gli esami del sangue… migliori di quelli che faccio io. Avrei voluto scoprirla prima…” </cite>                                    <br />
                                 <br />
-                                <br />
+
                                 <b>Paolo consiglia Animal House</b>
                             </div>
                         </div>
-                        <div class="carousel-content d-flex justify-content-around">
 
-                            <div class="card carousel-card text-center d-flex flex-column align-items-center">
-                                <img src="~/Content/ImgsLayout/bulldog.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <cite>“Gentilezza, professionalità e tanta disponibilità nello spiegare le cose riguardanti i nostri pet. Pazienza e dolcezza. Ci siamo sentiti accolti a braccia aperte. Grazie!”</cite>
-                                    <br />
-                                    <br />
-                                    <b>Lorena consiglia Animal House</b>
-                                </div>
-                            </div>
-                            <div class="card carousel-card text-center d-flex flex-column align-items-center">
-                                <img src="~/Content/ImgsLayout/border.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <cite>“Continuare con questa organizzazione e con questo personale che è il top della gentilezza e della familiarità. Alto livello di professionalità.” </cite>                                    <br />
-                                    <br />
-                                    <br />
-                                    <b>Gerardo consiglia Animal House</b>
-                                </div>
-                            </div>
-                            <div class="card carousel-card text-center d-flex flex-column align-items-center">
-                                <img src="~/Content/ImgsLayout/bengal.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <cite>“Io e la mia Zoe abbiamo visitato Ca’ Zampa a Roma.. beh torneremo sicuramente. La mia cagnetta è molto paurosa, ma il personale gentilissimo e qualificato e l’empatia che abbiamo percepito l’hanno resa serena.” </cite>                                    <br />
-                                    <br />
-                                    <br />
-                                    <b>Sandra consiglia Animal House</b>
-                                </div>
-                            </div>
-                            <div class="card carousel-card text-center d-flex flex-column align-items-center">
-                                <img src="~/Content/ImgsLayout/gattobianco.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <cite>“Ho portato d’urgenza la mia gattina e sono stati prontissimi! Lo consiglio perchè sanno trasmettere tranquillità e amore ai bimbi pelosi che arrivano. Semplicemente fantastici!”</cite>                                    <br />
-                                    <br />
-                                    <br />
-                                    <b>Romina consiglia Animal House</b>
-                                </div>
-                            </div>
-                            <div class="card carousel-card text-center d-flex flex-column align-items-center">
-                                <img src="~/Content/ImgsLayout/shitzu.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
-
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <cite>“Ho portato il mio shitzu e mi sono trovata bene… accoglienza e professionalità ottime. Grazie per la pazienza che avete avuto con la mia bimba cieca e con dermatite” </cite>                                    <br />
-                                    <br />
-                                    <br />
-                                    <b>Morena consiglia Animal House</b>
-                                </div>
-
-                            </div>
-                            <div class="card carousel-card text-center d-flex flex-column align-items-center">
-                                <img src="~/Content/ImgsLayout/scottish.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <cite>“Ho portato il mio shitzu e mi sono trovata bene… accoglienza e professionalità ottime. Grazie per la pazienza che avete avuto con la mia bimba cieca e con dermatite” </cite>                                    <br />
-                                    <br />
-                                    <br />
-                                    <b>Lorena consiglia Animal House</b>
-                                </div>
-                            </div>
-                            <div class="card carousel-card text-center d-flex flex-column align-items-center">
-                                <img src="~/Content/ImgsLayout/chihuahua.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <cite>“Interessanti i workshop aperti al pubblico, che ritengo un mezzo efficace per rafforzare i rapporti cliente/personale e per/compagno umano ”</cite>                                    <br />
-                                    <br />
-                                    <br />
-                                    <b>Antonella consiglia Animal House</b>
-                                </div>
-                            </div>
-                            <div class="card carousel-card text-center d-flex flex-column align-items-center">
-                                <img src="~/Content/ImgsLayout/jackrussel.jpg" class="card-img-top rounded-circle mt-5" alt="immagine1">
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <cite>“Straconsigliato! Ad aprile scorso la mia gatta è volata sul ponte, ora ne ho un altra, di 15 anni, si prendono cura di lei… come fosse la loro! per citare un servizio compreso nel pacchetto benessere, gli esami del sangue… migliori di quelli che faccio io. Avrei voluto scoprirla prima…” </cite>                                    <br />
-                                    <br />
-                                    <br />
-                                    <b>Paolo consiglia Animal House</b>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
-           
-        
+        </div>
 
 
-</main>
+
+
+    </main>
     <!--Main layout-->
 
 
