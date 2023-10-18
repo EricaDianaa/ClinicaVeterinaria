@@ -35,6 +35,7 @@ namespace ClinicaVeterinaria.Models
 
         [Column(TypeName = "date")]
         [Display(Name = "Data di nascita")]
+        [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString ="{0:d}")]
         public DateTime? DataNascita { get; set; }
 
         public bool? Microchip { get; set; }
