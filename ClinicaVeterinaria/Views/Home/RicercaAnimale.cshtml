@@ -27,6 +27,10 @@
     </div>
 </div>
 
+<div class="row" id="List2">
+
+</div>
+
 <div class="d-md-flex">
 
     <div class="container">
@@ -45,8 +49,9 @@
 
 
 </div>
- @if (Session["NessunAnimale"] != null){
-     <h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>
+@if (Session["NessunAnimale"] != null)
+{
+    <h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>
 }
 
 
@@ -64,16 +69,27 @@
                     data: { NumeroMicrochip: valore },
                     success: function (data) {
                         console.log(data)
-                        $.each(data, function (i, v) {
+                        if (data.length > 0) {
+                            $.each(data, function (i, v) {
 
-                            var Foto;
-                            if (v.Foto == null) {
-                                Foto = "<img src='https://www.comune.marzabotto.bo.it/servizi/funzioni/download.aspx?id=4148&idc=2764' class='img-fluid' />";
-                            }
-                            else {
+                                var Foto;
+                                if (v.Foto == null) {
+                                    Foto = "<img src='https://www.comune.marzabotto.bo.it/servizi/funzioni/download.aspx?id=4148&idc=2764' class='img-fluid' />";
+                                }
+                                else {
 
-                                Foto = "<img src='Content/ImgProgetto " + v.Foto + "' class='img-fluid'/>"
-                            }
+                                    Foto = "<img src='Content/ImgProgetto " + v.Foto + "' class='img-fluid'/>"
+                                }
+
+                                var Nome
+                                if (v.NomeProprietario != null) {
+                                    Nome = "<p><strong>Nome proprietario:</strong>" + v.NomeProprietario + "</p>" +
+                                        " <p><strong>Cognome proprietario:</strong>" + v.CognomeProprietario + "</p>";
+                                }
+                                else {
+
+                                    Nome = "  <p>Proprietario non identificato o appartenente al comune</p>";
+                                }
 
                                 var licurrent =
                                     "  <div class='d-flex flex-column text-center'>" +
@@ -88,9 +104,8 @@
                                     "  <div class='card-body'>" +
                                     "  <h5 class='card-title'>" + v.Nome + "</h5>" +
                                     "<div class='card-text'>" +
-                                    "  <p><strong>Nome proprietario:</strong>" + v.NomeProprietario + "</p>" +
-                                    " <p><strong>Cognome proprietario:</strong>" + v.CognomeProprietario + "</p>" +
-                                    " <p><strong>Data di nascita:</strong>" + v.DataNascitaString + "</p>" +    
+                                    Nome +
+                                    " <p><strong>Data di nascita:</strong>" + v.DataNascitaString + "</p>" +
                                     "<p> <strong>Data inizio ricovero:</strong>" + v.DataInizioRicoveroString + "</p > " +
                                     "<p><strong>Colore del pelo:</strong>" + v.ColoreMantello + "</p>" +
                                     "<p><strong>Tipologia:</strong>" + v.TipologiaNome + "</p>" +
@@ -101,12 +116,22 @@
                                     " </div>" +
                                     "</div>"
                                 $("#List1").html(licurrent);
-                            
-                            
-                        })
+
+                               
+                                $("#List2").html("");
+                            })
+                        }
+                        else {
+                            var item = "<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>";
+                            var i= ""
+                            $("#List2").html(item);
+                            $("#List1").html(i);
+                        }
+
                     }
 
                 })
+
 
             })
 
@@ -116,10 +141,14 @@
                 $.ajax({
                     method: "GET",
                     url: "RicercaAnimale2",
+
+
                     success: function (data) {
+                        $("#List").html("")
                         console.log("Visite", data)
-                        $.each(data, function (index, v) {
-                          
+                        if (data.length > 0) {
+                            $.each(data, function (index, v) {
+
                                 var licurrent = " <div class='d-flex flex-column mt-4'>" +
                                     "<h2 class='text-center text - black'>Visite</h2>" +
                                     "<table class='table table-bordered border-dark'>" +
@@ -136,7 +165,8 @@
                                 $("#List").append(licurrent)
 
 
-                        });
+                            });
+                        }
                     }
                 })
             })
