@@ -16,7 +16,7 @@ namespace ClinicaVeterinaria.Controllers
 
             return View();
         }
-
+        
        // -------------RicercaAnimale----------
         public ActionResult RicercaAnimale()
         {
@@ -62,8 +62,7 @@ namespace ClinicaVeterinaria.Controllers
             }
           
             }
-           
-           
+
             return Json(visite,JsonRequestBehavior.AllowGet);
         }
       
