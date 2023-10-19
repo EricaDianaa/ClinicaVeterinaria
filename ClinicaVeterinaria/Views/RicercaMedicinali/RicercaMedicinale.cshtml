@@ -1,4 +1,4 @@
-﻿@using ClinicaVeterinaria.Models 
+﻿@model ClinicaVeterinaria.Models.Prodotti 
 @{
     ViewBag.Title = "RicercaMedicinale";
 }
@@ -29,9 +29,16 @@
 </div>
 <div class="container d-flex flex-column justify-content-center mx-auto mt-3">
     <h2 class="text-center">Ricerca medicinali</h2>
-    <input type="text" name="IdProdotti" id="Input2" class=" mx-auto form-control mt-3" />
-    <button class="btn btn-primary mx-auto text-center" id="Cerca2">Cerca</button>
 
+    <div class="form-group d-flex flex-column justify-content-center mx-auto">
+        @Html.LabelFor(model => model.IdProdotto, "Medicinale", htmlAttributes: new { @class = " control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("IdProdotti", null, htmlAttributes: new { @class = "", id = "Dropdown" })
+            @Html.ValidationMessageFor(model => model.IdProdotto, "", new { @class = "text-danger" })
+            <button class="btn btn-primary mx-auto text-center" id="Cerca2">Cerca</button>
+        </div>
+    </div>
+    
     <div class="container  d-flex flex-column justify-content-center mx-auto mt-3">
 
         <div class="row" id="List2">
@@ -90,7 +97,7 @@
             })
 
             $("#Cerca2").click(function () {
-                var valore = $("#Input2").val()
+                var valore = $("#Dropdown").val()
                 console.log(valore)
                 $.ajax({
                     method: "POST",
@@ -100,9 +107,17 @@
                         $("#List2").html("");
                         console.log(data)
 
-                        var licurrent = "<p class='text-center'>Il medicinale è nel cassetto<strong> " + data.NomeCassetto + "</strong> dentro l'armadietto <strong> " + data.Armadietto +"</strong></p>";
-                                
+                        if (data.NomeCassetto != null) {
+                            var licurrent = "<p class='text-center'>Il medicinale è nel cassetto<strong> " + data.NomeCassetto + "</strong> dentro l'armadietto <strong> " + data.Armadietto + "</strong></p>";
                             $("#List2").html(licurrent);
+                        }
+                       else {
+                            var licurrent = "<p class='text-center'>Il medicinale non è presente in nessun cassetto</p>";
+                            $("#List2").html(licurrent);
+                        }
+                      
+                                
+                           
                     }
 
                 })
