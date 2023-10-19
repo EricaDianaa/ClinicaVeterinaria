@@ -31,7 +31,6 @@ namespace ClinicaVeterinaria.Models
         public string Nome { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string Descrizione { get; set; }
 
         public int Quantita { get; set; }

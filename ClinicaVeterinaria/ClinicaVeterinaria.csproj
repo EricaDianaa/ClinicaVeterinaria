@@ -202,6 +202,10 @@
     <Compile Include="Migrations\202310181040215_ProdottiPrezzo.designer.cs">
       <DependentUpon>202310181040215_ProdottiPrezzo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310190849259_visita_vet_prodotti_dettagli.cs" />
+    <Compile Include="Migrations\202310190849259_visita_vet_prodotti_dettagli.designer.cs">
+      <DependentUpon>202310190849259_visita_vet_prodotti_dettagli.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnimaliRicoverati.cs" />
     <Compile Include="Models\Armadietti.cs" />
@@ -407,6 +411,7 @@
     </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\JavaScript2.js" />
+    <Content Include="Scripts\JavaScriptAnimal.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
@@ -551,6 +556,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310181040215_ProdottiPrezzo.resx">
       <DependentUpon>202310181040215_ProdottiPrezzo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310190849259_visita_vet_prodotti_dettagli.resx">
+      <DependentUpon>202310190849259_visita_vet_prodotti_dettagli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\ClinicaVeterinaria.Migrations.Inital.resources" />
   </ItemGroup>
