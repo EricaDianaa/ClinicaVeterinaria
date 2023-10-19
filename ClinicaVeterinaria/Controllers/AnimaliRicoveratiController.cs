@@ -76,7 +76,16 @@ namespace ClinicaVeterinaria.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             AnimaliRicoverati animaliRicoverati = db.AnimaliRicoverati.Find(id);
+            if(animaliRicoverati.Foto != null)
+            {
+
             TempData["NomeImmagine"] = animaliRicoverati.Foto;
+            }
+            else
+            {
+
+            TempData["NomeImmagine"] = "";
+            }
             if (animaliRicoverati == null)
             {
                 return HttpNotFound();
