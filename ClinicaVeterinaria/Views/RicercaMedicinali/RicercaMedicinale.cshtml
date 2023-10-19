@@ -1,4 +1,5 @@
-﻿@{
+﻿@using ClinicaVeterinaria.Models 
+@{
     ViewBag.Title = "RicercaMedicinale";
 }
 
@@ -25,57 +26,88 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container d-flex flex-column justify-content-center mx-auto mt-3">
+    <h2 class="text-center">Ricerca medicinali</h2>
+    <input type="text" name="IdProdotti" id="Input2" class=" mx-auto form-control mt-3" />
+    <button class="btn btn-primary mx-auto text-center" id="Cerca2">Cerca</button>
+
+    <div class="container  d-flex flex-column justify-content-center mx-auto mt-3">
+
+        <div class="row" id="List2">
+        </div>
     </div>
-    @section scripts {
-        <script type="text/javascript">
+</div>
+@section scripts {
+    <script type="text/javascript">
 
-            $(document).ready(function () {
+        $(document).ready(function () {
 
-                $("#Cerca").click(function () {
-                    var valore = $("#Input").val()
-                    console.log("val" + valore)
-                    $.ajax({
-                        method: "POST",
-                        url: "/RicercaMedicinali/RicercaMedicinaleData",
-                        data: { DataVendita: valore },
-                        success: function (data) {
-                            if (data.length > 0) {
+            $("#Cerca").click(function () {
+                var valore = $("#Input").val()
+                console.log("val" + valore)
+                $.ajax({
+                    method: "POST",
+                    url: "/RicercaMedicinali/RicercaMedicinaleData",
+                    data: { DataVendita: valore },
+                    success: function (data) {
+                        if (data.length > 0) {
 
-                                $.each(data, function (index, item) {
-                                    $("#List").append("<li>Nome cliente: " + item.Nome + " - Ricetta: " + item.Ricetta + "</li>")
-                                });
-                            } else {
-                                $("#List").append("<li>Nessuna vendita alla data ricercata</li>")
-                            }
+                            $.each(data, function (index, item) {
+                                $("#List").append("<li>Nome cliente: " + item.Nome + " - Ricetta: " + item.Ricetta + "</li>")
+                            });
+                        } else {
+                            $("#List").append("<li>Nessuna vendita alla data ricercata</li>")
                         }
-                    })
-
+                    }
                 })
 
-                $("#Cerca1").click(function () {
-                    var valore = $("#Input1").val()
-                    console.log(valore)
-                    $.ajax({
-                        method: "POST",
-                        url: "RicercaMedicinaleCF",
-                        data: { CodiceFiscale: valore },
-                        success: function (data) {
-                            $("#List1").html("");
-                            $.each(data, function (i, v) {
-                                console.log("DataVendita: " + v.DataVendita)
-                                var licurrent =
-                                    "<table class='table table-bordered border-dark bg-body mt-3'> <thead> <tr> <th scope='col'>IdVisita</th>  <th scope='col'>NumeroRicetta</th><th scope='col'>Data vendita</th></tr></thead> <tbody><tr> " +
-                                    "<td>" + v.IdVendita + "</td> " +
-                                    "<td>" + v.NumeroRicetta + "</td> " +
-                                    "<td>" + v.DateVenditaString + "</td> " +
-                                    "</tr></tbody></table>";
-                                $("#List1").append(licurrent);
-                            })
-                        }
-
-                    })
-
-                })
             })
-        </script>
-    }
+
+            $("#Cerca1").click(function () {
+                var valore = $("#Input1").val()
+                console.log(valore)
+                $.ajax({
+                    method: "POST",
+                    url: "RicercaMedicinaleCF",
+                    data: { CodiceFiscale: valore },
+                    success: function (data) {
+                        $("#List1").html("");
+                        $.each(data, function (i, v) {
+                            console.log("DataVendita: " + v.DataVendita)
+                            var licurrent =
+                                "<table class='table table-bordered border-dark bg-body mt-3'> <thead> <tr> <th scope='col'>IdVisita</th>  <th scope='col'>NumeroRicetta</th><th scope='col'>Data vendita</th></tr></thead> <tbody><tr> " +
+                                "<td>" + v.IdVendita + "</td> " +
+                                "<td>" + v.NumeroRicetta + "</td> " +
+                                "<td>" + v.DateVenditaString + "</td> " +
+                                "</tr></tbody></table>";
+                            $("#List1").append(licurrent);
+                        })
+                    }
+
+                })
+
+            })
+
+            $("#Cerca2").click(function () {
+                var valore = $("#Input2").val()
+                console.log(valore)
+                $.ajax({
+                    method: "POST",
+                    url: "RicercaMedicinaleCasetto",
+                    data: { IdProdotti: valore },
+                    success: function (data) {
+                        $("#List2").html("");
+                        console.log(data)
+
+                        var licurrent = "<p class='text-center'>Il medicinale è nel cassetto<strong> " + data.NomeCassetto + "</strong> dentro l'armadietto <strong> " + data.Armadietto +"</strong></p>";
+                                
+                            $("#List2").html(licurrent);
+                    }
+
+                })
+
+            })
+        })
+    </script>
+}
