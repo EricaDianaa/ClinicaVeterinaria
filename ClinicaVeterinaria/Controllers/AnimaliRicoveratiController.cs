@@ -44,7 +44,7 @@ namespace ClinicaVeterinaria.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(/*[Bind(Include = "IdAnimali,DataRegistrazione,Nome,Tipologia,ColoreMantello,DataNascita,Microchip,NumeroMicrochip,NomeProprietario,CognomeProprietario,IsComune,Foto,DataInizioRicovero,IdUtente")] */AnimaliRicoverati animaliRicoverati, HttpPostedFileBase foto)
+        public ActionResult Create(AnimaliRicoverati animaliRicoverati, HttpPostedFileBase foto)
         {
             if (ModelState.IsValid)
             {

@@ -169,6 +169,7 @@
     <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
     <Compile Include="Controllers\CatalogoProdottiController.cs" />
     <Compile Include="Controllers\ChiSiamoController.cs" />
+    <Compile Include="Controllers\ComuneController.cs" />
     <Compile Include="Controllers\DettagliController.cs" />
     <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Models\Carrello.cs" />
     <Compile Include="Models\Cassetti.cs" />
     <Compile Include="Models\Cassetto_Prodotti.cs" />
+    <Compile Include="Models\ComuneVisiteRisp.cs" />
     <Compile Include="Models\Dettagli.cs" />
     <Compile Include="Models\Ditte.cs" />
     <Compile Include="Models\ElencoMedicinaliVenduti.cs" />
@@ -373,6 +375,7 @@
     </Content>
     <Content Include="Content\Immagini\UsiProdotti.png" />
     <Content Include="Content\Immagini\VisitaVeterinaria.png" />
+    <Content Include="Content\Immagini\visiteComunali.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -526,6 +529,7 @@
     <Content Include="Views\Admin\Cassa.cshtml" />
     <Content Include="Views\ChiSiamo\Index.cshtml" />
     <Content Include="Views\Home\RicercaAnonimaDaChip.cshtml" />
+    <Content Include="Views\Comune\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

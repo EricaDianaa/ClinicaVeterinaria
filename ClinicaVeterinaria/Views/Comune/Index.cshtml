@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Visite Comune</h2>
+
+<button id="btnComune">Visite comune</button>
+
+<div id="append">
+    
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnComune").click(function () {
+                $.ajax({
+                    method: "POST",
+                    url: "ComuneVisite",
+                    success: function (data) {
+                        console.log(data)
+                        $.each(data, function (index, v) {
+                            var licurrent = " <div class='d-flex flex-column mt-4'>" +
+                                "<table class='table table-bordered border-dark'>" +
+                                "<thead>" +
+                                "<tr class='bg-info'>" +
+                                "<th scope='col'>Nome Animale</th>" +
+                                "<th scope='col'>Tipologia</th>" +
+                                "<th scope='col'>Data inizio ricovero</th>" +
+                                "<th scope='col'>Descrizione</th></tr></thead> <tbody><tr>" +
+                                "<th scope='row'>" + v.NomePaziente + "</th>" +
+                                "<td>" + v.Tipologia + "</td>" +
+                                "<td>" + v.DataInizio + "</td>" +
+                                "<td>" + v.DescrizioneVisita + "</td></tr></tbody></table></div>";
+                            $("#append").append(licurrent)
+                        });
+                    }
+                })
+            })
+        })
+
+
+    </script>
+    
+    
+    }
