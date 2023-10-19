@@ -225,6 +225,7 @@
     <Compile Include="Models\UsiDisponibili.cs" />
     <Compile Include="Models\Utenti.cs" />
     <Compile Include="Models\Vendite.cs" />
+    <Compile Include="Models\VenditeDaCodFisc.cs" />
     <Compile Include="Models\VisiteVeterinarie.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

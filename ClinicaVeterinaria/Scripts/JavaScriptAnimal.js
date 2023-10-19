@@ -84,7 +84,7 @@
                     })
                 }
                 else {
-                    $("#List1").html("<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>");
+                    $("#List1").html("<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun paziente trovato</h2>");
                     $("#List").html("");
                 }
             }

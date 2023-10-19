@@ -5,7 +5,7 @@
 }
 
 <div class="form-horizontal  mx-auto align-items-center justify-content-around mt-3 d-flex text-center ">
-    <img class="w-50 p-3 rounded-5" src="https://www.animalidacompagnia.it/wp-content/uploads/2022/03/animali-da-compagnia-quali-sono.jpg" alt="Alternate Text" />
+    <img class="w-50 p-3 rounded-5 d-none d-md-block" src="https://www.animalidacompagnia.it/wp-content/uploads/2022/03/animali-da-compagnia-quali-sono.jpg" alt="Alternate Text" />
 
     <div class="">
         <h2>Hai smarrito il tuo animale?</h2>
@@ -95,8 +95,7 @@
                             })
                         }
                         else {
-                            var item = "<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>";
-                            $("#Resp").html("");
+                            $("#Resp").html("<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun animale trovato</h2>");
                         }
 
                     }
