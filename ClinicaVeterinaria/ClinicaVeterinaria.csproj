@@ -347,9 +347,21 @@
     <Content Include="Content\ImgsLayout\siamese.jpg" />
     <Content Include="Content\ImgsLayout\storie.jpg" />
     <Content Include="Content\ImgsLayout\vaccini.png" />
+    <Content Include="Content\Immagini\AddAnimale.png" />
+    <Content Include="Content\Immagini\AddAziende.png" />
+    <Content Include="Content\Immagini\AddTipologia.png" />
+    <Content Include="Content\Immagini\addUtente.png" />
+    <Content Include="Content\Immagini\AddVisita.png" />
+    <Content Include="Content\Immagini\armadietto.png" />
+    <Content Include="Content\Immagini\cassa.png" />
+    <Content Include="Content\Immagini\cassa1.png" />
+    <Content Include="Content\Immagini\cassetto.png" />
     <Content Include="Content\Immagini\DogDaycare.png" />
     <Content Include="Content\Immagini\ImmagineRegister.png" />
     <Content Include="Content\Immagini\pexels-barnabas-davoti-11106411.jpg" />
+    <Content Include="Content\Immagini\prodotti.png" />
+    <Content Include="Content\Immagini\ProdottiUsi.png" />
+    <Content Include="Content\Immagini\search.png" />
     <Content Include="Content\Immagini\sfondoLogin.png" />
     <Content Include="Content\Immagini\user-icon.png" />
     <Content Include="Content\customStyle.css">
@@ -358,6 +370,8 @@
     <Content Include="Content\customStyle.min.css">
       <DependentUpon>customStyle.css</DependentUpon>
     </Content>
+    <Content Include="Content\Immagini\UsiProdotti.png" />
+    <Content Include="Content\Immagini\VisitaVeterinaria.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
