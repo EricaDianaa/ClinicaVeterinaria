@@ -39,21 +39,16 @@
                     <img src="~/content/ImgsLayout/logosfondoblu.png" alt="Logo" style="max-height:140px;">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                         <li class="nav-item active ">
-                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Home |", "Index", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        
+                        <li> @Html.ActionLink("Menu Admin |", "AdminMenu", "Admin", null, new { @class = "nav-link" })</li>
+                        <li> @Html.ActionLink("Cassa |", "Cassa", "Admin", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Ricerca Animale |", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Chi siamo", "Index", "ChiSiamo", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
-                        </li>
-                        <li> @Html.ActionLink("Admin", "AdminMenu", "Admin", null, new { @class = "nav-link" })</li>
-                        <li> @Html.ActionLink("Cassa", "Cassa", "Admin", null, new { @class = "nav-link" })</li>
-                        <li class="nav-item">
-                            @Html.ActionLink("RicercaAnimale", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("RicercaMedicinale", "RicercaMedicinale", "RicercaMedicinali", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Ricerca Medicinale", "RicercaMedicinale", "RicercaMedicinali", null, new { @class = "nav-link" })
                         </li>
                     </ul>
 
@@ -92,16 +87,19 @@
                     <img src="~/content/ImgsLayout/logosfondoblu.png" alt="Logo" style="max-height:140px;">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                         <li class="nav-item active ">
-                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Home |", "Index", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Chi siamo", "Index", "ChiSiamo", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Chi siamo |", "Index", "ChiSiamo", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Servizi offerti |", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Ricerca Animale", "RicercaAnonimaDaChip", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Ricerca Animale |", "RicercaAnonimaDaChip", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Catalogo Prodotti", "Index", "CatalogoProdotti", null, new { @class = "nav-link" })
                         </li>
                     </ul>
                     <ul class="navbar-nav d-flex flex-row">
@@ -136,16 +134,16 @@
                     <img src="~/content/ImgsLayout/logosfondoblu.png" alt="Logo" style="max-height:140px;">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                         <li class="nav-item active ">
-                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Home |", "Index", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Chi siamo", "Index", "ChiSiamo", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Chi siamo |", "Index", "ChiSiamo", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Servizi offerti |", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Ricerca Animale", "RicercaAnonimaDaChip", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Ricerca Animale |", "RicercaAnonimaDaChip", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
                             @Html.ActionLink("Catalogo Prodotti", "Index", "CatalogoProdotti", null, new { @class = "nav-link" })
@@ -174,12 +172,12 @@
 
     <div>
         @RenderBody()
-        <hr />
+        
         <footer>
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                <p>&copy; @DateTime.Now.Year - Animal House - ASP.NET - EPICODE</p>
-                <p>Progetto Build Week Team 4  </p>
+                <p>&copy; @DateTime.Now.Year - Animal House - ASP.NET - EPICODE </p>
+                <p>Progetto Build Week Team 4 - Applicativo creato a puro scopo didattico </p>
 
                 <hr>
                 <h5>Chi siamo</h5>

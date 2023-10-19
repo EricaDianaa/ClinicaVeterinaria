@@ -1,14 +1,15 @@
 ﻿<div class="row row-cols-1 row-cols-md-3 container-fluid mt-3 cassa">
     <div class="col">
         @{
+            Html.RenderAction("CreaCarrello", "Carrello");
+        }
+    </div>    
+    <div class="col">
+        @{
             Html.RenderAction("Create", "Vendite");
         }
     </div>
-    <div class="col">
-        @{
-            Html.RenderAction("CreaCarrello", "Carrello");
-        }
-    </div>
+    
     <div class="col">
         @{
             Html.RenderAction("MostraCarrello", "Carrello");

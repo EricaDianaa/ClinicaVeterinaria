@@ -10,14 +10,19 @@
         @foreach (var prodotto in Model)
         {
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height:35vh">
                     <div class="card-body">
-                        <h5 class="card-title">@prodotto.Nome</h5>
-                        <p class="card-text">
+                        <h2 class="card-title">@prodotto.Nome</h2>
+                        <p class="card-text ">
                             <strong>Tipo:</strong> @prodotto.Tipo<br />
-                            <strong>Descrizione:</strong> @prodotto.Descrizione<br />
+                            <hr />
                             <strong>Ditta:</strong> @prodotto.Ditte.Nome<br />
+                            <hr />
                             <strong>Quantità:</strong> @prodotto.Quantita
+                            <hr />
+                            <strong>Descrizione:</strong> @prodotto.Descrizione<br />
+                            
+
                         </p>
                     </div>
                 </div>

@@ -2,44 +2,48 @@
 @{
     ViewBag.Title = "RicercaMedicinale";
 }
+<div class="d-flex flex-column justify-content-between">
+    <div class="row row-cols-2 container justify-content-center m-auto mt-3 text-center">
+        <div class="col">
+            <h2>Ricerca vendite per data</h2>
+            <input type="date" name="DataVendita" id="Input" class="form-control mt-3 mx-auto" />
+            <button class="btn btn-primary" id="Cerca">Cerca</button>
 
-<div class="row row-cols-2 container justify-content-center m-auto mt-3 text-center">
-    <div class="col">
-        <h2>Ricerca vendite per data</h2>
-        <input type="date" name="DataVendita" id="Input" class="form-control mt-3 mx-auto" />
-        <button class="btn btn-primary" id="Cerca">Cerca</button>
+            <div class="container">
 
-        <div class="container">
-
-            <ul class="mt-2" id="List">
-            </ul>
+                <ul class="mt-2" id="List">
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="col">
-        <h2>Ricerca vendite per codice fiscale</h2>
-        <input type="text" name="CodiceFiscale" id="Input1" class="form-control mx-auto mt-3" />
-        <button class="btn btn-primary " id="Cerca1">Cerca</button>
+        </div>
+        <div class="row row-cols-2 container justify-content-center m-auto mt-3 text-center">
 
-        <div class="container">
-            <div class="row" id="List1">
+        <div class="col">
+            <h2>Ricerca vendite per codice fiscale</h2>
+            <input type="text" name="CodiceFiscale" id="Input1" class="form-control mx-auto mt-3" />
+            <button class="btn btn-primary " id="Cerca1">Cerca</button>
+
+            <div class="container">
+                <div class="row" id="List1">
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container d-flex flex-column justify-content-center mx-auto mt-3">
-    <h2 class="text-center">Ricerca medicinali</h2>
+    <div class="container d-flex flex-column justify-content-center mx-auto mt-3">
+        <h2 class="text-center">Ricerca medicinali</h2>
 
-    <div class="form-group mx-auto">
-        @Html.LabelFor(model => model.IdProdotto, "Medicinale", htmlAttributes: new { @class = " control-label col-md-2" })
-        <div class=" d-flex  justify-content-center align-items-center">
-            @Html.DropDownList("IdProdotti", null, htmlAttributes: new { @class = "", id = "Dropdown" })
-            @Html.ValidationMessageFor(model => model.IdProdotto, "", new { @class = "text-danger" })
-            <button class="btn btn-primary mx-auto text-center ms-2" id="Cerca2">Cerca</button>
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.IdProdotto, "Medicinale", htmlAttributes: new { @class = " control-label col-md-2" })
+            <div class=" d-flex  justify-content-center align-items-center">
+                @Html.DropDownList("IdProdotti", null, htmlAttributes: new { @class = "", id = "Dropdown" })
+                @Html.ValidationMessageFor(model => model.IdProdotto, "", new { @class = "text-danger" })
+                <button class="btn btn-primary mx-auto text-center ms-2" id="Cerca2">Cerca</button>
+            </div>
         </div>
-    </div>
-    
-    <div class="container  d-flex flex-column justify-content-center mx-auto mt-3">
-        <div class="row" id="List2">
+
+        <div class="container  d-flex flex-column justify-content-center mx-auto mt-3">
+            <div class="row" id="List2">
+            </div>
         </div>
     </div>
 </div>
