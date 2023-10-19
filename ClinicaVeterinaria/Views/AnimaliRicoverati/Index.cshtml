@@ -15,15 +15,18 @@
         <section class="text-center">
             <h4 class="mb-5 text-primary"><strong>Animali anagrafati</strong></h4>
             <div class="row">
+                <p class="text-center">
+                    @Html.ActionLink("Registra nuovo animale", "Create")
+                </p>
                 @foreach (var a in Model)
                 {
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <div class="card">
-                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="~/Content/ImgProgetto/@a.Foto" class="img-fluid" />
-                                <a href="#!">
+                    <div class="col-lg-4 col-md-12 mb-4 ">
+                        <div class="card h-100 d-flex flex-column justify-content-between">
+                            <div class="bg-image hover-overlay ripple"  data-mdb-ripple-color="light">
+                                <img src="~/Content/ImgProgetto/@a.Foto" class="img-fluid"  />
+                                
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                </a>
+                                
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Nome: <strong>@a.Nome</strong></h3>
@@ -39,9 +42,7 @@
                     </div>
                 }
             </div>
-            <p class="text-center">
-                @Html.ActionLink("Registra nuovo animale", "Create")
-            </p>
+            
 
         </section>
         <!--Section: Content-->
