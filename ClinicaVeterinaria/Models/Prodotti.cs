@@ -31,11 +31,10 @@ namespace ClinicaVeterinaria.Models
         public string Nome { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string Descrizione { get; set; }
-
+        [Display(Name = "Quantità")]
         public int Quantita { get; set; }
-
+        [Display(Name = "Ditta")]
         public int IdDitta { get; set; }
 
         public decimal Prezzo { get; set; }

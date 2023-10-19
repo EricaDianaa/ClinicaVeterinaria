@@ -10,9 +10,9 @@ namespace ClinicaVeterinaria.Models
     {
         [Key]
         public int IdCassettoProdotti { get; set; }
-
+        [Display(Name = "Cassetto")]
         public int IdCassetto { get; set; }
-
+        [Display(Name = "Prodotto")]
         public int IdProdotti { get; set; }
         [NotMapped]
         public string NomeCassetto { get; set; }

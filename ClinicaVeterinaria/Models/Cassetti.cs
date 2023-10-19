@@ -17,9 +17,9 @@ namespace ClinicaVeterinaria.Models
 
         [Key]
         public int IdCassetto { get; set; }
-
+        [Display(Name = "Armadietto")]
         public int IdArmadietto { get; set; }
-
+        [Display(Name = "Nome Cassetto")]
         public string NomeCassetto { get; set; }
 
         public virtual Armadietti Armadietti { get; set; }
