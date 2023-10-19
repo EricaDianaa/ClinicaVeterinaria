@@ -14,6 +14,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Armadietti.CodiceArmadietto)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCassetto)
+        </th>
         <th></th>
     </tr>
 
@@ -23,9 +26,12 @@
             @Html.DisplayFor(modelItem => item.Armadietti.CodiceArmadietto)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdCassetto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdCassetto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdCassetto })
+            @Html.DisplayFor(modelItem => item.NomeCassetto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdCassetto }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IdCassetto }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdCassetto })
         </td>
     </tr>
 }

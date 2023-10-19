@@ -9,13 +9,19 @@
 <div>
     <h4>Cassetti</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="">
         <dt>
             @Html.DisplayNameFor(model => model.Armadietti.CodiceArmadietto)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCassetto)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Armadietti.CodiceArmadietto)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.NomeCassetto)
         </dd>
 
     </dl>
