@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
@@ -23,9 +23,9 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdTipologia }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdTipologia }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdTipologia })
+            @Html.ActionLink("Modifica", "Edit", new { id=item.IdTipologia }) |
+            @Html.ActionLink("Dettagli", "Details", new { id=item.IdTipologia }) |
+            @Html.ActionLink("Elimina", "Delete", new { id=item.IdTipologia })
         </td>
     </tr>
 }
