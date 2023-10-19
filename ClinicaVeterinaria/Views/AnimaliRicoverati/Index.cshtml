@@ -10,7 +10,7 @@
 
 <!--Main layout-->
 <main class="my-5">
-    <div class="container">
+    <div >
         <!--Section: Content-->
         <section class="text-center">
             <h4 class="mb-5 text-primary"><strong>Animali anagrafati</strong></h4>
@@ -20,10 +20,10 @@
                 </p>
                 @foreach (var a in Model)
                 {
-                    <div class="col-lg-4 col-md-12 mb-4 ">
+                    <div class="col-xxl-3 col-xl-6 col-lg-12 mb-5 ">
                         <div class="card h-100 d-flex flex-column justify-content-between">
                             <div class="bg-image hover-overlay ripple"  data-mdb-ripple-color="light">
-                                <img src="~/Content/ImgProgetto/@a.Foto" class="img-fluid"  />
+                                <img src="~/Content/ImgProgetto/@a.Foto" class="img-fluid" style="height:25vh" />
                                 
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 
