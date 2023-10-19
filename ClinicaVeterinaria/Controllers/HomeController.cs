@@ -21,8 +21,8 @@ namespace ClinicaVeterinaria.Controllers
         // -------------RicercaAnimale----------
         public ActionResult RicercaAnimale()
         {
-            Session["Animale"] = null;
-            Session["NessunAnimale"] = null;
+            TempData["Animale"] = null;
+            TempData["NessunAnimale"] = null;
             return View();
         }
 
@@ -30,7 +30,7 @@ namespace ClinicaVeterinaria.Controllers
         public JsonResult RicercaAnimale1(AnimaliRicoverati animale)
         {
             AnimaliRicoverati a = db.AnimaliRicoverati.FirstOrDefault(m => m.NumeroMicrochip == animale.NumeroMicrochip);
-            Session["Animale"] = a;
+            TempData["Animale"] = a;
 
             List<AnimaliRicoverati> animal = new List<AnimaliRicoverati>();
             if (a != null)
@@ -40,7 +40,7 @@ namespace ClinicaVeterinaria.Controllers
             }
             else
             {
-                Session["NessunAnimale"] = "null";
+                TempData["NessunAnimale"] = "null";
             }
 
             return Json(animal);
@@ -49,7 +49,7 @@ namespace ClinicaVeterinaria.Controllers
         //ricerca le visite collegate all'animale
         public JsonResult RicercaAnimale2()
         {
-            AnimaliRicoverati a = (AnimaliRicoverati)Session["Animale"];
+            AnimaliRicoverati a = (AnimaliRicoverati)TempData["Animale"];
             List<VisiteVeterinarie> v = new List<VisiteVeterinarie>();
             List<VisiteVeterinarie> visite = new List<VisiteVeterinarie>();
             if (a != null)
