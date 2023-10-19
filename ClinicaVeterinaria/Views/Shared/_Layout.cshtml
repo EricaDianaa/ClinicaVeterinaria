@@ -8,7 +8,6 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xM6B5z6W5" crossorigin="anonymous"></script>
-  
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -49,10 +48,11 @@
                             @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
                         </li>
                         <li> @Html.ActionLink("Admin", "AdminMenu", "Admin", null, new { @class = "nav-link" })</li>
+                        <li> @Html.ActionLink("Cassa", "Cassa", "Admin", null, new { @class = "nav-link" })</li>
                     </ul>
 
                     <ul class="navbar-nav d-flex flex-row">
-                        
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 @User.Identity.Name
@@ -99,7 +99,7 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav d-flex flex-row">
-                        
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 @User.Identity.Name
@@ -144,10 +144,9 @@
                         <li class="nav-item">
                             @Html.ActionLink("Catalogo Prodotti", "Index", "CatalogoProdotti", null, new { @class = "nav-link" })
                         </li>
-
                     </ul>
                     <ul class="navbar-nav d-flex flex-row">
-                       
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Accedi
@@ -188,7 +187,6 @@
                 <a class="anchor ms-1" href="https://www.linkedin.com/in/francesco-lettierideveloper/" target="_blank"> Francesco Lettieri </a>  |
                 <i class="fab fa-linkedin"></i>
                 <a class="anchor ms-1" href="https://www.linkedin.com/in/lorenzo-siani-4108381aa/" target="_blank"> Lorenzo Siani </a> <br />
-                
             </div>
             <!-- Copyright -->
         </footer>
