@@ -87,21 +87,22 @@ namespace ClinicaVeterinaria.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(/*[Bind(Include = "IdAnimali,DataRegistrazione,Nome,Tipologia,ColoreMantello,DataNascita,Microchip,NumeroMicrochip,NomeProprietario,CognomeProprietario,IsComune,Foto,DataInizioRicovero,IdUtente")] */AnimaliRicoverati animaliRicoverati, HttpPostedFileBase foto)
+        public ActionResult Edit(AnimaliRicoverati animaliRicoverati, HttpPostedFileBase foto)
         {
             if (ModelState.IsValid)
             {
+                AnimaliRicoverati animali = db.AnimaliRicoverati.Find(animaliRicoverati.IdAnimali);
                 if (foto != null && foto.ContentLength > 0)
                 {
-                    animaliRicoverati.Foto = foto.FileName;
+                    animali.Foto = foto.FileName;
                     string pathToSave = Server.MapPath("~/Content/ImgProgetto/") + foto.FileName;
                     foto.SaveAs(pathToSave);
                 }
                 if (animaliRicoverati.NumeroMicrochip == null)
                 {
-                    animaliRicoverati.NumeroMicrochip = "L'animale non possiede alcun microchip";
+                    animali.NumeroMicrochip = "L'animale non possiede alcun microchip";
                 }
-                db.Entry(animaliRicoverati).State = EntityState.Modified;
+                db.Entry(animali).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -81,7 +81,7 @@ namespace ClinicaVeterinaria.Controllers
                         pr.Quantita -= cartItem.qta;
                         db.Entry(pr).State = EntityState.Modified;
                     }
-
+                    Session.Remove("cart");
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }

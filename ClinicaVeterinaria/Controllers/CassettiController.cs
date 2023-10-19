@@ -49,7 +49,7 @@ namespace ClinicaVeterinaria.Controllers
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdCassetto,IdArmadietto")] Cassetti cassetti)
+        public ActionResult Create(Cassetti cassetti)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace ClinicaVeterinaria.Controllers
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdCassetto,IdArmadietto")] Cassetti cassetti)
+        public ActionResult Edit(Cassetti cassetti)
         {
             if (ModelState.IsValid)
             {
