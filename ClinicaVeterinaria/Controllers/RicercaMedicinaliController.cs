@@ -14,6 +14,7 @@ namespace ClinicaVeterinaria.Controllers
         // GET: RicercaMedicinali
         public ActionResult RicercaMedicinale()
         {
+            ViewBag.IdProdotti = new SelectList(db.Prodotti, "IdProdotto", "Nome");
             return View();
         }
 
@@ -47,12 +48,16 @@ namespace ClinicaVeterinaria.Controllers
         [HttpPost]
         public JsonResult RicercaMedicinaleCasetto(int IdProdotti)
         {
-            ViewBag.Prodotti = new SelectList(db.Prodotti, "Prodotti", "Nome");
+            
             Cassetto_Prodotti cassetto= db.Cassetto_Prodotti.Where(M=>M.IdProdotti == IdProdotti).FirstOrDefault();
-            Cassetti IdArmadietti = db.Cassetti.Where(M => M.IdCassetto ==cassetto.IdCassetto).FirstOrDefault();
+            Cassetto_Prodotti cassetto1 = new Cassetto_Prodotti();
+            if (cassetto != null) {
+             Cassetti IdArmadietti = db.Cassetti.Where(M => M.IdCassetto ==cassetto.IdCassetto).FirstOrDefault();
             Armadietti armadietto=db.Armadietti.Where(m=>m.IdArmadietto==IdArmadietti.IdArmadietto).FirstOrDefault();
             Prodotti p =db.Prodotti.Where(M => M.IdProdotto == IdProdotti).FirstOrDefault();
-            Cassetto_Prodotti cassetto1 = new Cassetto_Prodotti { IdProdotti = cassetto.IdProdotti, IdCassetto = cassetto.IdCassetto, NomeCassetto = cassetto.Cassetti.NomeCassetto,Armadietto=armadietto.CodiceArmadietto,NomeMedicinale=p.Nome };
+             cassetto1 = new Cassetto_Prodotti { IdProdotti = cassetto.IdProdotti, IdCassetto= cassetto.IdCassetto, NomeCassetto = cassetto.Cassetti.NomeCassetto,Armadietto=armadietto.CodiceArmadietto,NomeMedicinale=p.Nome };
+            }
+            
             return Json(cassetto1);
         }
     }
