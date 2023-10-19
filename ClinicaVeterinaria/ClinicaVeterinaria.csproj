@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202310181040215_ProdottiPrezzo.designer.cs">
       <DependentUpon>202310181040215_ProdottiPrezzo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310190849259_visita_vet_prodotti_dettagli.cs" />
+    <Compile Include="Migrations\202310190849259_visita_vet_prodotti_dettagli.designer.cs">
+      <DependentUpon>202310190849259_visita_vet_prodotti_dettagli.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnimaliRicoverati.cs" />
     <Compile Include="Models\Armadietti.cs" />
@@ -544,6 +548,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310181040215_ProdottiPrezzo.resx">
       <DependentUpon>202310181040215_ProdottiPrezzo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310190849259_visita_vet_prodotti_dettagli.resx">
+      <DependentUpon>202310190849259_visita_vet_prodotti_dettagli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\ClinicaVeterinaria.Migrations.Inital.resources" />
   </ItemGroup>

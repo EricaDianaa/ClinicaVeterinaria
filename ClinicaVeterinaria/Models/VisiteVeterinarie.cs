@@ -24,7 +24,6 @@ namespace ClinicaVeterinaria.Models
         public string ObiettivoEsame { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string Descrizione { get; set; }
 
         public virtual AnimaliRicoverati AnimaliRicoverati { get; set; }
