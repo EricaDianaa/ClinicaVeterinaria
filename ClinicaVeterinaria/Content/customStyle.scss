@@ -1,5 +1,31 @@
 ﻿body {
 }
-.btn{
+
+.card-text-cutter {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.btn {
     margin-top: 0.3em;
+}
+
+.carrello {
+    th{
+        padding: 0.2em;
+    }
+    td {
+        padding: 0.2em;
+        vertical-align: middle;
+        font-size: 1.3em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    a {
+        color: red;
+    }
 }
