@@ -218,6 +218,7 @@
     <Compile Include="Models\ModelDBContext.cs" />
     <Compile Include="Models\Prodotti.cs" />
     <Compile Include="Models\ProdottiUsi.cs" />
+    <Compile Include="Models\RicercaDaChip.cs" />
     <Compile Include="Models\SiteRole.cs" />
     <Compile Include="Models\Tipologia.cs" />
     <Compile Include="Models\User.cs" />
@@ -523,6 +524,7 @@
     <Content Include="Views\CatalogoProdotti\Index.cshtml" />
     <Content Include="Views\Admin\Cassa.cshtml" />
     <Content Include="Views\ChiSiamo\Index.cshtml" />
+    <Content Include="Views\Home\RicercaAnonimaDaChip.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

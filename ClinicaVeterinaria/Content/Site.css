@@ -207,6 +207,23 @@ hr {
         border-bottom-right-radius: 15px;
     }
 }
+
+
+.carosello-chisiamo {
+    background-color: rgb(37, 150, 190);
+    padding: 5px;
+    border-radius: 5px
+}
+
+#contatti {
+    width: 20%;
+    padding: 15px;
+    color: white;
+    height: 50%;
+    border-radius: 5px;
+    background-color: rgb(37, 150, 190);
+}
+}
 .img-width{
     width:80px;
 }

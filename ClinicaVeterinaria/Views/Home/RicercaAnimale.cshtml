@@ -1,13 +1,10 @@
-﻿
-@model ClinicaVeterinaria.Models.AnimaliRicoverati
+﻿@model ClinicaVeterinaria.Models.AnimaliRicoverati
 @{
     ViewBag.Title = "RicercaAnimale";
 
 }
 
-
-
-<div class="form-horizontal  mx-auto align-items-center justify-content-around  d-flex text-center ">
+<div class="form-horizontal  mx-auto align-items-center justify-content-around mt-3 d-flex text-center ">
     <img class="w-50 p-3 rounded-5" src="https://www.animalidacompagnia.it/wp-content/uploads/2022/03/animali-da-compagnia-quali-sono.jpg" alt="Alternate Text" />
 
     <div class="">
@@ -21,41 +18,33 @@
             <div class="d-flex flex-column justify-content-center">
                 <input type="text" name="CodiceFiscale" id="Input1" class=" text-center form-control mx-auto mb-3 mt-3" />
                 <button id="Cerca1" class="btn btn-primary mx-auto mb-3">Cerca</button>
-
             </div>
         </div>
     </div>
 </div>
 
-<div class="row" id="List2">
-
-</div>
+@*<div class="row" id="List2">
+</div>*@
 
 <div class="d-md-flex">
 
     <div class="container">
 
         <div class="row" id="List1">
-
         </div>
     </div>
 
     <div class="container">
 
         <div class="row" id="List">
-
         </div>
     </div>
-
-
 </div>
-@if (Session["NessunAnimale"] != null)
+@*@if (Session["NessunAnimale"] != null)
 {
     <h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>
-}
-
+}*@
 
 @section scripts{
     <script src="~/Scripts/JavaScriptAnimal.js"></script>
 }
-

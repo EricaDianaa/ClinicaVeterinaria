@@ -1,0 +1,110 @@
+﻿@model ClinicaVeterinaria.Models.AnimaliRicoverati
+
+@{
+    ViewBag.Title = "RicercaAnonimaDaChip";
+}
+
+<div class="form-horizontal  mx-auto align-items-center justify-content-around mt-3 d-flex text-center ">
+    <img class="w-50 p-3 rounded-5" src="https://www.animalidacompagnia.it/wp-content/uploads/2022/03/animali-da-compagnia-quali-sono.jpg" alt="Alternate Text" />
+
+    <div class="">
+        <h2>Hai smarrito il tuo animale?</h2>
+        <p>Potrebbe essere ricoverato o al sicuro in una delle nostre cliniche!</p>
+        <p> Inserisci il numero di microchip nel form sottostante </p>
+        <p>
+            Nel caso ci fosse un riscontro positivo contattaci per organizzare il recupero in una delle nostre sedi.
+        </p>
+        <div class="form-group mx-auto">
+            <div class="d-flex flex-column justify-content-center">
+                <input type="text" name="NumeroChip" id="NumeroChip" class=" text-center form-control mx-auto mb-3 mt-3" />
+                <button id="btnChip" class="btn btn-primary mx-auto mb-3">Cerca</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-md-flex">
+
+    <div class="container">
+
+        <div class="row" id="Resp">
+        </div>
+    </div>
+</div>
+@*@if (Session["NessunAnimale"] != null)
+{
+    <h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>
+}*@
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+
+            $("#btnChip").click(function () {
+                var valore = $("#NumeroChip").val()
+                console.log(valore)
+                $.ajax({
+                    method: "POST",
+                    url: "RicercaAnimale1",
+                    data: { NumeroMicrochip: valore },
+                    success: function (data) {
+                        console.log(data)
+                        if (data.length > 0) {
+                            $.each(data, function (i, v) {
+
+                                var Foto;
+                                if (v.Foto == null) {
+                                    Foto = "<img src='https://www.comune.marzabotto.bo.it/servizi/funzioni/download.aspx?id=4148&idc=2764' class='img-fluid' />";
+                                }
+                                else {
+
+                                    Foto = "<img src='/Content/ImgProgetto/" + v.Foto + "' class='img-fluid' />"
+                                }
+
+                                var DatiP
+                                if (v.NomeProprietario != "") {
+                                    DatiP = "<p><strong>Dati proprietario: </strong>" + v.NomeProprietario +" " + v.CognomeProprietario + "</p>";
+                                }
+                                else {
+
+                                    DatiP = "  <p>Proprietario non identificato o appartenente al comune</p>";
+                                }
+
+                                var licurrent =
+                                    "  <div class='d-flex flex-column text-center'>" +
+                                    " <div class='row'>" +
+                                    " <div class=' mb-4 rounded-3 bg-info border border-info mt-4'>" +
+                                    " <div class='card'>" +
+                                    " <div class='bg-image hover-overlay ripple' data-mdb-ripple-color='light'>"
+                                    + Foto
+                                    + " <a href='#!'>" +
+                                    " <div class='mask' style='background-color: rgba(251, 251, 251, 0.15);'></div></a>  </div>" +
+                                    "  <div class='card-body'>" +
+                                    "  <p class='card-title'><strong>Nome animale: </strong>" + v.Nome + "</p>" +
+                                    "<div class='card-text'>" +
+                                    DatiP +
+                                    "<p> <strong>Data inizio ricovero: </strong>" + v.DataInizioRicoveroString + "</p > " +
+                                    "<p><strong>Colore del pelo: </strong>" + v.ColoreMantello + "</p>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    " </div>" +
+                                    " </div>" +
+                                    "</div>"
+                                $("#Resp").html(licurrent);
+                            })
+                        }
+                        else {
+                            var item = "<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>";
+                            $("#Resp").html("");
+                        }
+
+                    }
+
+                })
+
+            })
+
+        })
+    </script>
+}

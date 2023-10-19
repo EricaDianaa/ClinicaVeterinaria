@@ -14,6 +14,12 @@ namespace ClinicaVeterinaria.Models
         public int IdCassetto { get; set; }
         [Display(Name = "Prodotto")]
         public int IdProdotti { get; set; }
+        [NotMapped]
+        public string NomeCassetto { get; set; }
+        [NotMapped]
+        public string NomeMedicinale { get; set; }
+        [NotMapped]
+        public string Armadietto { get; set; }
 
         public virtual Cassetti Cassetti { get; set; }
 
