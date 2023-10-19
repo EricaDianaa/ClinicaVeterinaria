@@ -1,4 +1,4 @@
-﻿@using ClinicaVeterinaria.Models 
+﻿@using ClinicaVeterinaria.Models
 @{
     ViewBag.Title = "RicercaMedicinale";
 }
@@ -21,7 +21,6 @@
         <button class="btn btn-primary" id="Cerca1">Cerca</button>
 
         <div class="container">
-
             <div class="row" id="List1">
             </div>
         </div>
@@ -33,7 +32,6 @@
     <button class="btn btn-primary mx-auto text-center" id="Cerca2">Cerca</button>
 
     <div class="container  d-flex flex-column justify-content-center mx-auto mt-3">
-
         <div class="row" id="List2">
         </div>
     </div>
@@ -66,7 +64,6 @@
 
             $("#Cerca1").click(function () {
                 var valore = $("#Input1").val()
-                console.log(valore)
                 $.ajax({
                     method: "POST",
                     url: "RicercaMedicinaleCF",
@@ -74,20 +71,24 @@
                     success: function (data) {
                         $("#List1").html("");
                         $.each(data, function (i, v) {
-                            console.log("DataVendita: " + v.DataVendita)
+                            console.log("Dati Vendita: " + v.DataAcquisto);
                             var licurrent =
-                                "<table class='table table-bordered border-dark bg-body mt-3'> <thead> <tr> <th scope='col'>IdVisita</th>  <th scope='col'>NumeroRicetta</th><th scope='col'>Data vendita</th></tr></thead> <tbody><tr> " +
-                                "<td>" + v.IdVendita + "</td> " +
+                                "<table class='table table-bordered border-dark bg-body mt-3'> <thead> <tr><th scope='col'>NumeroRicetta</th><th scope='col'>Data vendita</th><th scope='col'>Dettaglio vendita</th></thead> <tbody><tr> " +
                                 "<td>" + v.NumeroRicetta + "</td> " +
-                                "<td>" + v.DateVenditaString + "</td> " +
-                                "</tr></tbody></table>";
+                                "<td>" + v.DataAcquisto + "</td> " +
+                                "<td><ul class='DatiVendita'>" + "DATI DI VENDITA...";
+
+                            $.each(v.ProdottiLista, function (i, prodotto) {
+                                console.log("Prodotto: " + prodotto.Nome);
+                                licurrent += "<li>" + prodotto.Nome + "</li>";
+                            });
+
+                            licurrent += "</ul></td></tr></tbody></table>";
                             $("#List1").append(licurrent);
-                        })
+                        });
                     }
-
-                })
-
-            })
+                });
+            });
 
             $("#Cerca2").click(function () {
                 var valore = $("#Input2").val()
@@ -100,9 +101,9 @@
                         $("#List2").html("");
                         console.log(data)
 
-                        var licurrent = "<p class='text-center'>Il medicinale è nel cassetto<strong> " + data.NomeCassetto + "</strong> dentro l'armadietto <strong> " + data.Armadietto +"</strong></p>";
-                                
-                            $("#List2").html(licurrent);
+                        var licurrent = "<p class='text-center'>Il medicinale è nel cassetto<strong> " + data.NomeCassetto + "</strong> dentro l'armadietto <strong> " + data.Armadietto + "</strong></p>";
+
+                        $("#List2").html(licurrent);
                     }
 
                 })
