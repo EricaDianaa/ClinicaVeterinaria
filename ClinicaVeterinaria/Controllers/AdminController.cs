@@ -19,5 +19,10 @@ namespace ClinicaVeterinaria.Controllers
         {
             return View();
         }
+
+        public ActionResult Cassa()
+        {
+            return View();
+        }
     }
 }

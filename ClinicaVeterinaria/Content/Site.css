@@ -1,10 +1,6 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@400;600&family=Klee+One:wght@400;600&display=swap');
 
-
-
-
-
-Set padding to keep content from hitting the edges 
+Set padding to keep content from hitting the edges
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
@@ -17,17 +13,13 @@ textarea {
     max-width: 280px;
 }
 
-
-
-
 body {
-    font-family: 'Anek Gurmukhi', sans-serif!important;
+    font-family: 'Anek Gurmukhi', sans-serif !important;
     font-size: 1.5em !important
 }
 
-
-h1{
-    font-size:2.5em!important;
+h1 {
+    font-size: 2.5em !important;
     position: relative;
     z-index: 1;
 }
@@ -37,18 +29,16 @@ h2 {
     z-index: 1;
 }
 
-
 .h2index {
     color: rgb(37, 150, 190);
     font-size: 1.8em;
     transform: rotate(-4deg);
-    top: -35px; 
-    z-index: 2; 
+    top: -35px;
+    z-index: 2;
 }
 
-
-.card-razze{
-    height:60vh!important
+.card-razze {
+    height: 60vh !important
 }
 
 /* Height for devices larger than 576px */
@@ -64,17 +54,16 @@ h2 {
 }
 
 nav {
-    height: 170px !important;
+    /*    height: 170px !important;*/
     background-color: rgb(37, 150, 190);
 }
 
-
 .fixed-height-card {
-    height: 750px!important;
+    height: 750px !important;
     width: 350px !important;
     overflow: auto;
-   
 }
+
 @media (min-width: 1025px) {
     .h-custom {
         height: 100vh !important;
@@ -92,15 +81,13 @@ nav {
     top: 13px;
 }
 
-#imgcontainer{
-    width:100%
+#imgcontainer {
+    width: 100%
 }
-
 
 #imgheader {
     max-width: 90%;
-
-   position: relative;
+    position: relative;
 }
 
     #imgheader::before {
@@ -110,9 +97,8 @@ nav {
         right: 0;
         bottom: 0;
         left: 0;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1) 100%), 
-                    linear-gradient(to right, rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1) 100%); 
-        pointer-events: none; 
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1) 100%), linear-gradient(to right, rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1) 100%);
+        pointer-events: none;
     }
 
 #cardheader {
@@ -122,34 +108,26 @@ nav {
 }
 
 hr {
-    height: 2px!important;
-    
+    height: 2px !important;
 }
 
 .cardheadertrio {
     text-align: center;
     width: 80%;
     height: 610px !important;
-    margin-bottom:20%;
+    margin-bottom: 20%;
 }
-
 
 .card-img-top.rounded-circle {
     object-fit: cover;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    
 }
-
 
 .card {
     margin: 0 5px;
 }
-
-
-
-
 
 .carousel-container {
     overflow: hidden;
@@ -169,8 +147,8 @@ hr {
 .carousel-card {
     width: 340px;
     margin-right: 20px;
-    background-color: rgb(37, 150, 190)!important;
-    color:white!important;
+    background-color: rgb(37, 150, 190) !important;
+    color: white !important;
 }
 
 @keyframes scrolling {
@@ -201,17 +179,18 @@ hr {
 }
 
 /*.gradient-custom-2 {*/
-    /* fallback for old browsers */
-    /*background: #a1c4fd;*/
-    /* Chrome 10-25, Safari 5.1-6 */
-    /*background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));*/
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /*background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
+/* fallback for old browsers */
+/*background: #a1c4fd;*/
+/* Chrome 10-25, Safari 5.1-6 */
+/*background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));*/
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
 }*/
 
 .bg-indigo {
     background-color: #2596be;
 }
+
 .card-registration {
     -webkit-box-shadow: -2px 0px 15px 2px #000000 !important;
     box-shadow: -2px 0px 15px 2px #000000 !important;

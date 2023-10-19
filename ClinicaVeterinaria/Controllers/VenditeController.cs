@@ -39,12 +39,18 @@ namespace ClinicaVeterinaria.Controllers
         // GET: Vendite/Create
         public ActionResult Create()
         {
-            ViewBag.IdUtente = new SelectList(db.Utenti, "IdUtente", "Nome");
-            return View();
+            if (Session["cart"] == null)
+            {
+                List<Carrello> carrello = new List<Carrello>();
+                Session["cart"] = carrello;
+            }
+            ViewBag.IdUtente = new SelectList(db.Utenti, "IdUtente", "CodiceFiscale");
+            //return View();
+            return PartialView("Create");
         }
 
         // POST: Vendite/Create
-        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -60,23 +66,25 @@ namespace ClinicaVeterinaria.Controllers
                 }
                 else
                 {
-
-                db.Vendite.Add(vendite);
+                    db.Vendite.Add(vendite);
 
                     List<Carrello> cart = (List<Carrello>)Session["cart"];
-                    foreach(Carrello cartItem in cart)
+                    foreach (Carrello cartItem in cart)
                     {
-                        vendite.Dettagli.Add(new Dettagli { 
-                            IdProdotto = cartItem.IdProduct, 
+                        vendite.Dettagli.Add(new Dettagli
+                        {
+                            IdProdotto = cartItem.IdProduct,
                             Quantita = cartItem.qta,
                             Prezzo = cartItem.Prezzo,
                         });
+                        Prodotti pr = db.Prodotti.Find(cartItem.IdProduct);
+                        pr.Quantita -= cartItem.qta;
+                        db.Entry(pr).State = EntityState.Modified;
                     }
 
                     db.SaveChanges();
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
                 }
-
             }
 
             ViewBag.IdUtente = new SelectList(db.Utenti, "IdUtente", "Nome", vendite.IdUtente);
@@ -100,7 +108,7 @@ namespace ClinicaVeterinaria.Controllers
         }
 
         // POST: Vendite/Edit/5
-        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per la protezione da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per altri dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
