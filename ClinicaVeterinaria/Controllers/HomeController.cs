@@ -60,7 +60,7 @@ namespace ClinicaVeterinaria.Controllers
 
                 foreach (VisiteVeterinarie vis in v)
                 {
-                    visite.Add(new VisiteVeterinarie { Descrizione = vis.Descrizione, idVisite = vis.idVisite, IdAnimale = vis.IdAnimale, Data = vis.Data, DataString = vis.Data.ToShortDateString().ToString() });
+                    visite.Add(new VisiteVeterinarie { ObiettivoEsame = vis.ObiettivoEsame, Descrizione = vis.Descrizione, idVisite = vis.idVisite, IdAnimale = vis.IdAnimale, Data = vis.Data, DataString = vis.Data.ToShortDateString().ToString() });
                 }
             }
 

@@ -32,7 +32,6 @@
                             " <div class='row'>" +
                             " <div class=' mb-4 rounded-3 bg-info border border-info mt-4'>" +
                             " <div class='card'>" +
-                            " <h2 class='text-center'>Dettagli</h2>" +
                             " <div class='bg-image hover-overlay ripple' data-mdb-ripple-color='light'>"
                             + Foto
                             + " <a href='#!'>" +
@@ -70,17 +69,25 @@
                                         "<table class='table table-bordered border-dark'>" +
                                         "<thead>" +
                                         "<tr class='bg-info'>" +
-                                        "<th scope='col'></th>" +
                                         "<th scope='col'>Data visita</th>" +
-                                        "<th scope='col'>Descrizione</th></tr></thead> <tbody><tr>";
+                                        "<th scope='col'>Descrizione</th>" +
+                                        "<th scope='col'>Obiettivo</th>" +
+                                        "</tr></thead> <tbody><tr>";
                                     $.each(data, function (index, v) {
                                         licurrent +=
-                                            "<td>" + v.idVisite + "</td>" +
                                             "<td>" + v.DataString + "</td>" +
-                                            "<td>" + v.Descrizione + "</td></tr>";
+                                            "<td>" + v.Descrizione + "</td> ";
+                                        if (v.ObiettivoEsame != null) {
+                                            licurrent += "<td>" + v.ObiettivoEsame + "</td>"
+                                        }
+                                        else {
+                                            licurrent += "<td> </td>"
+                                        }
+
+                                        licurrent += "</tr>";
                                     });
                                     licurrent += "</tbody></table></div>";
-                                        $("#List").append(licurrent)
+                                    $("#List").append(licurrent)
                                 }
                                 else {
                                     $("#List").html("<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessuna visita per il paziente</h2>");

@@ -5,15 +5,10 @@
 }
 
 <div class="form-horizontal  mx-auto align-items-center justify-content-around mt-3 d-flex text-center ">
-    <img class="w-50 p-3 rounded-5 d-none d-md-block"" src="https://www.animalidacompagnia.it/wp-content/uploads/2022/03/animali-da-compagnia-quali-sono.jpg" alt="Alternate Text" />
+    <img class="w-50 p-3 rounded-5 d-none d-md-block" " src="https://www.animalidacompagnia.it/wp-content/uploads/2022/03/animali-da-compagnia-quali-sono.jpg" alt="Alternate Text" />
 
     <div class="">
-        <h2>Hai smarrito il tuo animale?</h2>
-        <p>Potrebbe essere ricoverato o al sicuro in una delle nostre cliniche!</p>
-        <p> Inserisci il numero di microchip nel form sottostante </p>
-        <p>
-            Nel caso ci fosse un riscontro positivo contattaci per organizzare il recupero in una delle nostre sedi.
-        </p>
+        <h2>Visualizza cartella la clinica del paziente ricercando il suo codice del microcip</h2>
         <div class="form-group mx-auto">
             <div class="d-flex flex-column justify-content-center">
                 <input type="text" name="CodiceFiscale" id="Input1" class=" text-center form-control mx-auto mb-3 mt-3" />
@@ -24,7 +19,7 @@
 </div>
 
 @*<div class="row" id="List2">
-</div>*@
+    </div>*@
 
 <div class="d-md-flex">
 
@@ -41,9 +36,9 @@
     </div>
 </div>
 @*@if (Session["NessunAnimale"] != null)
-{
-    <h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>
-}*@
+    {
+        <h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun risultato trovato</h2>
+    }*@
 
 @section scripts{
     <script src="~/Scripts/JavaScriptAnimal.js"></script>
