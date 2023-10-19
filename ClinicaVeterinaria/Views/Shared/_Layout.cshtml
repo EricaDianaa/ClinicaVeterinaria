@@ -49,6 +49,9 @@
                         </li>
                         <li> @Html.ActionLink("Admin", "AdminMenu", "Admin", null, new { @class = "nav-link" })</li>
                         <li> @Html.ActionLink("Cassa", "Cassa", "Admin", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">
+                            @Html.ActionLink("RicercaAnimale", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
+                        </li>
                     </ul>
 
                     <ul class="navbar-nav d-flex flex-row">
@@ -95,7 +98,7 @@
                             @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("RicercaAnimale", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Ricerca Animale", "RicercaAnonimaDaChip", "Home", null, new { @class = "nav-link" })
                         </li>
                     </ul>
                     <ul class="navbar-nav d-flex flex-row">
@@ -139,7 +142,7 @@
                             @Html.ActionLink("Servizi offerti", "Index", "ServiziOfferti", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Ricerca Animale", "RicercaAnimale", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Ricerca Animale", "RicercaAnonimaDaChip", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
                             @Html.ActionLink("Catalogo Prodotti", "Index", "CatalogoProdotti", null, new { @class = "nav-link" })
