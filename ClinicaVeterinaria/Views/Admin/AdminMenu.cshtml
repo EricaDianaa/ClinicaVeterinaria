@@ -2,7 +2,7 @@
     ViewBag.Title = "AdminMenu";
 }
 
-<h2 class="text-center m-3">Admin Menu</h2>
+@*<h2 class="text-center m-3">Admin Menu</h2>*@
 
 <div class="container mt-5">
 
@@ -10,17 +10,17 @@
     <div class="card mb-4">
         <div class="card-header" style=" background-color: rgb(37, 150, 190); color: #ffffff; ">
 
-            <h2>User</h2>
+            <h2>Sezione clienti</h2>
         </div>
         <div class="card-body">
-            <ul class="navbar-nav d-flex flex-row gap-5 flex-wrap">
+            <ul class="navbar-nav d-flex justify-content-center flex-row gap-5 flex-wrap">
                 <!-- Utenti Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Utenti
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       <img class="img-width" src="~/Content/Immagini/addUtente.png" />
                     </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Registrati", "Register", "Register", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Registra cliente", "Register", "Register", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
             </ul>
@@ -32,31 +32,40 @@
             <h3>Clinica veterinaria</h3>
         </div>
         <div class="card-body">
-            <ul class="navbar-nav d-flex flex-row gap-5 flex-wrap">
+            <ul class="navbar-nav d-flex justify-content-center flex-row gap-5 flex-wrap">
                 <!-- Animali Anagrafati -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Animali Anagrafati</a>
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/AddAnimale.png" />
+                        Animale
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "AnimaliRicoverati", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "AnimaliRicoverati", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista animali anagrafati", "Index", "AnimaliRicoverati", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Registra nuovo animale", "Create", "AnimaliRicoverati", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
 
                 <!-- Tipi Animali -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tipi Animali</a>
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/AddTipologia.png" />
+                        Tipologia
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "Tipologia", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "Tipologia", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista tipologie animali", "Index", "Tipologia", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Inserisci nuova tipologia", "Create", "Tipologia", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
 
                 <!-- Visite accettazioni -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visite accettazioni</a>
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/VisitaVeterinaria.png" />
+                        Visite veterinarie
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "VisiteVeterinarie", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "VisiteVeterinarie", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista visite veterinarie", "Index", "VisiteVeterinarie", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Inserisci visita veterinaria", "Create", "VisiteVeterinarie", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
             </ul>
@@ -66,76 +75,109 @@
     <!-- Farmacia Prodotti Card -->
     <div class="card mb-4">
         <div class="card-header" style=" background-color: rgb(37, 150, 190); color: #ffffff; ">
-            <h2>Farmacia Prodotti</h2>
+            <h2>Farmacia</h2>
         </div>
         <div class="card-body">
-            <ul class="navbar-nav d-flex flex-row gap-5 flex-wrap">
+            <ul class="navbar-nav d-flex justify-content-center flex-row gap-5 flex-wrap">
 
                 <!-- Ditte Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ditte</a>
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/AddAziende.png" />
+                        Aziende
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "Ditte", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "Ditte", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista aziende", "Index", "Ditte", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Inserisci azienda", "Create", "Ditte", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
 
                 <!-- UsiDisponibili Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">UsiDisponibili</a>
+                @*<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/UsiProdotti.png" />
+                        Usi prodotti consigliati
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista usi prodotti", "Index", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Inserisci uso prodotto", "Create", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
-                </li>
+                </li>*@
 
                 <!-- ProdottiUsi Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ProdottiUsi</a>
+                @*<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/ProdottiUsi.png" />
+                        Tipologia ed uso prodotto
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista tipologia ed uso", "Index", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Crea tipologia ed uso", "Create", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
-                </li>
+                </li>*@
 
                 <!-- Prodotti Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Prodotti</a>
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/Prodotti.png" />
+                        Prodotti
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista prodotti", "Index", "Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Inserisci nuovo prodotto", "Create", "Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista tipologia ed uso", "Index", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Crea tipologia ed uso", "Create", "ProdottiUsi", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista usi prodotti", "Index", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Inserisci uso prodotto", "Create", "UsiDisponibili", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
 
                 <!-- Armadietti Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Armadietti</a>
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/armadietto.png" />
+                        Armadietti/Cassetti
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "Armadietti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "Armadietti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Armadietti", "Index", "Armadietti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Crea armadietto", "Create", "Armadietti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista cassetti", "Index", "Cassetti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Crea cassetto", "Create", "Cassetti", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
 
                 <!-- Cassetti Dropdown -->
-                <li class="nav-item dropdown">
+                @*<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cassetti</a>
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Lista", "Index", "Cassetti", new { area = "" }, new { @class = "dropdown-item" })</li>
                         <li>@Html.ActionLink("Crea", "Create", "Cassetti", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
-                </li>
+                </li>*@
 
                 <!-- Cassetto_Prodotti Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cassetto_Prodotti</a>
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/cassetto.png" />
+                        Cassetto prodotti
+                    </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista cassetti", "Index", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Crea nuovo cassetto", "Create", "Cassetto_Prodotti", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
 
                 <!-- Ricerca vendite Link -->
-                <li>@Html.ActionLink("Ricerca vendite", "RicercaMedicinale", "RicercaMedicinali", new { area = "" }, new { @class = "dropdown-item" })</li>
+                
+               
+                <li>
+                  
+                    <a href="/RicercaMedicinali/RicercaMedicinale">
+                        <img class="img-width" src="~/Content/Immagini/search.png" />
+                        Ricerca vendite
+                    </a>
+                    @*@Html.ActionLink("Ricerca vendite", "RicercaMedicinale", "RicercaMedicinali", new { area = "" }, new { @class = "dropdown-item" })*@
+                </li>
             </ul>
         </div>
     </div>
@@ -143,44 +185,50 @@
     <!-- Farmacia Vendite Card -->
     <div class="card mb-4">
         <div class="card-header" style=" background-color: rgb(37, 150, 190); color: #ffffff; ">
-            <h2>Farmacia Vendite</h2>
+            <h2>Farmacia Shop</h2>
         </div>
-        <div>
-            <h1>
-                @Html.ActionLink("CASSA", "Cassa", "Admin", new { area = "" }, new { @class = "dropdown-item" })
-            </h1>
+        <div class="d-flex justify-content-center">
+            <a href="/Admin/Cassa">
+                <img style="width:150px;" src="~/Content/Immagini/cassa1.png" />
+                Aquista
+            </a>
+            @*<h1>
+            @Html.ActionLink("CASSA", "Cassa", "Admin", new { area = "" }, new { @class = "dropdown-item" })
+        </h1>*@
         </div>
         <div class="card-body">
-            <ul class="navbar-nav d-flex flex-row gap-5 flex-wrap">
+            <ul class="navbar-nav d-flex justify-content-center flex-row gap-5 flex-wrap">
                 <!-- Crea vendita Carrello -->
-                <li class="nav-item dropdown">
+                @*<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Crea Carrello
                     </a>
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Crea", "CreaCarrello", "Carrello", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
-                </li>
+                </li>*@
                 <!-- Crea vendita Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Crea vendita
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Vendite
                     </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "Vendite", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "Vendite", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista vendite", "Index", "Vendite", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Crea vendite", "Create", "Vendite", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Lista dettaglio vendite", "Index", "Dettagli", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Crea dettaglio vendite", "Create", "Dettagli", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
                 <!-- Crea dettaglio Dropdown -->
-                <li class="nav-item dropdown">
+                <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Crea dettaglio
                     </a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista", "Index", "Dettagli", new { area = "" }, new { @class = "dropdown-item" })</li>
-                        <li>@Html.ActionLink("Crea", "Create", "Dettagli", new { area = "" }, new { @class = "dropdown-item" })</li>
-                    </ul>
-                </li>
+                    <ul class="dropdown-menu">-->
+                        @*<li>@Html.ActionLink("Lista", "Index", "Dettagli", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Crea", "Create", "Dettagli", new { area = "" }, new { @class = "dropdown-item" })</li>*@
+                    <!--</ul>
+                </li>-->
             </ul>
         </div>
     </div>

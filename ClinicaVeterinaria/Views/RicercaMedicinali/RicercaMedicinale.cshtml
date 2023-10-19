@@ -1,24 +1,24 @@
-﻿@using ClinicaVeterinaria.Models
+﻿@model ClinicaVeterinaria.Models.Prodotti 
 @{
     ViewBag.Title = "RicercaMedicinale";
 }
 
-<div class="row row-cols-2 container justify-content-center m-auto mt-3">
+<div class="row row-cols-2 container justify-content-center m-auto mt-3 text-center">
     <div class="col">
         <h2>Ricerca vendite per data</h2>
-        <input type="date" name="DataVendita" id="Input" class="form-control mt-3" />
+        <input type="date" name="DataVendita" id="Input" class="form-control mt-3 mx-auto" />
         <button class="btn btn-primary" id="Cerca">Cerca</button>
 
         <div class="container">
 
-            <ul id="List">
+            <ul class="mt-2" id="List">
             </ul>
         </div>
     </div>
     <div class="col">
         <h2>Ricerca vendite per codice fiscale</h2>
-        <input type="text" name="CodiceFiscale" id="Input1" class="form-control mt-3" />
-        <button class="btn btn-primary" id="Cerca1">Cerca</button>
+        <input type="text" name="CodiceFiscale" id="Input1" class="form-control mx-auto mt-3" />
+        <button class="btn btn-primary " id="Cerca1">Cerca</button>
 
         <div class="container">
             <div class="row" id="List1">
@@ -28,9 +28,16 @@
 </div>
 <div class="container d-flex flex-column justify-content-center mx-auto mt-3">
     <h2 class="text-center">Ricerca medicinali</h2>
-    <input type="text" name="IdProdotti" id="Input2" class=" mx-auto form-control mt-3" />
-    <button class="btn btn-primary mx-auto text-center" id="Cerca2">Cerca</button>
 
+    <div class="form-group mx-auto">
+        @Html.LabelFor(model => model.IdProdotto, "Medicinale", htmlAttributes: new { @class = " control-label col-md-2" })
+        <div class=" d-flex  justify-content-center align-items-center">
+            @Html.DropDownList("IdProdotti", null, htmlAttributes: new { @class = "", id = "Dropdown" })
+            @Html.ValidationMessageFor(model => model.IdProdotto, "", new { @class = "text-danger" })
+            <button class="btn btn-primary mx-auto text-center ms-2" id="Cerca2">Cerca</button>
+        </div>
+    </div>
+    
     <div class="container  d-flex flex-column justify-content-center mx-auto mt-3">
         <div class="row" id="List2">
         </div>
@@ -52,7 +59,7 @@
                         if (data.length > 0) {
 
                             $.each(data, function (index, item) {
-                                $("#List").append("<li>Nome cliente: " + item.Nome + " - Ricetta: " + item.Ricetta + "</li>")
+                                $("#List").append("<li><strong>Nome cliente: </strong> " + item.Nome + "<strong> - Ricetta: </strong> " + item.Ricetta + "</li>")
                             });
                         } else {
                             $("#List").append("<li>Nessuna vendita alla data ricercata</li>")
@@ -73,7 +80,8 @@
                         $.each(data, function (i, v) {
                             console.log("Dati Vendita: " + v.DataAcquisto);
                             var licurrent =
-                                "<table class='table table-bordered border-dark bg-body mt-3'> <thead> <tr><th scope='col'>NumeroRicetta</th><th scope='col'>Data vendita</th><th scope='col'>Dettaglio vendita</th></thead> <tbody><tr> " +
+                                "<table class='table table-bordered border-dark bg-body mt-3'> <thead class='bg-info'> <tr> <th scope='col'>IdVisita</th>  <th scope='col'>NumeroRicetta</th><th scope='col'>Data vendita</th></tr></thead> <tbody><tr> " +
+                                "<td>" + v.IdVendita + "</td> " +
                                 "<td>" + v.NumeroRicetta + "</td> " +
                                 "<td>" + v.DataAcquisto + "</td> " +
                                 "<td><ul class='DatiVendita'>" + "DATI DI VENDITA...";
@@ -91,7 +99,7 @@
             });
 
             $("#Cerca2").click(function () {
-                var valore = $("#Input2").val()
+                var valore = $("#Dropdown").val()
                 console.log(valore)
                 $.ajax({
                     method: "POST",
@@ -101,9 +109,17 @@
                         $("#List2").html("");
                         console.log(data)
 
-                        var licurrent = "<p class='text-center'>Il medicinale è nel cassetto<strong> " + data.NomeCassetto + "</strong> dentro l'armadietto <strong> " + data.Armadietto + "</strong></p>";
-
-                        $("#List2").html(licurrent);
+                        if (data.NomeCassetto != null) {
+                            var licurrent = "<p class='text-center'>Il medicinale è nel cassetto<strong> " + data.NomeCassetto + "</strong> dentro l'armadietto <strong> " + data.Armadietto + "</strong></p>";
+                            $("#List2").html(licurrent);
+                        }
+                       else {
+                            var licurrent = "<p class='text-center'>Il medicinale non è presente in nessun cassetto</p>";
+                            $("#List2").html(licurrent);
+                        }
+                      
+                                
+                           
                     }
 
                 })
