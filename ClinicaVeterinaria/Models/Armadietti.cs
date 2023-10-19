@@ -20,6 +20,7 @@ namespace ClinicaVeterinaria.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Cod. Armadietto")]
         public string CodiceArmadietto { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

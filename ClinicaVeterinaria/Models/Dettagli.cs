@@ -11,11 +11,11 @@ namespace ClinicaVeterinaria.Models
     {
         [Key]
         public int IdDettaglio { get; set; }
-
+        [Display(Name = "Prodotto")]
         public int IdProdotto { get; set; }
-
+        [Display(Name = "Quantità")]
         public int Quantita { get; set; }
-
+        [Display(Name = "Vendita")]
         public int IdVendita { get; set; }
 
         [Column(TypeName = "money")]

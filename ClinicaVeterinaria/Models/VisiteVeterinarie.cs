@@ -16,11 +16,12 @@ namespace ClinicaVeterinaria.Models
         public DateTime Data { get; set; }
         [NotMapped]
         public string DataString { get; set; }
-
+        [Display(Name = "Animale")]
         public int IdAnimale { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Esame")]
         public string ObiettivoEsame { get; set; }
 
         [Required]
