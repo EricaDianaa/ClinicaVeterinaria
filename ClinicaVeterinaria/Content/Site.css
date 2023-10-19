@@ -37,9 +37,7 @@ h2 {
     z-index: 2;
 }
 
-.card-razze {
-    height: 60vh !important
-}
+
 
 /* Height for devices larger than 576px */
 @media (min-width: 992px) {

@@ -168,6 +168,7 @@
     <Compile Include="Controllers\CassettiController.cs" />
     <Compile Include="Controllers\Cassetto_ProdottiController.cs" />
     <Compile Include="Controllers\CatalogoProdottiController.cs" />
+    <Compile Include="Controllers\ChiSiamoController.cs" />
     <Compile Include="Controllers\DettagliController.cs" />
     <Compile Include="Controllers\DitteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -323,6 +324,8 @@
     <Content Include="Content\ImgsLayout\Diagnostica.png" />
     <Content Include="Content\ImgsLayout\Ecografia.png" />
     <Content Include="Content\ImgsLayout\Endoscopia.png" />
+    <Content Include="Content\ImgsLayout\esigenze.jpg" />
+    <Content Include="Content\ImgsLayout\famiglia.jpg" />
     <Content Include="Content\ImgsLayout\gattobianco.jpg" />
     <Content Include="Content\ImgsLayout\gattocarosello.jpg" />
     <Content Include="Content\ImgsLayout\harley2.jpg" />
@@ -330,15 +333,18 @@
     <Content Include="Content\ImgsLayout\jackrussel.jpg" />
     <Content Include="Content\ImgsLayout\logosfondoblu.png" />
     <Content Include="Content\ImgsLayout\maincoon.jpg" />
+    <Content Include="Content\ImgsLayout\maremmano.jfif" />
     <Content Include="Content\ImgsLayout\meticcio.jpeg" />
     <Content Include="Content\ImgsLayout\Odontostomatologia.png" />
     <Content Include="Content\ImgsLayout\Oftalmologia.png" />
     <Content Include="Content\ImgsLayout\PianoSalute.png" />
     <Content Include="Content\ImgsLayout\ProntoSoccorso.png" />
+    <Content Include="Content\ImgsLayout\riparo.jpg" />
     <Content Include="Content\ImgsLayout\scottish.jpg" />
     <Content Include="Content\ImgsLayout\service.png" />
     <Content Include="Content\ImgsLayout\shitzu.jpg" />
     <Content Include="Content\ImgsLayout\siamese.jpg" />
+    <Content Include="Content\ImgsLayout\storie.jpg" />
     <Content Include="Content\ImgsLayout\vaccini.png" />
     <Content Include="Content\Immagini\DogDaycare.png" />
     <Content Include="Content\Immagini\ImmagineRegister.png" />
@@ -502,6 +508,7 @@
     <Content Include="Views\Carrello\_MostraCarrello.cshtml" />
     <Content Include="Views\CatalogoProdotti\Index.cshtml" />
     <Content Include="Views\Admin\Cassa.cshtml" />
+    <Content Include="Views\ChiSiamo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
