@@ -68,6 +68,16 @@
                         <li>@Html.ActionLink("Inserisci visita veterinaria", "Create", "VisiteVeterinarie", new { area = "" }, new { @class = "dropdown-item" })</li>
                     </ul>
                 </li>
+                <!-- Visite veterinarie comunali -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-width" src="~/Content/Immagini/VisitaVeterinaria.png"/>
+                        Visite veterinarie comunali
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Visite registrate del canile municipale", "Index", "Comune", new { area = "" }, new { @class = "dropdown-item" })</li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
