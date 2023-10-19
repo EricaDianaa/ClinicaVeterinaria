@@ -9,6 +9,7 @@ namespace ClinicaVeterinaria.Controllers
 {
     public class RicercaMedicinaliController : Controller
     {
+
         private ModelDBContext db = new ModelDBContext();
 
         // GET: RicercaMedicinali
@@ -33,18 +34,27 @@ namespace ClinicaVeterinaria.Controllers
         [HttpPost]
         public JsonResult RicercaMedicinaleCF(string CodiceFiscale)
         {
-            
             Utenti user = db.Utenti.FirstOrDefault(m => m.CodiceFiscale == CodiceFiscale);
-            List<Vendite> vendita= db.Vendite.Where(m => m.IdUtente == user.IdUtente).ToList();
-            List<Vendite> v = new List<Vendite>();
+            List<Vendite> vendita = db.Vendite.Where(m => m.IdUtente == user.IdUtente).ToList();
+            List<VenditeDaCodFisc> v = new List<VenditeDaCodFisc>();
+            List<Pr> prodottiList = new List<Pr>();
             foreach (Vendite ve in vendita)
             {
-                v.Add(new Vendite { IdVendita = ve.IdVendita, IdUtente = ve.IdUtente, DateVenditaString = ve.DataVendita.ToShortDateString().ToString(), NumeroRicetta = ve.NumeroRicetta });
+                foreach (Dettagli dettagli in ve.Dettagli)
+                {
+                    prodottiList.Add(new Pr { Nome = dettagli.Prodotti.Nome, Qta = dettagli.Quantita, Prezzo = dettagli.Prezzo });
+                }
+                //v.Add(new Vendite { IdVendita = ve.IdVendita, IdUtente = ve.IdUtente, DateVenditaString = ve.DataVendita.ToShortDateString().ToString(), NumeroRicetta = ve.NumeroRicetta });
+                v.Add(new VenditeDaCodFisc
+                {
+                    DataAcquisto = ve.DataVendita.ToShortDateString().ToString(),
+                    NumeroRicetta = ve.NumeroRicetta,
+                    ProdottiLista = prodottiList
+                });
             }
             return Json(v);
         }
 
-      
         [HttpPost]
         public JsonResult RicercaMedicinaleCasetto(int IdProdotti)
         {

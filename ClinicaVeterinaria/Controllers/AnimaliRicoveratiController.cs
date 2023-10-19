@@ -76,6 +76,7 @@ namespace ClinicaVeterinaria.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             AnimaliRicoverati animaliRicoverati = db.AnimaliRicoverati.Find(id);
+            TempData["NomeImmagine"] = animaliRicoverati.Foto;
             if (animaliRicoverati == null)
             {
                 return HttpNotFound();
@@ -91,18 +92,22 @@ namespace ClinicaVeterinaria.Controllers
         {
             if (ModelState.IsValid)
             {
-                AnimaliRicoverati animali = db.AnimaliRicoverati.Find(animaliRicoverati.IdAnimali);
+                //AnimaliRicoverati animali = db.AnimaliRicoverati.Find(animaliRicoverati.IdAnimali);
                 if (foto != null && foto.ContentLength > 0)
                 {
-                    animali.Foto = foto.FileName;
+                    animaliRicoverati.Foto = foto.FileName;
                     string pathToSave = Server.MapPath("~/Content/ImgProgetto/") + foto.FileName;
                     foto.SaveAs(pathToSave);
                 }
+                else
+                {
+                    animaliRicoverati.Foto = TempData["NomeImmagine"].ToString();
+                }
                 if (animaliRicoverati.NumeroMicrochip == null)
                 {
-                    animali.NumeroMicrochip = "L'animale non possiede alcun microchip";
+                    animaliRicoverati.NumeroMicrochip = "L'animale non possiede alcun microchip";
                 }
-                db.Entry(animali).State = EntityState.Modified;
+                db.Entry(animaliRicoverati).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
