@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     $("#Cerca1").click(function () {
-        var valore = $("#Input1").val()
+        var valore = $("#Input1").val();
+        var success = false;
         console.log(valore)
         $.ajax({
             method: "POST",
@@ -52,7 +53,10 @@
                             "</div>"
                         $("#List1").html(licurrent);
                         $("#List2").html("");
+                        success = true;
+                    })
 
+                    if (success == true) {
                         $.ajax({
                             method: "GET",
                             url: "RicercaAnimale2",
@@ -61,27 +65,29 @@
                                 $("#List").html("")
                                 console.log("Visite", data)
                                 if (data.length > 0) {
+                                    var licurrent = " <div class='d-flex flex-column mt-4'>" +
+                                        "<h2 class='text-center text - black'>Visite</h2>" +
+                                        "<table class='table table-bordered border-dark'>" +
+                                        "<thead>" +
+                                        "<tr class='bg-info'>" +
+                                        "<th scope='col'></th>" +
+                                        "<th scope='col'>Data visita</th>" +
+                                        "<th scope='col'>Descrizione</th></tr></thead> <tbody><tr>";
                                     $.each(data, function (index, v) {
-                                        var licurrent = " <div class='d-flex flex-column mt-4'>" +
-                                            "<h2 class='text-center text - black'>Visite</h2>" +
-                                            "<table class='table table-bordered border-dark'>" +
-                                            "<thead>" +
-                                            "<tr class='bg-info'>" +
-                                            "<th scope='col'></th>" +
-                                            "<th scope='col'>Data visita</th>" +
-                                            "<th scope='col'>Descrizione</th></tr></thead> <tbody><tr>" +
-                                            "<th scope='row' class='bg-info'>" + v.idVisite + "</th>" +
+                                        licurrent +=
+                                            "<td>" + v.idVisite + "</td>" +
                                             "<td>" + v.DataString + "</td>" +
-                                            "<td>" + v.Descrizione + "</td></tr></tbody></table></div>";
-                                        $("#List").append(licurrent)
+                                            "<td>" + v.Descrizione + "</td></tr>";
                                     });
+                                    licurrent += "</tbody></table></div>";
+                                        $("#List").append(licurrent)
                                 }
                                 else {
                                     $("#List").html("<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessuna visita per il paziente</h2>");
                                 }
                             }
                         })
-                    })
+                    }
                 }
                 else {
                     $("#List1").html("<h2 class='text-center border border-dark bg-info mt-4 p-3 '>Nessun paziente trovato</h2>");
