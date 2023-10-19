@@ -9,6 +9,7 @@ namespace ClinicaVeterinaria.Controllers
 {
     public class RicercaMedicinaliController : Controller
     {
+
         private ModelDBContext db = new ModelDBContext();
 
         // GET: RicercaMedicinali
