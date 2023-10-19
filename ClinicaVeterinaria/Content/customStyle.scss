@@ -11,11 +11,35 @@
 .btn {
     margin-top: 0.3em;
 }
+.carPro {
+    background: #4fbfe773;
+}
+.carVen {
+    background: #4fbfe754;
+}
+.carCar {
+    background: #4fbfe773;
+}
+.cassa {
+    margin: auto;
+    .col{
+        border-radius: 20px;
+    }
+    h4 {
+        padding-top: 1em;
+            text-align: center;
+    }
+
+    .btn {
+        margin-bottom: 1em;
+    }
+}
 
 .carrello {
-    th{
+    th {
         padding: 0.2em;
     }
+
     td {
         padding: 0.2em;
         vertical-align: middle;

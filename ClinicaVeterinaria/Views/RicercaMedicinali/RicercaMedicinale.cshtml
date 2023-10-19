@@ -30,12 +30,11 @@
         </div>
     </div>
     <div class="container d-flex flex-column justify-content-center mx-auto mt-3">
-        <h2 class="text-center">Ricerca medicinali</h2>
+        <h2 class="text-center">Ricerca posizione medicinale</h2>
 
         <div class="form-group mx-auto">
-            @Html.LabelFor(model => model.IdProdotto, "Medicinale", htmlAttributes: new { @class = " control-label col-md-2" })
             <div class=" d-flex  justify-content-center align-items-center">
-                @Html.DropDownList("IdProdotti", null, htmlAttributes: new { @class = "", id = "Dropdown" })
+                @Html.DropDownList("IdProdotti", null, htmlAttributes: new { @class = "form-control", id = "Dropdown" })
                 @Html.ValidationMessageFor(model => model.IdProdotto, "", new { @class = "text-danger" })
                 <button class="btn btn-primary mx-auto text-center ms-2" id="Cerca2">Cerca</button>
             </div>

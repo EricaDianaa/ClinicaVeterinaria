@@ -1,4 +1,4 @@
-﻿@model ClinicaVeterinaria.Models.Vendite
+﻿    @model ClinicaVeterinaria.Models.Vendite
 
 @{
     ViewBag.Title = "Create";
@@ -31,7 +31,11 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" form="FormVendite" value="Concludi vendita" class="btn btn-primary" />
+                        <input type="submit" form="FormVendite" value="Concludi vendita" class="btn btn-success" />
+                        @if (TempData["CarrelloVuoto"] != null)
+                {
+                    <p>@TempData["CarrelloVuoto"]</p>
+                }
                     </div>
                 </div>
             </div>

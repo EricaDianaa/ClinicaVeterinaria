@@ -1,16 +1,16 @@
-﻿<div class="row row-cols-1 row-cols-md-3 container-fluid mt-3 cassa">
-    <div class="col">
+﻿<div class="row row-cols-1 row-cols-md-3 container-fluid my-3 cassa">
+    <div class="col carPro">
         @{
             Html.RenderAction("CreaCarrello", "Carrello");
         }
     </div>    
-    <div class="col">
+    <div class="col carVen">
         @{
             Html.RenderAction("Create", "Vendite");
         }
     </div>
     
-    <div class="col">
+    <div class="col carCar">
         @{
             Html.RenderAction("MostraCarrello", "Carrello");
         }

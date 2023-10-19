@@ -54,7 +54,7 @@ namespace ClinicaVeterinaria.Controllers
                 Prodotti prodotto = db.Prodotti.Where(x => x.IdProdotto == oc.IdProduct).FirstOrDefault();
                 if (oc.qta > prodotto.Quantita)
                 {
-                    TempData["quantitaInsufficiente"] = $"Quantità non disponibile, disponibili {prodotto.Quantita} pz";
+                    TempData["quantitaInsufficiente"] = $"Sono disponibili solo n°{prodotto.Quantita} pz";
                 }
                 else
                 {

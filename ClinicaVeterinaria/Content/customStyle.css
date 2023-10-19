@@ -8,6 +8,32 @@
   margin-top: 0.3em;
 }
 
+.carPro {
+  background: rgba(79, 191, 231, 0.4509803922);
+}
+
+.carVen {
+  background: rgba(79, 191, 231, 0.3294117647);
+}
+
+.carCar {
+  background: rgba(79, 191, 231, 0.4509803922);
+}
+
+.cassa {
+  margin: auto;
+}
+.cassa .col {
+  border-radius: 20px;
+}
+.cassa h4 {
+  padding-top: 1em;
+  text-align: center;
+}
+.cassa .btn {
+  margin-bottom: 1em;
+}
+
 .carrello th {
   padding: 0.2em;
 }

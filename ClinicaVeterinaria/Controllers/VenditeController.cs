@@ -59,16 +59,17 @@ namespace ClinicaVeterinaria.Controllers
             if (ModelState.IsValid)
             {
                 vendite.DataVendita = DateTime.Now;
+                List<Carrello> cart = (List<Carrello>)Session["cart"];
 
-                if (Session["cart"] == null)
+                if (cart.Count() == 0)
                 {
-                    return RedirectToAction("CreaCarrello", "Carrello");
+                    TempData["CarrelloVuoto"] = "Il carrello è vuoto, inserisci prima qualche articolo";
+                    return RedirectToAction("Cassa", "Admin");
                 }
                 else
                 {
                     db.Vendite.Add(vendite);
 
-                    List<Carrello> cart = (List<Carrello>)Session["cart"];
                     foreach (Carrello cartItem in cart)
                     {
                         vendite.Dettagli.Add(new Dettagli
