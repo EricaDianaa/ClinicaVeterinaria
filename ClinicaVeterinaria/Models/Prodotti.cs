@@ -32,9 +32,9 @@ namespace ClinicaVeterinaria.Models
 
         [Required]
         public string Descrizione { get; set; }
-
+        [Display(Name = "Quantità")]
         public int Quantita { get; set; }
-
+        [Display(Name = "Ditta")]
         public int IdDitta { get; set; }
 
         public decimal Prezzo { get; set; }

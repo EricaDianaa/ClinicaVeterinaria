@@ -17,16 +17,18 @@ namespace ClinicaVeterinaria.Models
 
         [Key]
         public int IdVendita { get; set; }
-
+        [Display(Name = "Cliente")]
         public int IdUtente { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Data vendita")]
         public DateTime DataVendita { get; set; }
 
         [NotMapped]
         public string DateVenditaString { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Numero ricetta")]
         public string NumeroRicetta { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

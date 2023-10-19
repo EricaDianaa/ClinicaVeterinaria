@@ -16,7 +16,7 @@ namespace ClinicaVeterinaria.Controllers
             get
             {
                 List<SelectListItem> list = new List<SelectListItem>();
-                List<Prodotti> listPr = db.Prodotti.ToList();
+                List<Prodotti> listPr = db.Prodotti.Where(x => x.Quantita > 0).OrderBy(x => x.Nome).ToList();
                 foreach (Prodotti prodotto in listPr)
                 {
                     list.Add(new SelectListItem { Text = prodotto.Nome, Value = prodotto.IdProdotto.ToString() });
@@ -52,19 +52,25 @@ namespace ClinicaVeterinaria.Controllers
 
                 List<Carrello> cart = (List<Carrello>)Session["cart"];
                 Prodotti prodotto = db.Prodotti.Where(x => x.IdProdotto == oc.IdProduct).FirstOrDefault();
-                Carrello item = new Carrello
+                if (oc.qta > prodotto.Quantita)
                 {
-                    IdProduct = prodotto.IdProdotto,
-                    qta = oc.qta,
-                    Nome = prodotto.Nome,
-                    Prezzo = prodotto.Prezzo
-                };
-
-                cart.Add(item);
-                Session["cart"] = cart;
+                    TempData["quantitaInsufficiente"] = $"Quantità non disponibile, disponibili {prodotto.Quantita} pz";
+                }
+                else
+                {
+                    Carrello item = new Carrello
+                    {
+                        IdProduct = prodotto.IdProdotto,
+                        qta = oc.qta,
+                        Nome = prodotto.Nome,
+                        Prezzo = prodotto.Prezzo
+                    };
+                    cart.Add(item);
+                    Session["cart"] = cart;
+                }
             }
             ViewBag.prodotti = prodotti;
-            return RedirectToAction("Cassa","Admin");
+            return RedirectToAction("Cassa", "Admin");
         }
 
         public ActionResult MostraCarrello()

@@ -11,9 +11,9 @@ namespace ClinicaVeterinaria.Models
     {
         [Key]
         public int IdProdottiUsi { get; set; }
-
+        [Display(Name = "Uso prodotto")]
         public int IdUsi { get; set; }
-
+        [Display(Name = "Prodotto")]
         public int IdProdotti { get; set; }
 
         public virtual Prodotti Prodotti { get; set; }
