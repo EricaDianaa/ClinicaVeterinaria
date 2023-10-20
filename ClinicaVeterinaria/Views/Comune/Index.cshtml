@@ -17,7 +17,7 @@
             $("#btnComune").click(function () {
                 $.ajax({
                     method: "POST",
-                    url: "ComuneVisite",
+                    url: "/Comune/ComuneVisite",
                     success: function (data) {
                         console.log(data)
                         $("#append").html("")
