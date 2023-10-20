@@ -20,13 +20,16 @@ body {
 
 h1 {
     font-size: 2.5em !important;
-    position: relative;
-    z-index: 1;
+    text-align: center;
+/*    position: relative;
+    z-index: 1;*/
 }
 
 h2 {
-    position: relative;
-    z-index: 1;
+    text-align: center;
+    margin-top: 1em!important;
+    /*    position: relative;
+    z-index: 1;*/
 }
 
 .h2index {
@@ -35,6 +38,7 @@ h2 {
     transform: rotate(-4deg);
     top: -35px;
     z-index: 2;
+    position: relative;
 }
 
 
