@@ -4,11 +4,10 @@
     ViewBag.Title = "Delete";
 }
 
-
 <div>
 
     <hr />
-  
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
@@ -31,14 +30,12 @@
                 {
                     @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Elimina" class="btn btn-danger" /> |
-                @Html.ActionLink("Indietro", "Index", "", new {@class= "btn btn-default"})
-            </div>
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Elimina" class="btn btn-danger" /> |
+                        @Html.ActionLink("Indietro", "Index", "", new { @class = "btn btn-default" })
+                    </div>
                 }
             </div>
         </div>
     </div>
-
-  
 </div>
