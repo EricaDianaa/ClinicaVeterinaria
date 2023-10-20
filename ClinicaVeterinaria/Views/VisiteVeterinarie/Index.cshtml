@@ -32,7 +32,10 @@
             @Html.DisplayFor(modelItem => item.AnimaliRicoverati.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Data)
+            @{
+                var dataFormattata = item.Data.ToShortDateString();
+            }
+            @Html.DisplayFor(modelItem => dataFormattata)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ObiettivoEsame)

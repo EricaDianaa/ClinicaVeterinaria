@@ -29,7 +29,10 @@
             @Html.DisplayFor(modelItem => item.Utenti.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DataVendita)
+            @{
+                var dataFormattata = item.DataVendita.ToShortDateString();
+            }
+            @Html.DisplayFor(modelItem => dataFormattata)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NumeroRicetta)
