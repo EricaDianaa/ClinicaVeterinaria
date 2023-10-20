@@ -3,16 +3,13 @@
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Create</h2>
+    <h4 class="mt-3 text-center">Prodotti</h4>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Prodotti</h4>
-    <hr />
+<div class="row row-cols-2 container m-auto">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -59,14 +56,7 @@
         </div>
     </div>
 
-    <div class="mt-2">
-        @foreach (SelectListItem i in ViewBag.UsiDisponibili)
-        {
-            <div>
-                <input type="checkbox" name="Selezione" value="@i.Value" /> @i.Text
-            </div>
-        }
-    </div>
+
     @*<div class="form-group">
             Armadio @Html.LabelFor(model => model.Cassetto_Prodotti, "Cassetto_Prodotti", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -96,13 +86,20 @@
             @Html.DropDownList("CassettoId", new SelectList(ViewBag.Cassetti, "Value", "Text"), new { @class = "form-control", id = "CassettiDropdown" })
         </div>
     </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Aggiungi prodotto" class="btn btn-default" />
-        </div>
+    <div class="mt-2">
+        @foreach (SelectListItem i in ViewBag.UsiDisponibili)
+        {
+            <div>
+                <input type="checkbox" name="Selezione" value="@i.Value" /> @i.Text
+            </div>
+        }
     </div>
 </div>
+    <div class="form-group">
+        <div class="text-center m-4">
+            <input type="submit" value="Aggiungi prodotto" class="btn btn-primary" />
+        </div>
+    </div>
 }
 
 @section Scripts {
