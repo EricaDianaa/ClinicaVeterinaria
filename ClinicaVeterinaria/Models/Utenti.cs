@@ -25,7 +25,7 @@ namespace ClinicaVeterinaria.Models
         public string Nome { get; set; }
 
         [Required]
-        [Remote("IsEmailValid", "Validazioni", ErrorMessage = "Indirizzo e-mail già presente")]
+       
         [StringLength(50)]
         public string Password { get; set; }
 
@@ -47,6 +47,7 @@ namespace ClinicaVeterinaria.Models
 
         [Required]
         [StringLength(50)]
+        [Remote("IsEmailValid", "Validazioni", ErrorMessage = "Indirizzo e-mail già presente")]
         public string Email { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
