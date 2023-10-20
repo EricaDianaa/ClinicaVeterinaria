@@ -10,7 +10,7 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
-     [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AnimaliRicoveratiController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
@@ -54,14 +54,13 @@ namespace ClinicaVeterinaria.Controllers
                     string pathToSave = Server.MapPath("~/Content/ImgProgetto/") + foto.FileName;
                     foto.SaveAs(pathToSave);
                 }
-                if(animaliRicoverati.NumeroMicrochip == null)
+                if (animaliRicoverati.NumeroMicrochip == null)
                 {
                     animaliRicoverati.NumeroMicrochip = "L'animale non possiede alcun microchip";
                 }
                 db.AnimaliRicoverati.Add(animaliRicoverati);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-                
             }
 
             ViewBag.Tipologia = new SelectList(db.Tipologia, "IdTipologia", "Nome", animaliRicoverati.Tipologia);
@@ -76,15 +75,13 @@ namespace ClinicaVeterinaria.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             AnimaliRicoverati animaliRicoverati = db.AnimaliRicoverati.Find(id);
-            if(animaliRicoverati.Foto != null)
+            if (animaliRicoverati.Foto != null)
             {
-
-            TempData["NomeImmagine"] = animaliRicoverati.Foto;
+                TempData["NomeImmagine"] = animaliRicoverati.Foto;
             }
             else
             {
-
-            TempData["NomeImmagine"] = "";
+                TempData["NomeImmagine"] = "";
             }
             if (animaliRicoverati == null)
             {
@@ -144,9 +141,17 @@ namespace ClinicaVeterinaria.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             AnimaliRicoverati animaliRicoverati = db.AnimaliRicoverati.Find(id);
-            db.AnimaliRicoverati.Remove(animaliRicoverati);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (db.VisiteVeterinarie.Where(x => x.IdAnimale == animaliRicoverati.IdAnimali).FirstOrDefault() != null)
+            {
+                TempData["EliminaAnimale"] = "Al paziente sono collegate delle visite, impossibile eliminarlo";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                db.AnimaliRicoverati.Remove(animaliRicoverati);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
         }
 
         protected override void Dispose(bool disposing)

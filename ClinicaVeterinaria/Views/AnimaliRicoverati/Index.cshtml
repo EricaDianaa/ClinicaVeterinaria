@@ -5,15 +5,18 @@
     ViewBag.Title = "Index";
 }
 
-
-
-
 <!--Main layout-->
 <main class="my-5">
-    <div >
+    <div>
         <!--Section: Content-->
         <section class="text-center">
             <h4 class="mb-5 text-primary"><strong>Animali anagrafati</strong></h4>
+            @if (TempData["EliminaAnimale"] != null)
+            {
+                <div>
+                    <p class="alert alert-secondary">@TempData["EliminaAnimale"]</p>
+                </div>
+            }
             <div class="row">
                 <p class="text-center">
                     @Html.ActionLink("Registra nuovo animale", "Create")
@@ -22,11 +25,10 @@
                 {
                     <div class="col-xxl-3 col-xl-6 col-lg-12 mb-5 ">
                         <div class="card h-100 d-flex flex-column justify-content-between">
-                            <div class="bg-image hover-overlay ripple"  data-mdb-ripple-color="light">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                 <img src="~/Content/ImgProgetto/@a.Foto" class="img-fluid" style="height:25vh" />
-                                
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                
+
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Nome: <strong>@a.Nome</strong></h3>
@@ -42,8 +44,6 @@
                     </div>
                 }
             </div>
-            
-
         </section>
         <!--Section: Content-->
         <!-- Pagination -->
